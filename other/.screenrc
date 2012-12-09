@@ -1,0 +1,63 @@
+#kill startup message
+startup_message off
+autodetach on
+shell -$SHELL
+
+defscrollback 8192
+hardstatus on
+#hardstatus alwayslastline "%-Lw%{= BW}%50>%n%f* %t%{-}%+Lw%< %=%D %M %d %c"
+#hardstatus string '%{= kK}%-Lw%{= KW}%50>%n%f %t%{= kK}%+Lw%< %{=kG}%-= %d%M %c:%s%{-}'
+
+caption always "%{= bK} %{= bG} [%n]%t @ %H %{-} %= %{= bR} %l %{-} | %{= bG} %Y-%m-%d %{-}"
+hardstatus alwayslastline " %-Lw%{= BW}%n%f %t%{-}%+Lw %=| %0c:%s "
+
+# buttom status bar
+#caption always "%{=u .G} %-w%<%{=ub .y}%n %t%{=u .G}%+w"
+#hardstatus alwaysignore
+#hardstatus alwayslastline "{= .K} [%l]%<%=%{= .W}@%H %=%{= .y} %Y/%m/%d%{= .m} %C %A"
+
+maxwin 10
+
+escape ^Ll
+
+bind c screen 1
+
+bindkey [[a1;5C next
+bindkey ^[O5C next
+bindkey ^[[C next
+bindkey ^[[1;5D prev
+bindkey ^[O5D” prev
+bindkey ^[[D prev
+
+bindkey "^[," prev
+bindkey "^[." next
+bindkey "^[0" select 0
+bindkey "^[1" select 1
+bindkey "^[2" select 2
+bindkey "^[3" select 3
+bindkey "^[4" select 4
+bindkey "^[5" select 5
+bindkey "^[6" select 6
+bindkey "^[7" select 7
+bindkey "^[8" select 8
+bindkey "^[9" select 9
+bindkey "^[w" kill
+bindkey "^[t" title
+bindkey "^[n" screen -t new 1
+bindkey "^[q" detach
+
+# C-b $num : move current window to number $num
+bind -c move 1 number 1
+bind -c move 2 number 2
+bind -c move 3 number 3
+bind -c move 4 number 4
+bind -c move 5 number 5
+bind -c move 6 number 6
+bind -c move 7 number 7
+bind -c move 8 number 8
+bind -c move 9 number 9
+bindkey "^b" command -c move
+
+chdir /home
+screen -t home 1
+
