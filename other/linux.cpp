@@ -11,6 +11,7 @@ find . -name "*.php" -exec dos2unix {} \;
 -path expression -prune:  避开表达中指定的一组pathname查找。
 find . -path "./DontSearchPath" -prune -o -name "datafile*" -print
 find . \( -path "./DontSearchPath" -o -path "./DoSearchPath" \) -prune -o -name "datafile*" -print
+find . -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'
 
 dos2unix [-kn] file [newfile]
 unix2dos [-kn] file [newfile]
