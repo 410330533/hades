@@ -119,6 +119,19 @@ tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql
 rsync -av /home /backupdata
 rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
 
+ubuntu 源
+http://mirrors.163.com/.help/ubuntu.html
+deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
+deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+
 apt-get install build-essential
 apt-get install libxml2-dev
 apt-get install lynx
