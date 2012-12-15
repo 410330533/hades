@@ -358,7 +358,7 @@ sudo apt-get install extundelete
     apt-get install apache2
     vi /etc/apache2/apache2.conf
     a2enmod a2dismod
-	ab -c 100 -n 10000 http://127.0.0.1:8080/
+    ab -c 100 -n 10000 http://127.0.0.1:8080/
 
 (git)
     apt-get install git
@@ -384,14 +384,14 @@ sudo apt-get install extundelete
     cd node
     ./configure --prefix=$HOME/node --debug
     make && make install
-	curl http://npmjs.org/install.sh | sh
+    curl http://npmjs.org/install.sh | sh
 
 (php)
     apt-get install php5
     apt-get install php-apc
     apt-get install php-pear
     apt-get install php5-cli
-	apt-get install php5-cgi
+    apt-get install php5-cgi
     apt-get install php5-curl
     apt-get install php5-dev
     apt-get install php5-gd
@@ -410,14 +410,14 @@ sudo apt-get install extundelete
     phpdoc -d parsedir -t targetdir -o HTML:default:default
 
 (ruby)
-	apt-get install ruby
-	apt-get install rubygems
+    apt-get install ruby
+    apt-get install rubygems
     apt-get install ruby-rvm
-	apt-get install rails
-	gem install rails --include-dependencies
+    apt-get install rails
+    gem install rails --include-dependencies
 
 (nginx)
-	apt-get install nginx
+    apt-get install nginx
     (python)
     location / {
         include fastcgi_params;
@@ -427,12 +427,12 @@ sudo apt-get install extundelete
     }
 
 (spawn-fcgi)
-	apt-get install spawn-fcgi
-	spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi
+    apt-get install spawn-fcgi
+    spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi
     spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/git/test/index.py
 
 (rcconf)
-	apt-get install rcconf
+    apt-get install rcconf
 
 (cacti)
     apt-get install cacti
@@ -483,12 +483,12 @@ sudo apt-get install extundelete
         5.kill -9 6896(msqld_safe进程)
             /etc/init.d/mysql start
         6.mysql -uroot -p
-	数据库备份, 恢复:
-		mysqldump -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi > 5imimi.sql
-		mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.sql
+    数据库备份, 恢复:
+        mysqldump -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi > 5imimi.sql
+        mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.sql
 
 (python)
-	apt-get install python
+    apt-get install python
     apt-get install python-dev
     apt-get install python-setuptools
     apt-get install python-opencv
