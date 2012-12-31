@@ -362,7 +362,7 @@ sudo apt-get install extundelete
 
 (git)
     apt-get install git
-    git config --global user.name mahone
+    git config --global user.name mahone3297
     git config --global user.email 329730566@qq.com
     git config --global core.editor vim
     git config --global color.ui true
