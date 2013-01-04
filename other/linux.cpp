@@ -462,17 +462,22 @@ apt-get install xrdp
         (master):
             server-id = 1
             log_bin = /var/log/mysql/mysql-bin.log
+            binlog_do_db = uco
+            binlog_ignore_db = information_schema
         (slave):
             server-id = 2
             log_bin = /var/log/mysql/mysql-bin.log
+            replicate-do-db = uco
+            replicate-ignore-db = information_shcema
             relay_log = /var/log/mysql/mysql-relay-bin.log
             log_slave_updates = 1
             read_only = 1
         CHANGE MASTER TO MASTER_HOST='192.168.1.101', MASTER_USER='repl', MASTER_PASSWORD='repl', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
         SHOW MASTER STATUS;
         SHOW SLAVE STATUS;
-        START SLAVE;
         STOP SLAVE;
+        RESET SLAVE;
+        START SLAVE;
         
     恢复数据库管理员密码:
         1./etc/init.d/mysql stop
