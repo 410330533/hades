@@ -417,6 +417,7 @@ apt-get install xrdp
     apt-get install ruby-rvm
     apt-get install rails
     gem install rails --include-dependencies
+    gem install capistrano capistrano-ext
 
 (nginx)
     apt-get install nginx
