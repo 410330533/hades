@@ -139,7 +139,8 @@ apt-get install sendmail
 apt-get install top
 apt-get install beanstalkd
 apt-get install sysbench
-sudo apt-get install extundelete
+apt-get install extundelete
+apt-get install xrdp
 
 (linux kernel)
     make mrproper
