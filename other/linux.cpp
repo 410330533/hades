@@ -78,7 +78,6 @@ vmstat
 fuser -muv /proc
 lsof -u mahone
 pidof init
-ldd $(which sshd)
 chkconfig --list
 chkconfig --level 345 atd on
 logrotate -v /etc/logrotate.conf
@@ -322,6 +321,7 @@ apt-get install xrdp
 
 (ssh)
     apt-get install openssh-server
+    ssh-keygen -t rsa
 
 (vim)
     apt-get install vim
