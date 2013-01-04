@@ -339,6 +339,7 @@ apt-get install xrdp
     set tabstop=4
     set shiftwidth=4
     set expandtab
+    :%s/search_str/replace_str/g
 
 (svn)
     apt-get install subversion
