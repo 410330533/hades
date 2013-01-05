@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # eg:
 	# sh db_operation.sh backup ungzip
