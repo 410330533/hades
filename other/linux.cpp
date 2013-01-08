@@ -500,6 +500,7 @@ apt-get install xrdp
     apt-get install python-dev
     apt-get install python-setuptools
     apt-get install python-opencv
+    apt-get install python-psyco
     apt-get install python-pip
     pip install flacsync --upgrade
     pip install MySQL-python
