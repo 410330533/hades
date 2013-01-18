@@ -507,6 +507,7 @@ apt-get install xrdp
     pip install web.py
     pip install flup
     pip install uwsgi
+    pip install pythonbrew
     sh setuptools-0.6c11-py2.7.egg
     easy_install MySQL-python
     easy_install mechanize
