@@ -463,13 +463,9 @@ apt-get install xrdp
         (master):
             server-id = 1
             log_bin = /var/log/mysql/mysql-bin.log
-            binlog_do_db = uco
-            binlog_ignore_db = information_schema
         (slave):
             server-id = 2
             log_bin = /var/log/mysql/mysql-bin.log
-            replicate-do-db = uco
-            replicate-ignore-db = information_shcema
             relay_log = /var/log/mysql/mysql-relay-bin.log
             log_slave_updates = 1
             read_only = 1
