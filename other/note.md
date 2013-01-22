@@ -115,6 +115,8 @@ dump -1u -f /backupdata/home.dump.1 /home
 tar --exclude /proc --exclude /mnt --exclude /tmp --exclude /backupdata -jcvp -f /backupdata/system.tar.bz2 /
 tar -N '2012-02-06' -jpcv -f /backupdata/home.tar.bz2 /home
 tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql
+tar -tf log.tar
+tar -xf log.tar -C log_dir
 rsync -av /home /backupdata
 rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
 
@@ -379,6 +381,7 @@ apt-get install xrdp
     git commit --amend
     git ls-files --stage
     git cat-file -p 264b73
+    git archive master | tar -x -C src
     
     [remote "origin"]
         fetch = +refs/heads/*:refs/remotes/origin/*
