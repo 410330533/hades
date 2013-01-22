@@ -349,6 +349,9 @@ apt-get install xrdp
 (vsftp)
     apt-get install vsftpd
     service vsftpd status[start, stop, restart]
+    ftp ftp.ruby-lang.org
+    ftp> ?
+    ftp> passive
 
 (samba)
     apt-get install samba
@@ -377,9 +380,28 @@ apt-get install xrdp
     git ls-files --stage
     git cat-file -p 264b73
     
-    [remote "web"]
-    url = ssh://server.example.org/home/ams/website.git
-    url = ssh://other.exaple.org/home/foo/website.git
+    [remote "origin"]
+        fetch = +refs/heads/*:refs/remotes/origin/*
+        url = https://github.com/u-cosmetics/oms.git
+    [branch "develop"]
+        remote = origin
+        merge = refs/heads/develop
+    [branch "master"]
+        remote = origin
+        merge = refs/heads/master
+    [remote "localpc"]
+        url = git@localhost:oms.git
+        fetch = +refs/heads/*:refs/remotes/localpc/*
+    [remote "all"]
+        url = https://github.com/u-cosmetics/oms.git
+        url = git@localhost:oms.git
+(gitosis)
+    git clone https://github.com/res0nat0r/gitosis.git
+    cd gitosis
+    sudo python setup.py install
+    sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
+    sudo -H -u git gitosis-init < /home/mahone/.ssh/id_rsa.pub
+    git clone git@localhost:gitosis-admin.git
 
 (nodejs)
     git clone https://github.com/joyent/node.git
