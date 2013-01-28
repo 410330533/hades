@@ -119,6 +119,8 @@ tar -tf log.tar
 tar -xf log.tar -C log_dir
 rsync -av /home /backupdata
 rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
+echo "Welcome to linuxde.net" | openssl enc -base64
+echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 
 ubuntu 源
 http://mirrors.163.com/.help/ubuntu.html
