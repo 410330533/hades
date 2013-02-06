@@ -415,6 +415,11 @@ apt-get install xrdp
     make && make install
     curl http://npmjs.org/install.sh | sh
 
+## Java
+    1. JAVA_HOME: D:\Program Files (x86)\Java\jdk1.6.0_27
+    2. CLASSPATH: .;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar
+    3. Path: %JAVA_HOME%\bin
+
 (php)
     apt-get install php5
     apt-get install php-apc
