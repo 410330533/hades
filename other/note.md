@@ -122,6 +122,7 @@ rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
 echo "Welcome to linuxde.net" | openssl enc -base64
 echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 update-grub // 更新 grub 信息
+grub-install /dev/sda
 
 ubuntu 源
 http://mirrors.163.com/.help/ubuntu.html
