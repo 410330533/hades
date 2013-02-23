@@ -1,4 +1,14 @@
-"Hi ho, Io" println
+# basic
+i := 1
+while(i <= 11, i println; i = i + 1); "This one goes up to 11" println
+for(i, 1, 11, 2, i println); "This one goes up to 11" println
+if(true, "It is true." println, "It is false." println)
+if(false) then("It is true" println) else("It is false" println)
+
+# operator
+OperatorTable addOperator("xor", 11)
+true xor := method(bool, if(bool, false, true))
+false xor := method(bool, if(bool, true, false))
 
 # object
 Vehicle := Object clone
