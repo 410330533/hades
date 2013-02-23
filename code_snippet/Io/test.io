@@ -5,11 +5,6 @@ for(i, 1, 11, 2, i println); "This one goes up to 11" println
 if(true, "It is true." println, "It is false." println)
 if(false) then("It is true" println) else("It is false" println)
 
-# operator
-OperatorTable addOperator("xor", 11)
-true xor := method(bool, if(bool, false, true))
-false xor := method(bool, if(bool, true, false))
-
 # object
 Vehicle := Object clone
 Vehicle description := "Something to take you places"
@@ -68,3 +63,19 @@ result := elvis size
 # singleton
 Highlander := Object clone
 Highlander clone := Highlander
+
+# operator
+OperatorTable addOperator("xor", 11)
+true xor := method(bool, if(bool, false, true))
+false xor := method(bool, if(bool, true, false))
+
+# message
+postOffice := Object clone
+postOffice packageSender := method(call sender)
+
+mailer := Object clone
+mailer deliver := method(postOffice packageSender)
+
+postOffice messageTarget := method(call target)
+postOffice messageArgs := method(call message arguments)
+postOffice messageName := method(call message name)
