@@ -79,3 +79,80 @@ mailer deliver := method(postOffice packageSender)
 postOffice messageTarget := method(call target)
 postOffice messageArgs := method(call message arguments)
 postOffice messageName := method(call message name)
+
+# DSL(domain specific language)
+/*
+{
+    "Bob Smith": "5195551212",
+    "Mary Walsh": "4162223434"
+}
+*/
+OperatorTable addAssignOperator(":", "atPutNumber")
+curlyBrackets := method(
+    r := Map clone
+    call message arguments foreach(arg,
+        r doMessage(arg)
+        )
+    r
+)
+Map atPutNumber := method(
+    self atPut(
+        call evalArgAt(0) asMutable removePrefix("\"") removeSuffix("\""),
+        call evalArgAt(1))
+)
+s := File with("phonebook.txt") openForReading contents
+phoneNumbers := doString(s)
+phoneNumbers keys println
+phoneNumbers values println
+
+# forward
+Builder := Object clone
+Builder forward := method(
+    writeln("<", call message name, ">")
+    call message arguments foreach(
+        arg,
+        content := self doMessage(arg);
+        if(content type == "Sequence", writeln(content))
+    )
+    writeln("</", call message name, ">")
+)
+
+Builder ul(
+    li("Io"), li("Lua"), li("Javascript")
+)
+
+# coroutine
+vizzini := Object clone
+vizzini talk := method(
+    "fezzik, are there rocks ahead?" println
+    yield
+    "no more rhymes now, I mean it." println
+    yield
+)
+
+fezzik := Object clone
+fezzik rhyme := method(
+    yield
+    "If there are, we'll all be dead." println
+    yield
+    "Anybody want a peanut?" println
+)
+
+vizzini @@talk; fezzik @@rhyme
+# Coroutine currentCoroutine pause
+
+# actor
+slower := Object clone
+faster := Object clone
+slower start := method(wait(2); writeln("slowly"))
+faster start := method(wait(1); writeln("quickly"))
+slower start; faster start
+slower @@start; faster @@start; wait(3)
+
+# future
+/*
+futureResult := URL with("http://google.com/") @fetch
+writeln("我们可以在后台运行网页抓取的同时做一些别的事情。。。")
+writeln("这里将阻塞，直到结果产生为止")
+writeln("fetch ", futureResult size, " bytes")
+*/
