@@ -66,3 +66,16 @@ twin_cats(X, Y) :- cat(X), cat(Y).
 # | ?- dorothy(lion, tiger, bear).
 # | ?- dorothy(One, Two, Three).
 # | ?- twin_cats(One, Two).
+
+# family.pl
+father(zeb, john_boy_sr).
+father(john_boy_sr, john_boy_jr).
+
+ancestor(X, Y) :- father(X, Y).
+ancestor(X, Y) :- father(X, Z), ancestor(Z, Y).
+
+# complie
+# | ?- ancestor(john_boy_sr, john_boy_jr).
+# | ?- ancestor(zeb, john_boy_jr).
+# | ?- ancestor(zeb, who).
+# | ?- ancestor(who, john_boy_jr).
