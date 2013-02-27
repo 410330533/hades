@@ -79,3 +79,37 @@ ancestor(X, Y) :- father(X, Z), ancestor(Z, Y).
 # | ?- ancestor(zeb, john_boy_jr).
 # | ?- ancestor(zeb, who).
 # | ?- ancestor(who, john_boy_jr).
+
+# unification
+| ?- (1, 2, 3) = (1, 2, 3).
+| ?- (1, 2, 3) = (1, 2, 3, 4).
+| ?- (1, 2, 3) = (3, 2, 1).
+| ?- (A, B, C) = (1, 2, 3).
+| ?- (1, 2, 3) = (A, B, C).
+| ?- (A, 2, C) = (1, B, 3).
+| ?- [1, 2, 3] = [1, 2, 3].
+| ?- [1, 2, 3] = [X, Y, Z].
+| ?- [2, 2, 3] = [X, X, Z].
+| ?- [1, 2, 3] = [X, X, Z].
+| ?- [] = [].
+
+| ?- [a, b, c] = [Head|Tail].
+| ?- [] = [Head|Tail].
+| ?- [a] = [Head|Tail].
+| ?- [a, b, c] = [a|Tail].
+| ?- [a, b, c] = [a|[Head|Tail]].
+| ?- [a, b, c, d, e] = [_, _|[Head|_]].
+
+# list_math.pl
+count(0, []).
+count(Count, [Head|Tail]) :- count(TainCount, Tail), Count is TainCount + 1.
+
+sum(0, []).
+sum(Total, [Head|Tail]) :- sum(Sum, Tail), Total is Head + Sum.
+
+average(Average, List) :- sum(Sum, List), count(Count, List), Average is Sum/Count.
+
+# complie
+# | ?- count(what, [1]).
+# | ?- sum(what, [1, 2, 3]).
+# | ?- average(what, [1, 2, 3]).
