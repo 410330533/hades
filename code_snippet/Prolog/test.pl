@@ -196,4 +196,4 @@ eight_queens(Board) :-
     fd_all_different(Diags2).
 
 # complie
-| ?- eight_queens([(1, A), (2, B), (3, C), (4, D), (5, E), (6, F), (7, G), (8, H)]).
+# | ?- eight_queens([(1, A), (2, B), (3, C), (4, D), (5, E), (6, F), (7, G), (8, H)]).
