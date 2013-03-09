@@ -1,3 +1,4 @@
+// function
 def whileLoop {
     var i = 1
     while (i <= 3){
@@ -49,6 +50,8 @@ myCompass.turnLeft
 myCompass.turnLeft
 myCompass.turnLeft
 
+// class
+/*
 class Person(first_name: String){
     println("Outer constructor")
     def this(first_name: String, last_name: String){
@@ -61,3 +64,41 @@ class Person(first_name: String){
 
 val bob = new Person("Bob")
 val bobTate = new Person("Bob", "Tate")
+*/
+
+// object
+object TrueRing {
+    def rule = println("To rule them all")
+}
+TrueRing.rule
+
+// hierarchy
+/*
+class Person(val name: String) {
+    def talk(message: String) = println(name + " says " + message)
+    def id(): String = name
+}
+
+class Employee(override val name: String,
+                        val number: Int) extends Person(name) {
+    override def talk(message: String) {
+        println(name + " with number " + number + " says " + message)
+    }
+    override def id(): String = number.toString
+}
+
+val employee = new Employee("Yoda", 4)
+employee.talk("Extend or extend not. There is no try.")
+*/
+
+// trait
+class Person(val name: String)
+
+trait Nice {
+    def greet() = println("Howdily doodily.")
+}
+
+class Character(override val name: String) extends Person(name) with Nice
+
+val flanders = new Character("Ned")
+flanders.greet
