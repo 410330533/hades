@@ -102,3 +102,35 @@ class Character(override val name: String) extends Person(name) with Nice
 
 val flanders = new Character("Ned")
 flanders.greet
+
+// list, set, map
+val list = List("lions", "tigers", "bears")
+println(list.isEmpty)
+println(list.length)
+println(list.size)
+println(list.head)
+println(list.tail)
+println(list.last)
+println(list.init)
+println(list.reverse)
+println(list.drop(1))
+println(list.drop(2))
+val words = List("peg", "al", "bud", "kelly")
+println(words.count(word => word.size > 2))
+println(words.filter(word => word.size > 2))
+println(words.map(word => word.size))
+println(words.forall(word => word.size > 1))
+println(words.exists(word => word.size > 4))
+val animals = Set("lions", "tigers", "bears")
+val ordinals = Map(0 -> "zeor", 1 -> "one", 2 -> "two")
+
+val hobbits_list = List("frodo", "samwise", "pippin")
+hobbits_list.foreach(hobbit => println(hobbit))
+
+val hobbits_set = Set("frodo", "samwise", "pippin")
+hobbits_set.foreach(hobbit => println(hobbit))
+
+val hobbits_map = Map("frodo" -> "hobbit", "samwise" -> "hobbit", "pippin" -> "hobbit")
+hobbits_map.foreach(hobbit => println(hobbit))
+hobbits_map.foreach(hobbit => println(hobbit._1))
+hobbits_map.foreach(hobbit => println(hobbit._2))
