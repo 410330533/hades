@@ -369,6 +369,10 @@ apt-get install xrdp
     service smbd status[start, stop, restart]
     useradd -m testsamba
     smbpasswd -a testsamba
+    [root]
+        path = / 
+        browseable = yes 
+        writable = yes
 
 (apache)
     apt-get install apache2
