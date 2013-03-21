@@ -26,3 +26,10 @@ if
     x < 0 -> negative;
     true -> zero
 end.
+
+Negate = fun(I) -> -I end.
+Negate(1).
+
+Numbers = [1, 2, 3, 4].
+lists:foreach(fun(Number) -> io:format("~p~n", [Number]) end, Numbers).
+lists:map(fun(X) -> X + 1 end, Numbers).
