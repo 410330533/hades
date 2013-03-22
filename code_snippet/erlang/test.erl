@@ -33,3 +33,9 @@ Negate(1).
 Numbers = [1, 2, 3, 4].
 lists:foreach(fun(Number) -> io:format("~p~n", [Number]) end, Numbers).
 lists:map(fun(X) -> X + 1 end, Numbers).
+lists:filter(fun(X) -> X < 3 end, Numbers).
+lists:all(fun(X) -> X < 3 end, Numbers).
+lists:any(fun(X) -> X < 3 end, Numbers).
+lists:takewhile(fun(X) -> X < 3 end, Numbers).
+lists:dropwhile(fun(X) -> X < 3 end, Numbers).
+lists.foldl(fun(X, Sum) -> X + Sum end, 0, Numbers).
