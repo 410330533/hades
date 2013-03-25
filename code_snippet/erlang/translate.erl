@@ -13,3 +13,9 @@ loop() ->
             io:format("I don't understand.~n"),
             loop()
 end.
+
+% c(translate).
+% Pid = spawn(fun translate:loop/0).
+Pid ! "casa".
+Pid ! "blance".
+Pid ! "loco".
