@@ -16,6 +16,6 @@ end.
 
 % c(translate).
 % Pid = spawn(fun translate:loop/0).
-Pid ! "casa".
-Pid ! "blance".
-Pid ! "loco".
+% Pid ! "casa".
+% Pid ! "blanca".
+% Pid ! "loco".

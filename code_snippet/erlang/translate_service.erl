@@ -22,5 +22,5 @@ translate(To, Word) ->
 
 % c(translate_service).
 % Translator = spawn(fun translate_service:loop/0).
-translate_service:translate(Translator, "blanca").
-translate_service:translate(Translator, "casa").
+% translate_service:translate(Translator, "blanca").
+% translate_service:translate(Translator, "casa").
