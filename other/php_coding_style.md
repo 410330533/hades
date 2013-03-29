@@ -201,4 +201,4 @@ switch 语句应当有 default。
 
 ## PS
 - 参考文档 [Zend Framework 的 PHP 编码标准](http://framework.zend.com/manual/zh/coding-standard.html)
-- oms项目用的是php 5.4 版本，因此数组统一用[]形式
+- oms项目用的是php 5.4 版本，因此数组统一用`[]`形式
