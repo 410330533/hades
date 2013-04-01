@@ -79,3 +79,19 @@
 
 (def villains [{:name "Godzilla" :size "big"} {:name "Ebola" :size "small"}])
 (let [[_ {name :name}] villains] (str "Name of the second villain: " name))
+
+; anonymous function
+(def people ["Lea", "Han Solo"])
+(map count people)
+
+(defn twice-count[w] (* 2 (count w)))
+(map twice-count people)
+(map (fn [w] (* 2 (count w))) people)
+(map #(* 2 (count %)) people)
+
+(def v [3 1 2])
+(apply + v)
+(apply max v)
+
+(filter odd? v)
+(filter #(< % 3) v)
