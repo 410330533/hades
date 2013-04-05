@@ -150,3 +150,52 @@
 (nth (map first (iterate fib-pair [1 1])) 50)
 (defn factorial [n] (apply * (take n (iterate inc 1))))
 (factorial 5)
+
+; ref
+(def movie (ref "Star Wars"))
+(deref movie)
+@movie
+(dosync (alter movie str ": The Empire Strikes Back"))
+(dosync (ref-set movie "Star Wars: The Revenge of the Sith"))
+
+; atom
+(atom "Split at your own risk.")
+(def danger (atom "Split at your own risk."))
+@danger
+(reset! danger "Split with impunity")
+
+(def top-sellers (atom []))
+(swap! top-sellers conj {:title "Seven Languages in Seven Weeks", :author "Tate"})
+(swap! top-sellers conj {:title "Programming Clojure", :author "Tate"})
+
+; 构建原子缓存
+(defn create [] (atom {}))
+(defn get [cache key] (@cache key))
+(defn put
+    ([cache value-map]
+        (swap! cache merge value-map))
+    ([cache key value]
+        (swap! cache assoc key value)))
+(def ac (create))
+(put ac :quote "I'm your father, Luke.")
+(println (str "Cached item: " (get ac :quote)))
+
+; agent
+(defn twice [x] (* 2 x))
+(def tribbles (agent 1))
+(send tribbles twice)
+@tribbles
+
+(defn slow-twice [x]
+    (do
+        (Thread/sleep 5000)
+        (* 2 x)))
+@tribbles
+(send tribbles slow-twice)
+@tribbles
+; 5s later
+@tribbles
+
+; future
+(def finer-things (future (Thread/sleep 5000) "take time"))
+@finer-things
