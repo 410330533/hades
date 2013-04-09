@@ -1,135 +1,136 @@
-echo IGD > /sys/kernel/debug/vgaswitcheroo/switch // 切换到集成显卡
+echo IGD > /sys/kernel/debug/vgaswitcheroo/switch // 切换到集成显卡  
 echo OFF > /sys/kernel/debug/vgaswitcheroo/switch // 关掉没有连接的显卡
 
-mount -o username=${username},password=${password} //${ip}/e$ /home/win
-unmount /home/win
-do-release-upgrade
+mount -o username=${username},password=${password} //${ip}/e$ /home/win  
+unmount /home/win  
+do-release-upgrade  
 
-find ~/src -time=mtime -3 -exec ls -l {} \;
-find . -name "*.php" -exec dos2unix {} \;
--path pathname -prune:   避开指定子目录pathname查找。
--path expression -prune:  避开表达中指定的一组pathname查找。
-find . -path "./DontSearchPath" -prune -o -name "datafile*" -print
-find . \( -path "./DontSearchPath" -o -path "./DoSearchPath" \) -prune -o -name "datafile*" -print
-find . -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'
+find ~/src -time=mtime -3 -exec ls -l {} \;  
+find . -name "*.php" -exec dos2unix {} \;  
+-path pathname -prune:   避开指定子目录pathname查找。  
+-path expression -prune:  避开表达中指定的一组pathname查找。  
+find . -path "./DontSearchPath" -prune -o -name "datafile*" -print  
+find . \( -path "./DontSearchPath" -o -path "./DoSearchPath" \) -prune -o -name "datafile*" -print  
+find . -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'  
 
-dos2unix [-kn] file [newfile]
-unix2dos [-kn] file [newfile]
+dos2unix [-kn] file [newfile]  
+unix2dos [-kn] file [newfile]  
 
-iconv -f 原编码 -t 新编码 filename [-o newfile]
+iconv -f 原编码 -t 新编码 filename [-o newfile]  
 
-dpkg-reconfigure tzdata
-type -a ls
-echo $PATH | cut -d ':' -f 1,3
-export | cut -c 12-
-cat /etc/passwd | sort -t ':' -k 3 -n
-last | cut -d ' ' -f1 | sort | uniq -c
-last | tee last.list | cut -d ' ' -f1
-last | tr '[a-z]' '[A-Z]'
-cat /etc/passwd | tr -d ':'
-join -t ':' /etc/passwd /etc/shadow
-join -t ':' -1 4 /etc/passwd -2 3 /etc/group
-paste /etc/passwd /etc/shadow
-expand -t 4 filename
-split -b 300k /etc/termcap termcap
-split -l 10 /etc/termcap termcap
-tar -cvf - /home | tar -xvf -
-grep -n 'go\{2,5\}g' regular_express.txt
-nl /etc/passwd | sed -e '2,5d'
-nl /etc/passwd | sed -e '2a drink tea'
-nl /etc/passwd | sed -e '2i drink tea'
-sed -e 's/replace_str/new_str/g'
-printf '%10s %5i %8.2f \n' $ (cat printf.txt)
-last -n 5 | awk '{print $1,$3}'
-cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'
-groups
-newgrp
-chage -l mahone
-finger mahone
-chfn mahone
-chsh -s /bin/bash
-id mahone
-w
-who
-lastlog
-write mahone pts/0
-mesg
-mesg [y/n]
-wall [filename]
-pwck
-pwconv
-pwunconv
-grpck
-grpconv
-grpunconv
-at now +5 minutes
-batch 23:00 2012-01-24
-pstree
-kill -SIGHUP $(ps aux | grep 'syslog' | grep -v 'grep' | awk '{print $2}')
-killall -9 httpd
-nice -n number vi
-renice number PID
-free -m
-uname -a
-uptime
-netstat [-atunlp]
-dmesg
-vmstat
-fuser -muv /proc
-lsof -u mahone
-pidof init
-chkconfig --list
-chkconfig --level 345 atd on
-logrotate -v /etc/logrotate.conf
-runlevel
-lsmod
-modinfo lp
-insmod /lib/modules/$(uname -r)/kernel/fs/cifs/cifs.ko
-rmmod cifs
-modprobe cifs
-modprobe -r cifs
-nmap 192.168.1.100
-lpstat -a
-lpadmin -x hp_p2015
-lpadmin -p hp_p2015 -v socket://192.168.201.253:9100 -m postscript.ppd.gz -E
-lpadmin -d hp_p2015
-lpr -P hp_p2015 /etc/passwd
-lp -d hp_p2015 -n 2 /etc/issue
-lpq -a
-lpq -l -P hp_p2015
-lprm 11
-lspci
-lspci -s 02:01.0 -vv
-lsusb
-iostat -d 2 3
-sensors-detect
-sensors
-ldconfig
-ldd /usr/bin/passwd
-startx -- -depth 16
-dd if=/dev/sda of=/dev/sdb
-find / -print | cpio -covB > /dev/st0
-cpio -iduv < /dev/st0
-dump -0u -f /backupdata/home.dump /home
-dump -1u -f /backupdata/home.dump.1 /home
-tar --exclude /proc --exclude /mnt --exclude /tmp --exclude /backupdata -jcvp -f /backupdata/system.tar.bz2 /
-tar -N '2012-02-06' -jpcv -f /backupdata/home.tar.bz2 /home
-tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql
-tar -tf log.tar
-tar -xf log.tar -C log_dir
-rsync -av /home /backupdata
-rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
-echo "Welcome to linuxde.net" | openssl enc -base64
-echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
+dpkg-reconfigure tzdata  
+type -a ls  
+echo $PATH | cut -d ':' -f 1,3  
+export | cut -c 12-  
+cat /etc/passwd | sort -t ':' -k 3 -n  
+last | cut -d ' ' -f1 | sort | uniq -c  
+last | tee last.list | cut -d ' ' -f1  
+last | tr '[a-z]' '[A-Z]'  
+cat /etc/passwd | tr -d ':'  
+join -t ':' /etc/passwd /etc/shadow  
+join -t ':' -1 4 /etc/passwd -2 3 /etc/group  
+paste /etc/passwd /etc/shadow  
+expand -t 4 filename  
+split -b 300k /etc/termcap termcap  
+split -l 10 /etc/termcap termcap  
+tar -cvf - /home | tar -xvf -  
+grep -n 'go\{2,5\}g' regular_express.txt  
+nl /etc/passwd | sed -e '2,5d'  
+nl /etc/passwd | sed -e '2a drink tea'  
+nl /etc/passwd | sed -e '2i drink tea'  
+sed -e 's/replace_str/new_str/g'  
+printf '%10s %5i %8.2f \n' $ (cat printf.txt)  
+last -n 5 | awk '{print $1,$3}'  
+cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'  
+groups  
+newgrp  
+chage -l mahone  
+finger mahone  
+chfn mahone  
+chsh -s /bin/bash  
+id mahone  
+w  
+who  
+lastlog  
+write mahone pts/0  
+mesg  
+mesg [y/n]  
+wall [filename]  
+pwck  
+pwconv  
+pwunconv  
+grpck  
+grpconv  
+grpunconv  
+at now +5 minutes  
+batch 23:00 2012-01-24  
+pstree  
+kill -SIGHUP $(ps aux | grep 'syslog' | grep -v 'grep' | awk '{print $2}')  
+killall -9 httpd  
+nice -n number vi  
+renice number PID  
+free -m  
+uname -a  
+uptime  
+netstat [-atunlp]  
+dmesg  
+vmstat  
+fuser -muv /proc  
+lsof -u mahone  
+pidof init  
+chkconfig --list  
+chkconfig --level 345 atd on  
+logrotate -v /etc/logrotate.conf  
+runlevel  
+lsmod  
+modinfo lp  
+insmod /lib/modules/$(uname -r)/kernel/fs/cifs/cifs.ko  
+rmmod cifs  
+modprobe cifs  
+modprobe -r cifs  
+nmap 192.168.1.100  
+lpstat -a  
+lpadmin -x hp_p2015  
+lpadmin -p hp_p2015 -v socket://192.168.201.253:9100 -m postscript.ppd.gz -E  
+lpadmin -d hp_p2015  
+lpr -P hp_p2015 /etc/passwd  
+lp -d hp_p2015 -n 2 /etc/issue  
+lpq -a  
+lpq -l -P hp_p2015  
+lprm 11  
+lspci  
+lspci -s 02:01.0 -vv  
+lsusb  
+iostat -d 2 3  
+sensors-detect  
+sensors  
+ldconfig  
+ldd /usr/bin/passwd  
+startx -- -depth 16  
+dd if=/dev/sda of=/dev/sdb  
+find / -print | cpio -covB > /dev/st0  
+cpio -iduv < /dev/st0  
+dump -0u -f /backupdata/home.dump /home  
+dump -1u -f /backupdata/home.dump.1 /home  
+tar --exclude /proc --exclude /mnt --exclude /tmp --exclude /backupdata -jcvp -f /backupdata/system.tar.bz2 /  
+tar -N '2012-02-06' -jpcv -f /backupdata/home.tar.bz2 /home  
+tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql  
+tar -tf log.tar  
+tar -xf log.tar -C log_dir  
+rsync -av /home /backupdata  
+rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup  
+echo "Welcome to linuxde.net" | openssl enc -base64  
+echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d  
 
-(grub)
-update-grub // 更新 grub 信息
-grub-install /dev/sda
+# grub
+- update-grub // 更新 grub 信息
+- grub-install /dev/sda
 
-(ibus)
-apt-get install ibus-googlepinyin
+# ibus
+- apt-get install ibus-googlepinyin
 
-ubuntu 源
+# ubuntu 源
+```shell
 http://mirrors.163.com/.help/ubuntu.html
 deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
 deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
@@ -141,30 +142,30 @@ deb-src http://mirrors.163.com/ubuntu/ precise-security main restricted universe
 deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
 deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
 deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
+```
+- apt-get install build-essential
+- apt-get install libxml2-dev
+- apt-get install lynx
+- apt-get install sendmail
+- apt-get install top
+- apt-get install beanstalkd
+- apt-get install sysbench
+- apt-get install extundelete
+- apt-get install xrdp
 
-apt-get install build-essential
-apt-get install libxml2-dev
-apt-get install lynx
-apt-get install sendmail
-apt-get install top
-apt-get install beanstalkd
-apt-get install sysbench
-apt-get install extundelete
-apt-get install xrdp
-
-(linux kernel)
-    make mrproper
-    make clean
-    make menuconfig
-    make oldconfig
-    make xconfig
-    make gconfig
-    make config
-    make vmlinux 未经压缩的内核
-    make modules 仅内核模块
-    make bzImage 经过压缩的内核
-    make all 进行上述的三个操作
-    make modules_install
+# linux kernel
+- make mrproper
+- make clean
+- make menuconfig
+- make oldconfig
+- make xconfig
+- make gconfig
+- make config
+- make vmlinux 未经压缩的内核
+- make modules 仅内核模块
+- make bzImage 经过压缩的内核
+- make all 进行上述的三个操作
+- make modules_install
 
 (rpm)
     /var/lib/rpm
