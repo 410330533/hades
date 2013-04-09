@@ -350,6 +350,16 @@ deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted univers
 - set expandtab
 - :%s/search_str/replace_str/g
 
+# rabbitMQ
+- [deb package](http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb)
+
+```shell
+deb http://www.rabbitmq.com/debian/ testing main
+wget http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
+sudo apt-key add rabbitmq-signing-key-public.asc
+sudo apt-get install rabbitmq-server
+```
+
 # svn
 - apt-get install subversion
 - svnadmin create repository
