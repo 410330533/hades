@@ -64,6 +64,29 @@ let fact x = if x == 0 then 1 else fact (x - 1) * x
 -- :load lists.hs
 -- size "Fascinating."
 
+    allEven :: [Integer] -> [Integer]
+    allEven [] = []
+    allEven (h:t) = if even h then h:allEven t else allEven t
+
+-- list
+[1..4]
+[10, 8 .. 4]
+[10, 9.5 .. 4]
+take 5 [1 ..]
+[x * 2 | x <- [1, 2, 3]]
+[(y, x) | (x, y) <- [(1, 2), (2, 3), (3, 1)]]
+[(4 - x, y) | (x, y) <- [(1, 2), (2, 3), (3, 1)]]
+
+-- anonymous function
+(\x -> x) "Logical."
+(\x -> x ++ " caption.") "Logical, "
+map(\x -> x * x) [1, 2, 3]
+
+let crew = ["Kirk", "Spock", "McCoy"]
+[(a, b) | a <- crew, b <- crew]
+[(a, b) | a <- crew, b <- crew, a /= b]
+[(a, b) | a <- crew, b <- crew, a < b]
+
 4 + 4
 4 + 1.0
 "hello" ++ " world"
