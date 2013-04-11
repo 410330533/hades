@@ -80,7 +80,41 @@ take 5 [1 ..]
 -- anonymous function
 (\x -> x) "Logical."
 (\x -> x ++ " caption.") "Logical, "
+
+-- map
 map(\x -> x * x) [1, 2, 3]
+map(+ 1) [1, 2, 3]
+
+-- filter
+filter odd [1, 2, 3, 4, 5]
+
+-- 偏应用函数 柯里化
+let prod x y = x * y
+let double = prod 2
+let triple = prod 3
+
+-- 惰性求值
+module Main where
+    myRange start step = start:(myRange (start + step) step)
+module Main where
+    lazyFib x y = x:(lazyFib y (x + y))
+    fib = lazyFib 1 1
+    fibNth x = head (drop (x - 1) (take (x) fib))
+-- take 5 (lazyFib 0 1)
+-- take 5 (fib)
+-- take 5 (drop 20 (lazyFib 0 1))
+-- fibNth 3
+-- fibNth 6
+-- take 5 (zipWith (+) fib (drop 1 fib))
+-- take 5 (map (*2) [1 ..])
+-- take 5 (map ((* 2) . (* 5)) fib)
+
+-- 类型
+module Main where
+    data Suit = Spaces | Hearts deriving (Show)
+    data Rank = Ten | Jack | Queen | King | Ace deriving (Show)
+    type Card = (Rank, Suit)
+    type Hand = [Card]
 
 let crew = ["Kirk", "Spock", "McCoy"]
 [(a, b) | a <- crew, b <- crew]
