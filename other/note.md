@@ -475,17 +475,18 @@ sudo apt-get install rabbitmq-server
 - gem install capistrano capistrano-ext
 ```bash
 curl -L https://get.rvm.io | bash -s stable
+载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）
 source ~/.rvm/scripts/rvm
-# 替换 Ruby 下载地址到国内淘宝镜像服务器
-$ sed -i .bak 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
-# 安装 readline 包
-$ rvm pkg install readline
-# 安装 Ruby 2.0.0
-$ rvm install 2.0.0 --with-readline-dir=$rvm_path/usr
+替换 Ruby 下载地址到国内淘宝镜像服务器
+sed -i .bak 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
+安装 readline 包
+rvm pkg install readline
+安装 Ruby 2.0.0
+rvm install 2.0.0 --with-readline-dir=$rvm_path/usr
 rvm 2.0.0 --default
 gem source -r https://rubygems.org/
 gem source -a http://ruby.taobao.org
-gem install rails
+gem install bundler rails
 ```
 
 # nginx
