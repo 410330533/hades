@@ -473,6 +473,20 @@ sudo apt-get install rabbitmq-server
 - apt-get install rails
 - gem install rails --include-dependencies
 - gem install capistrano capistrano-ext
+```bash
+curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+# 替换 Ruby 下载地址到国内淘宝镜像服务器
+$ sed -i .bak 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
+# 安装 readline 包
+$ rvm pkg install readline
+# 安装 Ruby 2.0.0
+$ rvm install 2.0.0 --with-readline-dir=$rvm_path/usr
+rvm 2.0.0 --default
+gem source -r https://rubygems.org/
+gem source -a http://ruby.taobao.org
+gem install rails
+```
 
 # nginx
 - apt-get install nginx
