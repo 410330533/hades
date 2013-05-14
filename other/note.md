@@ -600,3 +600,6 @@ mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.s
 - init执行run-level的各个服务的启动(script方式)
 - init执行/etc/rc.d/rc.local
 - init执行终端机模拟程序mingetty来启动login程序，最后就等待用户登录
+
+# homebrew
+- install `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"`
