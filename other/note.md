@@ -603,3 +603,13 @@ mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.s
 
 # homebrew
 - install `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"`
+
+# macPorts
+```shell
+wget https://distfiles.macports.org/MacPorts/MacPorts-2.1.3.tar.bz2
+tar xjvf MacPorts-2.1.3.tar.bz2
+cd MacPorts-2.1.3
+./configure && make && sudo make install
+
+sudo port -v selfupdate
+```
