@@ -1,9 +1,8 @@
 echo IGD > /sys/kernel/debug/vgaswitcheroo/switch // 切换到集成显卡  
-echo OFF > /sys/kernel/debug/vgaswitcheroo/switch // 关掉没有连接的显卡
+echo OFF > /sys/kernel/debug/vgaswitcheroo/switch // 关掉没有连接的显卡  
 
 mount -o username=${username},password=${password} //${ip}/e$ /home/win  
 unmount /home/win  
-do-release-upgrade  
 
 find ~/src -time=mtime -3 -exec ls -l {} \;  
 find . -name "*.php" -exec dos2unix {} \;  
@@ -18,7 +17,6 @@ unix2dos [-kn] file [newfile]
 
 iconv -f 原编码 -t 新编码 filename [-o newfile]  
 
-dpkg-reconfigure tzdata  
 type -a ls  
 echo $PATH | cut -d ':' -f 1,3  
 export | cut -c 12-  
@@ -42,26 +40,11 @@ sed -e 's/replace_str/new_str/g'
 printf '%10s %5i %8.2f \n' $ (cat printf.txt)  
 last -n 5 | awk '{print $1,$3}'  
 cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'  
-groups  
-newgrp  
-chage -l mahone  
 finger mahone  
-chfn mahone  
-chsh -s /bin/bash  
 id mahone  
 w  
 who  
 lastlog  
-write mahone pts/0  
-mesg  
-mesg [y/n]  
-wall [filename]  
-pwck  
-pwconv  
-pwunconv  
-grpck  
-grpconv  
-grpunconv  
 at now +5 minutes  
 batch 23:00 2012-01-24  
 pstree  
@@ -73,40 +56,11 @@ free -m
 uname -a  
 uptime  
 netstat [-atunlp]  
-dmesg  
-vmstat  
-fuser -muv /proc  
 lsof -u mahone  
-pidof init  
-chkconfig --list  
-chkconfig --level 345 atd on  
 logrotate -v /etc/logrotate.conf  
 runlevel  
-lsmod  
-modinfo lp  
-insmod /lib/modules/$(uname -r)/kernel/fs/cifs/cifs.ko  
-rmmod cifs  
-modprobe cifs  
-modprobe -r cifs  
 nmap 192.168.1.100  
-lpstat -a  
-lpadmin -x hp_p2015  
-lpadmin -p hp_p2015 -v socket://192.168.201.253:9100 -m postscript.ppd.gz -E  
-lpadmin -d hp_p2015  
-lpr -P hp_p2015 /etc/passwd  
-lp -d hp_p2015 -n 2 /etc/issue  
-lpq -a  
-lpq -l -P hp_p2015  
-lprm 11  
-lspci  
-lspci -s 02:01.0 -vv  
-lsusb  
 iostat -d 2 3  
-sensors-detect  
-sensors  
-ldconfig  
-ldd /usr/bin/passwd  
-startx -- -depth 16  
 dd if=/dev/sda of=/dev/sdb  
 find / -print | cpio -covB > /dev/st0  
 cpio -iduv < /dev/st0  
@@ -128,30 +82,6 @@ echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 
 # ibus
 - apt-get install ibus-googlepinyin
-
-# ubuntu 源
-```shell
-http://mirrors.163.com/.help/ubuntu.html
-deb http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
-deb http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ precise main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ precise-security main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ precise-updates main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ precise-proposed main restricted universe multiverse
-deb-src http://mirrors.163.com/ubuntu/ precise-backports main restricted universe multiverse
-```
-- apt-get install build-essential
-- apt-get install libxml2-dev
-- apt-get install lynx
-- apt-get install sendmail
-- apt-get install top
-- apt-get install beanstalkd
-- apt-get install sysbench
-- apt-get install extundelete
-- apt-get install xrdp
 
 # linux kernel
 - make mrproper
@@ -604,7 +534,7 @@ mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.s
 # homebrew
 - install `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"`
 
-# macPorts
+# install macPorts
 ```shell
 wget https://distfiles.macports.org/MacPorts/MacPorts-2.1.3.tar.bz2
 tar xjvf MacPorts-2.1.3.tar.bz2
