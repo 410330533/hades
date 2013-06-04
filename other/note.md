@@ -420,14 +420,20 @@ gem install bundler rails
 ```
 
 # nginx
-- apt-get install nginx
-- (python)
+apt-get install nginx  
 ```conf
+php
 location / {
     include fastcgi_params;
     fastcgi_param SCRIPT_FILENAME $fastcgi_script_name;  # [1]
     fastcgi_param PATH_INFO $fastcgi_script_name;        # [2]
     fastcgi_pass 127.0.0.1:9002;
+}
+
+python
+location / {
+    include uwsgi_params;
+    uwsgi_pass 127.0.0.1:9090;
 }
 ```
 
@@ -512,7 +518,8 @@ mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.s
 - pip install MySQL-python
 - pip install web.py
 - pip install flup
-- pip install uwsgi
+- pip install uwsgi  
+`uwsgi -s 127.0.0.1:9090 -w index`
 - pip install pythonbrew
 - sh setuptools-0.6c11-py2.7.egg
 - easy_install MySQL-python
