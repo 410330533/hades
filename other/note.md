@@ -166,15 +166,17 @@ echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 - shutdown -r now
 
 # net
-- /etc/network/interfaces
-- auto lo
-- iface lo inet loopback
-- auto eth0
-- iface eth0 inet static
-- address 192.168.1.102
-- netmask 255.255.255.0
-- gateway 192.168.1.1
-- invoke-rc.d networking restart
+```conf
+/etc/network/interfaces
+auto lo
+iface lo inet loopback
+auto eth0
+iface eth0 inet static
+address 192.168.1.102
+netmask 255.255.255.0
+gateway 192.168.1.1
+invoke-rc.d networking restart
+```
 
 # apt-get
 - /var/cache/apt/archives/
