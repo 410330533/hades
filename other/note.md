@@ -376,27 +376,33 @@ sudo apt-get install rabbitmq-server
 - Path: %JAVA_HOME%\bin
 
 # php
-- apt-get install php5
-- apt-get install php-apc
-- apt-get install php-pear
-- apt-get install php5-cli
-- apt-get install php5-cgi
-- apt-get install php5-curl
-- apt-get install php5-dev
-- apt-get install php5-gd
-- apt-get install php5-fpm
-- apt-get install php5-memcache
-- apt-get install php5-mysql
-- apt-get install php5-xdebug
+```shell
+apt-get install php5
+apt-get install php-apc
+apt-get install php-pear
+apt-get install php5-cli
+apt-get install php5-cgi
+apt-get install php5-curl
+apt-get install php5-dev
+apt-get install php5-gd
+apt-get install php5-fpm
+apt-get install php5-memcache
+apt-get install php5-mysql
+apt-get install php5-xdebug
+```
 
 # phpunit
-- pear upgrade pear
-- pear config-set auto_discover 1
-- pear install pear.phpunit.de/PHPUnit
+```shell
+pear upgrade pear
+pear config-set auto_discover 1
+pear install pear.phpunit.de/PHPUnit
+```
 
 # phpdoc
-- pear upgrade PhpDocumentor
-- phpdoc -d parsedir -t targetdir -o HTML:default:default
+```shell
+pear upgrade PhpDocumentor
+phpdoc -d parsedir -t targetdir -o HTML:default:default
+```
 
 # ruby
 - apt-get install ruby
@@ -459,14 +465,16 @@ location / {
 - memcached -m 64 -p 11211 -u memcache -l 127.0.0.1
 
 # mysql
-- apt-get install mysql-server
+apt-get install mysql-server
 ```conf
 [mysqld]
     character_set_server = utf8
     collation_server = utf8_general_ci
+    innodb_lock_wait_timeout = 120
+    innodb_buffer_pool_size = 64M
 ```
-- 远程访问mysql
-```conf
+远程访问mysql
+```shell
 grant all privileges on *.* to mahone@'%' identified by 'taobao'
 vi /etc/mysql/my.cnf
     #bind-address = 127.0.0.1
@@ -490,8 +498,8 @@ replication:
     START SLAVE;
 ```
         
-- 恢复数据库管理员密码:
-```conf
+恢复数据库管理员密码:
+```shell
 1./etc/init.d/mysql stop
 2.mysqld_safe --skip-grant-tables --skip-networking
 3.mysql -uroot
@@ -503,8 +511,8 @@ replication:
     /etc/init.d/mysql start
 6.mysql -uroot -p
 ```
-- 数据库备份, 恢复:
-```conf
+数据库备份, 恢复:
+```shell
 mysqldump -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi > 5imimi.sql
 mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.sql
 ```
