@@ -130,40 +130,31 @@ echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 - yum groupinfo XFCE-4.4
 - yum groupinstall XFCE-4.4
 
-# quota
-- quotacheck -auvg
-- quotaon -auvg
-- quotaoff
-- edquota -u mahone [-g mahone]
-- quota -uvs mahone
-- quota -gvs mahone
-- repquota -auvs
-- warnquota
-
-# LVM
-- pvcreate pvscan pvdisplay pvremove
-- vgcreate vgscan vgdisplay vgextend vgreduce vgchange vgremove
-- lvcreate lvscan lvdisplay lvextend lvreduce lvremove lvresize
-
 # gcc
-- gcc -c hello.c
-- gcc -O -c hello.c
-- gcc sin.c -lm -L /usr/lib -I /usr/include
-- gcc test.c -o xxx -std=c99;
+```shell
+gcc -c hello.c
+gcc -O -c hello.c
+gcc sin.c -lm -L /usr/lib -I /usr/include
+gcc test.c -o xxx -std=c99;
+```
 
 # user
-- useradd mahone -m -s /bin/bash
-- passwd mahone
-- usermod -s /bin/bash -l oldname newname
-- userdel -r mahone
-- groupadd mahone
-- groupmod -g 1001 -n new old
-- groupdel mahone
-- gpasswd groupname
+```shell
+useradd mahone -m -s /bin/bash
+passwd mahone
+usermod -s /bin/bash -l oldname newname
+userdel -r mahone
+groupadd mahone
+groupmod -g 1001 -n new old
+groupdel mahone
+gpasswd groupname
+```
 
 # shutdown
-- shutdown -h now
-- shutdown -r now
+```shell
+shutdown -h now
+shutdown -r now
+```
 
 # net
 ```conf
@@ -179,90 +170,100 @@ invoke-rc.d networking restart
 ```
 
 # apt-get
-- /var/cache/apt/archives/
-- /var/cache/apt/archives/partial/
-- apt-get build-dep pkgname 安装相关的编译环境
-- apt-get source pkgname 下载该包的源代码
-- apt-get check 检查是否有损坏的依赖
-- apt-get update
-        在修改/etc/apt/sources.list或/etc/apt/preferences之後运行该命令。此外您需要定期运行这一命令以确保您的软件包列表是最新的
-- apt-get install packagename
-        安装一个新软件包(参见下文的aptitude)
-- apt-get remove packagename
-        卸载一个已安装的软件包(保留配置文档)
-- apt-get --purge remove packagename
-        卸载一个已安装的软件包(删除配置文档)
-- apt-get clean
-        这个命令会把安装的软件的备份也删除，但是这样不会影响软件的使用
-- apt-get autoclean
-        定期运行这个命令来清除那些已卸载的软件包的.deb文档。通过这种方式，您能够释放大量的磁盘空间。假如您的需求十分迫切，能够使用apt-get clean以释放更多空间。这个命令会将已安装软件包裹的.deb文档一并删除。大多数情况下您不会再用到这些.debs文档，因此假如您为磁盘空间不足而感到焦头烂额，这个办法也许值得一试
-- apt-get upgrade
-        更新任何已安装的软件包
-- apt-get dist-upgrade
-        将系统升级到新版本
-- apt-cache search string
-        在软件包列表中搜索字符串
-- apt-cache showpkg pkg
-        显示软件包信息
-- apt-cache dumpavail
-        打印可用软件包列表
-- apt-cache show pkg
-        显示软件包记录，类似于dpkg –print-avail
-- apt-cache pkgname
-        打印软件包列表中任何软件包的名称
-- aptitude update
-- aptitude upgrade
-- aptitude dist-upgrade
-- aptitude install pkgname
-- aptitude remove pkgname
-- aptitude purge pkgname
-- aptitude search string
-- aptitude show pkgname
-- aptitude clean
-- aptitude autoclean
-
-# sysv-rc-conf
-- apt-get install sysv-rc-conf
-- sysv-rc-conf
+```shell
+/var/cache/apt/archives/
+/var/cache/apt/archives/partial/
+apt-get build-dep pkgname 安装相关的编译环境
+apt-get source pkgname 下载该包的源代码
+apt-get check 检查是否有损坏的依赖
+apt-get update
+    在修改/etc/apt/sources.list或/etc/apt/preferences之後运行该命令。此外您需要定期运行这一命令以确保您的软件包列表是最新的
+apt-get install packagename
+    安装一个新软件包(参见下文的aptitude)
+apt-get remove packagename
+    卸载一个已安装的软件包(保留配置文档)
+apt-get --purge remove packagename
+    卸载一个已安装的软件包(删除配置文档)
+apt-get clean
+    这个命令会把安装的软件的备份也删除，但是这样不会影响软件的使用
+apt-get autoclean
+    定期运行这个命令来清除那些已卸载的软件包的.deb文档。通过这种方式，您能够释放大量的磁盘空间。假如您的需求十分迫切，能够使用apt-get clean以释放更多空间。这个命令会将已安装软件包裹的.deb文档一并删除。大多数情况下您不会再用到这些.debs文档，因此假如您为磁盘空间不足而感到焦头烂额，这个办法也许值得一试
+apt-get upgrade
+    更新任何已安装的软件包
+apt-get dist-upgrade
+    将系统升级到新版本
+apt-cache search string
+    在软件包列表中搜索字符串
+apt-cache showpkg pkg
+    显示软件包信息
+apt-cache dumpavail
+    打印可用软件包列表
+apt-cache show pkg
+    显示软件包记录，类似于dpkg –print-avail
+apt-cache pkgname
+    打印软件包列表中任何软件包的名称
+aptitude update
+aptitude upgrade
+aptitude dist-upgrade
+aptitude install pkgname
+aptitude remove pkgname
+aptitude purge pkgname
+aptitude search string
+aptitude show pkgname
+aptitude clean
+aptitude autoclean
+```
 
 # cowsay, fortunes
-- apt-get install cowsay
-- apt-get install fortunes
-- apt-get install fortune-zh
-- apt-get install fortunes-ubuntu-server
+```shell
+apt-get install cowsay
+apt-get install fortunes
+apt-get install fortune-zh
+apt-get install fortunes-ubuntu-server
+```
 
 # expect
-- apt-get install expect
+`apt-get install expect`
 
 # dstat
-- apt-get install dstat
-- dstat -cdlmnpsy
+```shell
+apt-get install dstat
+dstat -cdlmnpsy
+```
 
 # tmux
-- apt-get install tmux
+`apt-get install tmux`
 # byobu
-- apt-get install byobu
+`apt-get install byobu`
 
 # music
-- apt-get install lame
-- apt-get install mp3splt
-- apt-get install shntool
-- apt-get install flac
-- apt-get install cuetools
-- apt-get install wavpack
-- shnsplit -f CDImage.cue -i ape -o "cust ext=mp3 lame -b 320 - %f" CDImage.ape
+```shell
+apt-get install lame
+apt-get install mp3splt
+apt-get install shntool
+apt-get install flac
+apt-get install cuetools
+apt-get install wavpack
+shnsplit -f CDImage.cue -i ape -o "cust ext=mp3 lame -b 320 - %f" CDImage.ape
+```
 
 # siege
-- apt-get install siege
-- siege -c100 -r10 -b http://www.qq.com
+```shell
+apt-get install siege
+siege -c100 -r10 -b http://www.qq.com
+```
 
 # crontab
-- crontab [-u username] [-l|-e|-r]
-- minute hour day month week command
+```shell
+crontab [-u username] [-l|-e|-r]
+minute hour day month week command
+```
 
 # ssh
-- apt-get install openssh-server
-- ssh-keygen -t rsa
+```shell
+apt-get install openssh-server
+ssh-keygen -t rsa
+```
 
 # vim
 ```conf
@@ -285,9 +286,8 @@ set expandtab
 ```
 
 # rabbitMQ
-[deb package](http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb)
-
 ```shell
+http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb
 deb http://www.rabbitmq.com/debian/ testing main
 wget http://www.rabbitmq.com/rabbitmq-signing-key-public.asc
 sudo apt-key add rabbitmq-signing-key-public.asc
@@ -442,8 +442,8 @@ gem install bundler rails
 ```
 
 # nginx
-apt-get install nginx  
 ```conf
+apt-get install nginx
 php
 location / {
     include fastcgi_params;
