@@ -265,25 +265,27 @@ invoke-rc.d networking restart
 - ssh-keygen -t rsa
 
 # vim
-- apt-get install vim
-- set nu
-- set hlsearch
-- set autoindent
-- set backup
-- set ruler
-- set showmode
-- set backspace=(0,1,2)
-- set
-- set all
-- syntax on
-- set bg=(light,dark)
-- set tabstop=4
-- set shiftwidth=4
-- set expandtab
-- :%s/search_str/replace_str/g
+```conf
+apt-get install vim
+set nu
+set hlsearch
+set autoindent
+set backup
+set ruler
+set showmode
+set backspace=(0,1,2)
+set
+set all
+syntax on
+set bg=(light,dark)
+set tabstop=4
+set shiftwidth=4
+set expandtab
+:%s/search_str/replace_str/g
+```
 
 # rabbitMQ
-- [deb package](http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb)
+[deb package](http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb)
 
 ```shell
 deb http://www.rabbitmq.com/debian/ testing main
@@ -293,23 +295,27 @@ sudo apt-get install rabbitmq-server
 ```
 
 # svn
-- apt-get install subversion
-- svnadmin create repository
-- svnserve -d -r repository
+```shell
+apt-get install subversion
+svnadmin create repository
+svnserve -d -r repository
+```
 
 # vsftp
-- apt-get install vsftpd
-- service vsftpd status[start, stop, restart]
-- ftp ftp.ruby-lang.org
-- ftp> ?
-- ftp> passive
+```shell
+apt-get install vsftpd
+service vsftpd status[start, stop, restart]
+ftp ftp.ruby-lang.org
+ftp> ?
+ftp> passive
+```
 
 # samba
-- apt-get install samba
-- service smbd status[start, stop, restart]
-- useradd -m testsamba
-- smbpasswd -a testsamba
-```conf
+```shell
+apt-get install samba
+service smbd status[start, stop, restart]
+useradd -m testsamba
+smbpasswd -a testsamba
 [root]
     path = / 
     browseable = yes 
@@ -317,27 +323,29 @@ sudo apt-get install rabbitmq-server
 ```
 
 # apache
-- apt-get install apache2
-- vi /etc/apache2/apache2.conf
-- a2enmod a2dismod
-- ab -c 100 -n 10000 http://127.0.0.1:8080/
+```shell
+apt-get install apache2
+vi /etc/apache2/apache2.conf
+a2enmod a2dismod
+ab -c 100 -n 10000 http://127.0.0.1:8080/
+```
 
 # git
-- apt-get install git
-- git config --global user.name mahone3297
-- git config --global user.email 329730566@qq.com
-- git config --global core.editor vim
-- git config --global color.ui true
-- git config --global alias.st status
-- git config --global alias.co checkout
-- git config --global alias.ci commit
-- git config --global alias.br branch
-- git config --unset --global user.name
-- git commit --amend
-- git ls-files --stage
-- git cat-file -p 264b73
-- git archive master | tar -x -C src
-```conf
+```shell
+apt-get install git
+git config --global user.name mahone3297
+git config --global user.email 329730566@qq.com
+git config --global core.editor vim
+git config --global color.ui true
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.br branch
+git config --unset --global user.name
+git commit --amend
+git ls-files --stage
+git cat-file -p 264b73
+git archive master | tar -x -C src
     [remote "origin"]
         fetch = +refs/heads/*:refs/remotes/origin/*
         url = https://github.com/u-cosmetics/oms.git
@@ -356,24 +364,30 @@ sudo apt-get install rabbitmq-server
 ```
 
 # gitosis
-- git clone https://github.com/res0nat0r/gitosis.git
-- cd gitosis
-- sudo python setup.py install
-- sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
-- sudo -H -u git gitosis-init < /home/mahone/.ssh/id_rsa.pub
-- git clone git@localhost:gitosis-admin.git
+```shell
+git clone https://github.com/res0nat0r/gitosis.git
+cd gitosis
+sudo python setup.py install
+sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
+sudo -H -u git gitosis-init < /home/mahone/.ssh/id_rsa.pub
+git clone git@localhost:gitosis-admin.git
+```
 
 # nodejs
-- git clone https://github.com/joyent/node.git
-- cd node
-- ./configure --prefix=$HOME/node --debug
-- make && make install
-- curl http://npmjs.org/install.sh | sh
+```shell
+git clone https://github.com/joyent/node.git
+cd node
+./configure --prefix=$HOME/node --debug
+make && make install
+curl http://npmjs.org/install.sh | sh
+```
 
 # Java
-- JAVA_HOME: D:\Program Files (x86)\Java\jdk1.6.0_27
-- CLASSPATH: .;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar
-- Path: %JAVA_HOME%\bin
+```shell
+JAVA_HOME: D:\Program Files (x86)\Java\jdk1.6.0_27
+CLASSPATH: .;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar
+Path: %JAVA_HOME%\bin
+```
 
 # php
 ```shell
@@ -405,13 +419,13 @@ phpdoc -d parsedir -t targetdir -o HTML:default:default
 ```
 
 # ruby
-- apt-get install ruby
-- apt-get install rubygems
-- apt-get install ruby-rvm
-- apt-get install rails
-- gem install rails --include-dependencies
-- gem install capistrano capistrano-ext
 ```bash
+apt-get install ruby
+apt-get install rubygems
+apt-get install ruby-rvm
+apt-get install rails
+gem install rails --include-dependencies
+gem install capistrano capistrano-ext
 curl -L https://get.rvm.io | bash -s stable
 载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）
 source ~/.rvm/scripts/rvm
@@ -446,23 +460,33 @@ location / {
 ```
 
 # spawn-fcgi
-- apt-get install spawn-fcgi
-- spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi
-- spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/git/test/index.py
+```shell
+apt-get install spawn-fcgi
+spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi
+spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/git/test/index.py
+```
 
 # rcconf
-- apt-get install rcconf
+```shell
+apt-get install rcconf
+```
 
 # cacti
-- apt-get install cacti
+```shell
+apt-get install cacti
+```
 
 # mongo
-- apt-get install mongodb
-- pecl install mongo(php扩展)
+```shell
+apt-get install mongodb
+pecl install mongo(php扩展)
+```
 
 # memcache
-- apt-get install memcached
-- memcached -m 64 -p 11211 -u memcache -l 127.0.0.1
+```shell
+apt-get install memcached
+memcached -m 64 -p 11211 -u memcache -l 127.0.0.1
+```
 
 # mysql
 apt-get install mysql-server
@@ -518,38 +542,41 @@ mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.s
 ```
 
 # python
-- apt-get install python
-- apt-get install python-dev
-- apt-get install python-setuptools
-- apt-get install python-opencv
-- apt-get install python-psyco
-- apt-get install python-pip
-- pip install flacsync --upgrade
-- pip install MySQL-python
-- pip install web.py
-- pip install flup
-- pip install uwsgi  
-`uwsgi -s 127.0.0.1:9090 -w index`
-- pip install pythonbrew
-- sh setuptools-0.6c11-py2.7.egg
-- easy_install MySQL-python
-- easy_install mechanize
-- easy_install mutagen
-- easy_install pysox
-- easy_install web.py
+```shell
+apt-get install python
+apt-get install python-dev
+apt-get install python-setuptools
+apt-get install python-opencv
+apt-get install python-psyco
+apt-get install python-pip
+pip install flacsync --upgrade
+pip install MySQL-python
+pip install web.py
+pip install flup
+pip install uwsgi uwsgi -s 127.0.0.1:9090 -w index
+pip install pythonbrew
+sh setuptools-0.6c11-py2.7.egg
+easy_install MySQL-python
+easy_install mechanize
+easy_install mutagen
+easy_install pysox
+easy_install web.py
+```
 
 # linux系统启动过程:
-- 加载BIOS的硬件信息与进行自我测试，并依据设置取得第一个可启动的设备
-- 读取并执行第一个启动设备内MBR的boot loader(即是grub, spfdisk等程序)
-- 依据boot loader的设置加载kernel, kernel会开始检测硬件与加载驱动程序
-- 在硬件驱动成功后，kernel会主动调用init进程，而init会取得run-level信息
-- init执行/etc/rc.d/rc.sysinit文件来准备软件执行的操作环境(如网络，时区等)
-- init执行run-level的各个服务的启动(script方式)
-- init执行/etc/rc.d/rc.local
-- init执行终端机模拟程序mingetty来启动login程序，最后就等待用户登录
+```conf
+加载BIOS的硬件信息与进行自我测试，并依据设置取得第一个可启动的设备
+读取并执行第一个启动设备内MBR的boot loader(即是grub, spfdisk等程序)
+依据boot loader的设置加载kernel, kernel会开始检测硬件与加载驱动程序
+在硬件驱动成功后，kernel会主动调用init进程，而init会取得run-level信息
+init执行/etc/rc.d/rc.sysinit文件来准备软件执行的操作环境(如网络，时区等)
+init执行run-level的各个服务的启动(script方式)
+init执行/etc/rc.d/rc.local
+init执行终端机模拟程序mingetty来启动login程序，最后就等待用户登录
+```
 
 # homebrew
-- install `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"`
+install `ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"`
 
 # install macPorts
 ```shell
