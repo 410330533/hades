@@ -1,134 +1,145 @@
-echo IGD > /sys/kernel/debug/vgaswitcheroo/switch // 切换到集成显卡  
-echo OFF > /sys/kernel/debug/vgaswitcheroo/switch // 关掉没有连接的显卡  
+```shell
+mount -o username=${username},password=${password} //${ip}/e$ /home/win
+unmount /home/win
 
-mount -o username=${username},password=${password} //${ip}/e$ /home/win  
-unmount /home/win  
+find ~/src -time=mtime -3 -exec ls -l {} \;
+find . -name "*.php" -exec dos2unix {} \;
+-path pathname -prune: 避开指定子目录pathname查找。
+-path expression -prune:避开表达中指定的一组pathname查找。
+find . -path "./DontSearchPath" -prune -o -name "datafile*" -print
+find . \( -path "./DontSearchPath" -o -path "./DoSearchPath" \) -prune -o -name "datafile*" -print
+find . -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'
 
-find ~/src -time=mtime -3 -exec ls -l {} \;  
-find . -name "*.php" -exec dos2unix {} \;  
--path pathname -prune:   避开指定子目录pathname查找。  
--path expression -prune:  避开表达中指定的一组pathname查找。  
-find . -path "./DontSearchPath" -prune -o -name "datafile*" -print  
-find . \( -path "./DontSearchPath" -o -path "./DoSearchPath" \) -prune -o -name "datafile*" -print  
-find . -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'  
+dos2unix [-kn] file [newfile]
+unix2dos [-kn] file [newfile]
 
-dos2unix [-kn] file [newfile]  
-unix2dos [-kn] file [newfile]  
+iconv -f 原编码 -t 新编码 filename [-o newfile]
 
-iconv -f 原编码 -t 新编码 filename [-o newfile]  
+type -a ls
+echo $PATH | cut -d ':' -f 1,3
+export | cut -c 12-
+cat /etc/passwd | sort -t ':' -k 3 -n
+last | cut -d ' ' -f1 | sort | uniq -c
+last | tee last.list | cut -d ' ' -f1
+last | tr '[a-z]' '[A-Z]'
+cat /etc/passwd | tr -d ':'
+join -t ':' /etc/passwd /etc/shadow
+join -t ':' -1 4 /etc/passwd -2 3 /etc/group
+paste /etc/passwd /etc/shadow
+expand -t 4 filename
+split -b 300k /etc/termcap termcap
+split -l 10 /etc/termcap termcap
+tar -cvf - /home | tar -xvf -
+grep -n 'go\{2,5\}g' regular_express.txt
+nl /etc/passwd | sed -e '2,5d'
+nl /etc/passwd | sed -e '2a drink tea'
+nl /etc/passwd | sed -e '2i drink tea'
+sed -e 's/replace_str/new_str/g'
+printf '%10s %5i %8.2f \n' $ (cat printf.txt)
+last -n 5 | awk '{print $1,$3}'
+cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'
+finger mahone
+id mahone
+w
+who
+lastlog
+at now +5 minutes
+batch 23:00 2012-01-24
+pstree
+kill -SIGHUP $(ps aux | grep 'syslog' | grep -v 'grep' | awk '{print $2}')
+killall -9 httpd
+nice -n number vi
+renice number PID
+free -m
+uname -a
+uptime
+netstat [-atunlp]
+lsof -u mahone
+logrotate -v /etc/logrotate.conf
+runlevel
+nmap 192.168.1.100
+iostat -d 2 3
+dd if=/dev/sda of=/dev/sdb
 
-type -a ls  
-echo $PATH | cut -d ':' -f 1,3  
-export | cut -c 12-  
-cat /etc/passwd | sort -t ':' -k 3 -n  
-last | cut -d ' ' -f1 | sort | uniq -c  
-last | tee last.list | cut -d ' ' -f1  
-last | tr '[a-z]' '[A-Z]'  
-cat /etc/passwd | tr -d ':'  
-join -t ':' /etc/passwd /etc/shadow  
-join -t ':' -1 4 /etc/passwd -2 3 /etc/group  
-paste /etc/passwd /etc/shadow  
-expand -t 4 filename  
-split -b 300k /etc/termcap termcap  
-split -l 10 /etc/termcap termcap  
-tar -cvf - /home | tar -xvf -  
-grep -n 'go\{2,5\}g' regular_express.txt  
-nl /etc/passwd | sed -e '2,5d'  
-nl /etc/passwd | sed -e '2a drink tea'  
-nl /etc/passwd | sed -e '2i drink tea'  
-sed -e 's/replace_str/new_str/g'  
-printf '%10s %5i %8.2f \n' $ (cat printf.txt)  
-last -n 5 | awk '{print $1,$3}'  
-cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'  
-finger mahone  
-id mahone  
-w  
-who  
-lastlog  
-at now +5 minutes  
-batch 23:00 2012-01-24  
-pstree  
-kill -SIGHUP $(ps aux | grep 'syslog' | grep -v 'grep' | awk '{print $2}')  
-killall -9 httpd  
-nice -n number vi  
-renice number PID  
-free -m  
-uname -a  
-uptime  
-netstat [-atunlp]  
-lsof -u mahone  
-logrotate -v /etc/logrotate.conf  
-runlevel  
-nmap 192.168.1.100  
-iostat -d 2 3  
-dd if=/dev/sda of=/dev/sdb  
-find / -print | cpio -covB > /dev/st0  
-cpio -iduv < /dev/st0  
-dump -0u -f /backupdata/home.dump /home  
-dump -1u -f /backupdata/home.dump.1 /home  
-tar --exclude /proc --exclude /mnt --exclude /tmp --exclude /backupdata -jcvp -f /backupdata/system.tar.bz2 /  
-tar -N '2012-02-06' -jpcv -f /backupdata/home.tar.bz2 /home  
-tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql  
-tar -tf log.tar  
-tar -xf log.tar -C log_dir  
-rsync -av /home /backupdata  
-rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup  
-echo "Welcome to linuxde.net" | openssl enc -base64  
-echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d  
+find / -print | cpio -covB > /dev/st0
+cpio -iduv < /dev/st0
+
+dump -0u -f /backupdata/home.dump /home
+dump -1u -f /backupdata/home.dump.1 /home
+tar --exclude /proc --exclude /mnt --exclude /tmp --exclude /backupdata -jcvp -f /backupdata/system.tar.bz2 /
+tar -N '2012-02-06' -jpcv -f /backupdata/home.tar.bz2 /home
+tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql
+tar -tf log.tar
+tar -xf log.tar -C log_dir
+rsync -av /home /backupdata
+rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
+echo "Welcome to linuxde.net" | openssl enc -base64
+echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
+```
 
 # grub
-- update-grub // 更新 grub 信息
-- grub-install /dev/sda
+```shell
+update-grub // 更新 grub 信息
+grub-install /dev/sda
+```
 
 # ibus
-- apt-get install ibus-googlepinyin
+```shell
+apt-get install ibus-googlepinyin
+```
 
 # linux kernel
-- make mrproper
-- make clean
-- make menuconfig
-- make oldconfig
-- make xconfig
-- make gconfig
-- make config
-- make vmlinux 未经压缩的内核
-- make modules 仅内核模块
-- make bzImage 经过压缩的内核
-- make all 进行上述的三个操作
-- make modules_install
+```shell
+make mrproper
+make clean
+make menuconfig
+make oldconfig
+make xconfig
+make gconfig
+make config
+make vmlinux 未经压缩的内核
+make modules 仅内核模块
+make bzImage 经过压缩的内核
+make all 进行上述的三个操作
+make modules_install
+```
 
 # rpm
-- /var/lib/rpm
-- rpm -ivh rp-pppoe-3.5-32.1.i386.rpm
-- rpm -Uvh rp-pppoe-3.5-32.1.i386.rpm
-- rpm -ql logrotate
-- rpm -qi logrotate
-- rpm -qc logrotate
-- rpm -qd logrotate
-- rpm -qR logrotate
-- rpm -qf /bin/sh
-- rpm -qpR filename.i386.rpm
-- rpm -V logrotate
-- rpm -Vf /etc/crontab
-- rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-- rpm -e pam
-- rpm --rebuilddb
-- rpmbuild --rebuild rp-pppoe-3.5-32.1.src.rpm
-- rpmbuild -ba rp-pppoe.spec 编译并同时生成RPM与SRPM文件
-- rpmbuild -bb rp-pppoe.spec 仅编译成RPM文件
+```shell
+/var/lib/rpm
+rpm -ivh rp-pppoe-3.5-32.1.i386.rpm
+rpm -Uvh rp-pppoe-3.5-32.1.i386.rpm
+rpm -ql logrotate
+rpm -qi logrotate
+rpm -qc logrotate
+rpm -qd logrotate
+rpm -qR logrotate
+rpm -qf /bin/sh
+rpm -qpR filename.i386.rpm
+rpm -V logrotate
+rpm -Vf /etc/crontab
+rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
+rpm -e pam
+rpm --rebuilddb
+rpmbuild --rebuild rp-pppoe-3.5-32.1.src.rpm
+rpmbuild -ba rp-pppoe.spec 编译并同时生成RPM与SRPM文件
+rpmbuild -bb rp-pppoe.spec 仅编译成RPM文件
+```
 
 # yum
-- yum search raid
-- yum info mdadm
-- yum list
-- yum list updates
-- yum install pam-devel
-- yum remove pam-devel
-- yum clean all
-- vi /etc/yum.repos.d/CentOS-Base.repo
-- yum grouplist
-- yum groupinfo XFCE-4.4
-- yum groupinstall XFCE-4.4
+```shell
+yum search raid
+yum info mdadm
+yum list
+yum list updates
+yum install pam-devel
+yum remove pam-devel
+yum clean all
+vi /etc/yum.repos.d/CentOS-Base.repo
+yum grouplist
+yum groupinfo XFCE-4.4
+yum groupinstall XFCE-4.4
+```
 
 # gcc
 ```shell
@@ -223,7 +234,9 @@ apt-get install fortunes-ubuntu-server
 ```
 
 # expect
-`apt-get install expect`
+```shell
+apt-get install expect
+```
 
 # dstat
 ```shell
@@ -232,9 +245,13 @@ dstat -cdlmnpsy
 ```
 
 # tmux
-`apt-get install tmux`
+```shell
+apt-get install tmux
+```
 # byobu
-`apt-get install byobu`
+```shell
+apt-get install byobu
+```
 
 # music
 ```shell
