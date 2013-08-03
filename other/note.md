@@ -556,6 +556,7 @@ replication:
 ```shell
 mysqldump -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi > 5imimi.sql
 mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.sql
+mysqldump -h<host> -u<user> -p<password> --no-data 5imimi | sed 's/ AUTO_INCREMENT=[0-9]*\b//' > 5imimi.sql
 ```
 
 # python
