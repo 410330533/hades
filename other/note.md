@@ -582,7 +582,7 @@ easy_install pysox
 easy_install web.py
 ```
 
-#go
+# go
 ```shell
 add-apt-repository ppa:gophers/go
 apt-get update
