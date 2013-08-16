@@ -582,6 +582,13 @@ easy_install pysox
 easy_install web.py
 ```
 
+#go
+```shell
+add-apt-repository ppa:gophers/go
+apt-get update
+apt-get install golang-stable
+```
+
 # linux系统启动过程:
 ```conf
 加载BIOS的硬件信息与进行自我测试，并依据设置取得第一个可启动的设备
