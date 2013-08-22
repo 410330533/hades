@@ -453,6 +453,7 @@ sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 l
 curl -L https://get.rvm.io | bash -s stable
 载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）
 source ~/.rvm/scripts/rvm
+rvm -v
 
 2. 用 RVM 安装 Ruby 环境
 替换 Ruby 下载地址到国内淘宝镜像服务器
@@ -469,9 +470,13 @@ rvm install 2.0.0 --with-readline-dir=$rvm_path/usr
 rvm 2.0.0 --default
 gem source -r https://rubygems.org/
 gem source -a http://ruby.taobao.org
+ruby -v
+gem -v
 
 4. 安装 Rails 环境
 gem install bundler rails
+bundle -v
+rails -v
 ```
 
 # nginx
