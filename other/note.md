@@ -392,11 +392,9 @@ git clone git@localhost:gitosis-admin.git
 
 # nodejs
 ```shell
-git clone https://github.com/joyent/node.git
-cd node
-./configure --prefix=$HOME/node --debug
-make && make install
-curl http://npmjs.org/install.sh | sh
+add-apt-repository ppa:chris-lea/node.js
+apt-get update
+apt-get install nodejs
 ```
 
 # Java
