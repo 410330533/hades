@@ -459,10 +459,9 @@ for Mac
 sed -i .bak 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
 for Linux
 sed -i 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
-安装 readline 包
-rvm pkg install readline
+rvm autolibs enable
 安装 Ruby 2.0.0
-rvm install 2.0.0 --with-readline-dir=$rvm_path/usr
+rvm install 2.0.0
 
 3. 设置 Ruby 版本
 rvm 2.0.0 --default
