@@ -1,15 +1,5 @@
 git clone https://mahone3297@github.com/u-cosmetics/oms.git
-sudo apt-get install libxml2
-sudo apt-get install libxml2-dev
-sudo apt-get install libcurl4
-sudo apt-get install libcurl4-gnutls-dev
-sudo apt-get install libjpeg-dev
-sudo apt-get install libpng-dev
-sudo apt-get install libxpm-dev
-sudo apt-get install libfreetype6-dev
-sudo apt-get install libmcrypt-dev
-sudo apt-get install libicu-dev
-sudo apt-get install libreadline-dev
+sudo apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libicu-dev libreadline-dev
 ./configure --prefix=/usr/local --with-config-file-path=/usr/local/lib --enable-fpm --enable-mbstring --with-pdo-mysql --with-mysql --with-mysqli --with-pear --enable-soap --with-curl --with-mcrypt --with-gd --with-readline --enable-intl
 
 ----------------------------------------------------------------
