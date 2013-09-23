@@ -77,4 +77,6 @@ daemon = true
 sudo chmod 660 /etc/mysql-proxy.cnf
 sudo mysql-proxy --defaults-file=/etc/mysql-proxy.cnf
 ```
+
+# 参考文档
 [mysql-proxy official doc](http://dev.mysql.com/doc/refman/5.0/en/mysql-proxy.html)
