@@ -347,49 +347,6 @@ a2enmod a2dismod
 ab -c 100 -n 10000 http://127.0.0.1:8080/
 ```
 
-# git
-```shell
-apt-get install git
-git config --global user.name mahone3297
-git config --global user.email 329730566@qq.com
-git config --global core.editor vim
-git config --global color.ui true
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.ci commit
-git config --global alias.br branch
-git config --unset --global user.name
-git commit --amend
-git ls-files --stage
-git cat-file -p 264b73
-git archive master | tar -x -C src
-    [remote "origin"]
-        fetch = +refs/heads/*:refs/remotes/origin/*
-        url = https://github.com/u-cosmetics/oms.git
-    [branch "develop"]
-        remote = origin
-        merge = refs/heads/develop
-    [branch "master"]
-        remote = origin
-        merge = refs/heads/master
-    [remote "localpc"]
-        url = git@localhost:oms.git
-        fetch = +refs/heads/*:refs/remotes/localpc/*
-    [remote "all"]
-        url = https://github.com/u-cosmetics/oms.git
-        url = git@localhost:oms.git
-```
-
-# gitosis
-```shell
-git clone https://github.com/res0nat0r/gitosis.git
-cd gitosis
-sudo python setup.py install
-sudo adduser --system --shell /bin/sh --gecos 'git version control' --group --disabled-password --home /home/git git
-sudo -H -u git gitosis-init < /home/mahone/.ssh/id_rsa.pub
-git clone git@localhost:gitosis-admin.git
-```
-
 # nodejs
 ```shell
 add-apt-repository ppa:chris-lea/node.js
