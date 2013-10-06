@@ -83,11 +83,6 @@ update-grub // 更新 grub 信息
 grub-install /dev/sda
 ```
 
-# ibus
-```shell
-apt-get install ibus-googlepinyin
-```
-
 # linux kernel
 ```shell
 make mrproper
@@ -159,12 +154,6 @@ groupadd mahone
 groupmod -g 1001 -n new old
 groupdel mahone
 gpasswd groupname
-```
-
-# shutdown
-```shell
-shutdown -h now
-shutdown -r now
 ```
 
 # net
@@ -244,15 +233,6 @@ apt-get install dstat
 dstat -cdlmnpsy
 ```
 
-# tmux
-```shell
-apt-get install tmux
-```
-# byobu
-```shell
-apt-get install byobu
-```
-
 # music
 ```shell
 apt-get install lame
@@ -270,36 +250,10 @@ apt-get install siege
 siege -c100 -r10 -b http://www.qq.com
 ```
 
-# crontab
-```shell
-crontab [-u username] [-l|-e|-r]
-minute hour day month week command
-```
-
 # ssh
 ```shell
 apt-get install openssh-server
 ssh-keygen -t rsa
-```
-
-# vim
-```conf
-apt-get install vim
-set nu
-set hlsearch
-set autoindent
-set backup
-set ruler
-set showmode
-set backspace=(0,1,2)
-set
-set all
-syntax on
-set bg=(light,dark)
-set tabstop=4
-set shiftwidth=4
-set expandtab
-:%s/search_str/replace_str/g
 ```
 
 # rabbitMQ
@@ -361,35 +315,6 @@ CLASSPATH: .;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar
 Path: %JAVA_HOME%\bin
 ```
 
-# php
-```shell
-apt-get install php5
-apt-get install php-apc
-apt-get install php-pear
-apt-get install php5-cli
-apt-get install php5-cgi
-apt-get install php5-curl
-apt-get install php5-dev
-apt-get install php5-gd
-apt-get install php5-fpm
-apt-get install php5-memcache
-apt-get install php5-mysql
-apt-get install php5-xdebug
-```
-
-# phpunit
-```shell
-pear upgrade pear
-pear config-set auto_discover 1
-pear install pear.phpunit.de/PHPUnit
-```
-
-# phpdoc
-```shell
-pear upgrade PhpDocumentor
-phpdoc -d parsedir -t targetdir -o HTML:default:default
-```
-
 # nginx
 ```conf
 apt-get install nginx
@@ -418,11 +343,6 @@ spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/gi
 # rcconf
 ```shell
 apt-get install rcconf
-```
-
-# cacti
-```shell
-apt-get install cacti
 ```
 
 # mongo
