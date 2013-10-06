@@ -315,34 +315,11 @@ CLASSPATH: .;%JAVA_HOME%\lib\tools.jar;%JAVA_HOME%\lib\dt.jar
 Path: %JAVA_HOME%\bin
 ```
 
-# nginx
-```conf
-apt-get install nginx
-php
-location / {
-    include fastcgi_params;
-    fastcgi_param SCRIPT_FILENAME $fastcgi_script_name;  # [1]
-    fastcgi_param PATH_INFO $fastcgi_script_name;        # [2]
-    fastcgi_pass 127.0.0.1:9002;
-}
-
-python
-location / {
-    include uwsgi_params;
-    uwsgi_pass 127.0.0.1:9090;
-}
-```
-
 # spawn-fcgi
 ```shell
 apt-get install spawn-fcgi
 spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi
 spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/git/test/index.py
-```
-
-# rcconf
-```shell
-apt-get install rcconf
 ```
 
 # mongo
