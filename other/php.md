@@ -1,5 +1,9 @@
 # php
 ```shell
+sudo add-apt-repository ppa:ondrej/php5
+sudo apt-get install ppa-purge
+sudo ppa-purge ppa:ondrej/php5
+
 apt-get install php5
 apt-get install php-apc
 apt-get install php-pear
