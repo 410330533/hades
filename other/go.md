@@ -10,5 +10,8 @@ https://go.googlecode.com/files/go1.1.2.linux-amd64.tar.gz
 https://go.googlecode.com/files/go1.1.2.src.tar.gz
 https://go.googlecode.com/files/go1.1.2.windows-386.zip
 https://go.googlecode.com/files/go1.1.2.windows-amd64.zip
+
+export GOROOT=$HOME/go
+export PATH=$PATH:$GOROOT/bin
 ```
 
