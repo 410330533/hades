@@ -43,6 +43,7 @@ id mahone
 w
 who
 lastlog
+pkill -kill -t pts/1
 at now +5 minutes
 batch 23:00 2012-01-24
 pstree
