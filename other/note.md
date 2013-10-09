@@ -78,6 +78,12 @@ echo "Welcome to linuxde.net" | openssl enc -base64
 echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 ```
 
+# time
+```shell
+sudo dpkg-reconfigure tzdata
+sudo ntpdate cn.pool.ntp.org
+```
+
 # grub
 ```shell
 update-grub // 更新 grub 信息
