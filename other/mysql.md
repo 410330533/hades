@@ -53,6 +53,7 @@ mysqldump -h<host> -u<user> -p<password> --no-data 5imimi | sed 's/ AUTO_INCREME
 ```
 
 # mysql-proxy
+[mysql-proxy official doc](http://dev.mysql.com/doc/refman/5.0/en/mysql-proxy.html)
 ```shell
 sudo apt-get install mysql-proxy
 sudo vi /etc/mysql-proxy.cnf
@@ -76,9 +77,8 @@ sudo chmod 660 /etc/mysql-proxy.cnf
 sudo mysql-proxy --defaults-file=/etc/mysql-proxy.cnf
 ```
 
-[mysql-proxy official doc](http://dev.mysql.com/doc/refman/5.0/en/mysql-proxy.html)
-
 # mysqlslap
+[mysqlslap official doc](http://dev.mysql.com/doc/refman/5.1/en/mysqlslap.html)
 ```shell
 自动生成测试表和数据的形式，分别模拟 50 和 100 个客户端并发连接处理 1000 个 query 的情况。
 mysqlslap -a --concurrency=50,100 --number-of-queries=1000
