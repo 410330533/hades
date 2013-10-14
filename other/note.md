@@ -308,13 +308,6 @@ a2enmod a2dismod
 ab -c 100 -n 10000 http://127.0.0.1:8080/
 ```
 
-# nodejs
-```shell
-add-apt-repository ppa:chris-lea/node.js
-apt-get update
-apt-get install nodejs
-```
-
 # Java
 ```shell
 JAVA_HOME: D:\Program Files (x86)\Java\jdk1.6.0_27
