@@ -1,4 +1,5 @@
-Android 内部短信数据库结构
+- Android 内部短信数据库结构
+
 ```conf
 threads 表
 列名                      类型                  说明
@@ -31,4 +32,27 @@ service_center            text                  短信服务中心号码编号
 locked                    integer               此条短信是否已由用户锁定， 0- 未锁定， 1- 已锁定
 error_code                integer               错误代码，有哪些值暂时未知
 seen                      integer               用于指明该消息是否已被用户看到（非阅读，点开会话列表即可，不用打开会话），仅对收到的消息有用
+```
+
+- url
+
+```conf
+联系人 ContactsContract.Contacts.CONTENT_URI
+       ContactsContract.Contacts.DISPLAY_NAME
+联系人电话 ContactsContract.CommonDataKinds.Phone.CONTENT_URI
+           ContactsContract.CommonDataKinds.Phone.NUMBER
+           ContactsContract.CommonDataKinds.Phone.TYPE
+联系人邮箱 ContactsContract.CommonDataKinds.Email.CONTENT_URI
+           ContactsContract.CommonDataKinds.Email.TYPE
+           ContactsContract.CommonDataKinds.Email.DATA
+地址 ContactsContract.CommonDataKinds.StructuredPostal.CONTENT_URI
+     ContactsContract.CommonDataKinds.StructuredPostal.STREET
+     ContactsContract.CommonDataKinds.StructuredPostal.CITY
+     ContactsContract.CommonDataKinds.StructuredPostal.REGION
+     ContactsContract.CommonDataKinds.StructuredPostal.POSTCODE
+     ContactsContract.CommonDataKinds.StructuredPostal.FORMATTED_ADDRESS
+IM ContactsContract.CommonDataKinds.Im
+昵称 ContactsContract.CommonDataKinds.Nickname
+备注 ContactsContract.CommonDataKinds.Note
+组织 ContactsContract.CommonDataKinds.Organization
 ```
