@@ -6,6 +6,7 @@ apt-get install ruby-rvm
 apt-get install rails
 gem install rails --include-dependencies
 gem install capistrano capistrano-ext
+gem install ruby-mp3info
 ```
 ROR 环境配置, 参考 http://ruby-china.org/wiki/install_ruby_guide
 ```bash
