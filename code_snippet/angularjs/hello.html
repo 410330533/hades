@@ -1,16 +1,16 @@
-<html ng-app>
+<html ng-app="myApp">
     <head>
         <script src="angular.js"></script>
         <script>
-            function HelloController($scope){
-                $scope.greeting = { text: 'Hello' };
-            }
+            var myAppModule = angular.module('myApp', []);
+            myAppModule.controller('TextController', function ($scope){
+                var someText = {};
+                someText.message = 'You have started your journey.';
+                $scope.someText = someText;
+            });
         </script>
     </head>
-    <body>
-        <div ng-controller="HelloController">
-            <input ng-model="greeting.text"/>
-            <p>{{ greeting.text }}, World</p>
-        </div>
+    <body ng-controller="TextController">
+        <p>{{ someText.message }}</p>
     </body>
 </html>
