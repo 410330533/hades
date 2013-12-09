@@ -4,6 +4,7 @@ apt-get install git
 git config --global user.name mahone3297
 git config --global user.email 329730566@qq.com
 git config --global core.editor vim
+git config --global core.quotepath false
 git config --global color.ui true
 git config --global alias.st status
 git config --global alias.co checkout
