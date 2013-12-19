@@ -288,18 +288,6 @@ ftp> ?
 ftp> passive
 ```
 
-# samba
-```shell
-apt-get install samba
-service smbd status[start, stop, restart]
-useradd -m testsamba
-smbpasswd -a testsamba
-[root]
-    path = / 
-    browseable = yes 
-    writable = yes
-```
-
 # apache
 ```shell
 apt-get install apache2
