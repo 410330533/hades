@@ -7,6 +7,10 @@ apt-get install mysql-server
     innodb_file_per_table = 1
     innodb_lock_wait_timeout = 120
     innodb_buffer_pool_size = 64M
+    
+    log_bin = /var/log/mysql/mysql-bin.log
+    log_slow_queries = /var/log/mysql/mysql-slow.log
+    long_query_time = 2
 ```
 远程访问mysql
 ```shell
