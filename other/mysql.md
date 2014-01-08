@@ -1,5 +1,5 @@
 # mysql
-apt-get install mysql-server
+apt-get install mysql-server-5.5
 ```conf
 [mysqld]
     character_set_server = utf8
@@ -14,10 +14,12 @@ apt-get install mysql-server
 ```
 远程访问mysql
 ```shell
+CREATE USER 'custom'@'localhost' IDENTIFIED BY 'obscure';
+GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON bankaccount.* TO 'custom'@'localhost';
 grant all privileges on *.* to mahone@'%' identified by 'taobao'
-vi /etc/mysql/my.cnf
-    #bind-address = 127.0.0.1
-    
+DROP USER 'jeffrey'@'localhost';
+flush privileges;
+
 replication:
     GRANT REPLICATION SLAVE ON *.* TO repl@'192.168.0.%' IDENTIFIED BY 'repl';
     (master):
