@@ -4,6 +4,7 @@ apt-get install mysql-server
 [mysqld]
     character_set_server = utf8
     collation_server = utf8_general_ci
+    innodb_file_per_table = 1
     innodb_lock_wait_timeout = 120
     innodb_buffer_pool_size = 64M
 ```
