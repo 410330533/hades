@@ -10,6 +10,7 @@ git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.br branch
+git config --global push.default matching/simple
 git config --unset --global user.name
 git commit --amend
 git ls-files --stage
