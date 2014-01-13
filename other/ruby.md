@@ -7,6 +7,7 @@ apt-get install rails
 gem install rails --include-dependencies
 gem install capistrano capistrano-ext
 gem install ruby-mp3info
+gem install unicorn
 ```
 ROR 环境配置, 参考 http://ruby-china.org/wiki/install_ruby_guide
 ```bash
