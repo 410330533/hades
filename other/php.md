@@ -26,9 +26,9 @@ sudo make install
 
 # phpunit
 ```shell
-pear upgrade pear
-pear config-set auto_discover 1
-pear install pear.phpunit.de/PHPUnit
+sudo pear upgrade PEAR
+sudo pear config-set auto_discover 1
+sudo pear install pear.phpunit.de/PHPUnit
 ```
 
 # phpdoc
