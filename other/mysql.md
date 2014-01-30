@@ -1,5 +1,44 @@
 # mysql
 apt-get install mysql-server-5.5
+
+macPorts install mysql
+```shell
+1- Install MacPorts
+http://www.macports.org/install.php
+
+2- Update MacPorts:
+sudo port selfupdate
+
+3- Install MySQL server and client binaries:
+sudo port install mysql55
+
+4- Install MySQL server startup scripts:
+sudo port install mysql55-server
+
+5- Initialize the Database:
+sudo /opt/local/lib/mysql55/bin/mysql_install_db --user=mysql
+
+6- Start MySQL:
+sudo /opt/local/share/mysql55/support-files/mysql.server start
+
+7- Set root password:
+/opt/local/lib/mysql55/bin/mysqladmin -u root password 'changepasswordhere'
+
+8- Enable the startup script so mysql starts on boot
+sudo launchctl load -w /Library/LaunchDaemons/org.macports.mysql55-server.plist
+– or --
+sudo port load mysql55-server
+
+9- If you need to uninstall/reinstall for whatever reason, remove the database directory when you do the uninstall
+sudo port uninstall mysql55-server
+cd /opt/local/var/db/
+sudo rm -rf mysql55/
+
+10- To check the contents of any package:
+sudo port contents <package_name>
+```
+
+configuration
 ```conf
 [mysqld]
     character_set_server = utf8
@@ -12,14 +51,18 @@ apt-get install mysql-server-5.5
     log_slow_queries = /var/log/mysql/mysql-slow.log
     long_query_time = 2
 ```
-远程访问mysql
+
+create user
 ```shell
 CREATE USER 'custom'@'localhost' IDENTIFIED BY 'obscure';
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON bankaccount.* TO 'custom'@'localhost';
 grant all privileges on *.* to mahone@'%' identified by 'taobao'
 DROP USER 'jeffrey'@'localhost';
 flush privileges;
+```
 
+replication
+```shell
 replication:
     GRANT REPLICATION SLAVE ON *.* TO repl@'192.168.0.%' IDENTIFIED BY 'repl';
     (master):
