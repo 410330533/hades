@@ -41,15 +41,16 @@ sudo port contents <package_name>
 configuration
 ```conf
 [mysqld]
-    character_set_server = utf8
-    collation_server = utf8_general_ci
-    innodb_file_per_table = 1
-    innodb_lock_wait_timeout = 120
-    innodb_buffer_pool_size = 64M
-    
-    log_bin = /var/log/mysql/mysql-bin.log
-    log_slow_queries = /var/log/mysql/mysql-slow.log
-    long_query_time = 2
+character_set_server = utf8
+collation_server = utf8_general_ci
+innodb_file_per_table = 1
+innodb_lock_wait_timeout = 120
+innodb_buffer_pool_size = 64M
+skip-networking = OFF
+
+log_bin = /var/log/mysql/mysql-bin.log
+log_slow_queries = /var/log/mysql/mysql-slow.log
+long_query_time = 2
 ```
 
 create user
