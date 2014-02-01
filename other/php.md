@@ -29,6 +29,11 @@ sudo make install
 sudo pear upgrade PEAR
 sudo pear config-set auto_discover 1
 sudo pear install pear.phpunit.de/PHPUnit
+
+wget https://phar.phpunit.de/phpunit.phar
+chmod +x phpunit.phar
+mv phpunit.phar /usr/local/bin/phpunit
+phpunit --version
 ```
 
 # phpdoc
