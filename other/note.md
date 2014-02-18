@@ -310,12 +310,6 @@ spawn-fcgi -a 127.0.0.1 -p 9000 -C 10 -u www-data -f /usr/bin/php-cgi
 spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/git/test/index.py
 ```
 
-# mongo
-```shell
-apt-get install mongodb
-pecl install mongo(php扩展)
-```
-
 # memcache
 ```shell
 apt-get install memcached
