@@ -11,9 +11,7 @@ apt-get install openssh-server
 
 # ssh reverse connection
 ```shell
-1. 被控端执行 ssh -NfR 1111:localhost:22 username@123.123.123.123
-将主控端1111端口和被控端22端口绑定
-
+1. 被控端执行 ssh -NfR 1111:localhost:22 username@123.123.123.123 将主控端1111端口和被控端22端口进行绑定
 2. 在主控端连接 ssh localhost -p1111
 ```
 
