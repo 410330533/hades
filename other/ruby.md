@@ -1,16 +1,5 @@
-# ruby
-```bash
-apt-get install ruby
-apt-get install rubygems
-apt-get install ruby-rvm
-apt-get install rails
-gem install rails --include-dependencies
-gem install capistrano capistrano-ext
-gem install ruby-mp3info
-gem install unicorn
-```
-ROR 环境配置, 参考 http://ruby-china.org/wiki/install_ruby_guide
-```bash
+# ROR 环境配置, 参考 http://ruby-china.org/wiki/install_ruby_guide
+```shell
 0. 安装系统需要的包
 sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysql-ruby libmysqlclient-dev
 
@@ -41,5 +30,21 @@ gem -v
 gem install bundler rails
 bundle -v
 rails -v
+```
+
+# unicorn http://unicorn.bogomips.org/
+```shell
+gem install unicorn
+http://unicorn.bogomips.org/examples/unicorn.conf.rb
+http://unicorn.bogomips.org/examples/unicorn.conf.minimal.rb
+http://unicorn.bogomips.org/examples/nginx.conf
+unicorn_rails -c config/unicorn.conf.rb -E production -D
+```
+
+# gems
+```shell
+gem install rails --include-dependencies
+gem install capistrano capistrano-ext
+gem install ruby-mp3info
 ```
 
