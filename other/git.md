@@ -32,3 +32,7 @@ git archive master | tar -x -C src
         url = git@localhost:oms.git
 ```
 
+# github
+```shell
+185.31.17.184 github.global.ssl.fastly.net
+```
