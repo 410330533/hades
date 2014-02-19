@@ -257,12 +257,6 @@ apt-get install siege
 siege -c100 -r10 -b http://www.qq.com
 ```
 
-# ssh
-```shell
-apt-get install openssh-server
-ssh-keygen -t rsa
-```
-
 # rabbitMQ
 ```shell
 http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb
