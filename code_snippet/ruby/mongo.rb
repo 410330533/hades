@@ -1,18 +1,18 @@
 # https://github.com/mongodb/mongo-ruby-driver
+# https://github.com/mongodb/mongo-ruby-driver/tree/1.9.2
 
 require 'mongo'
 
 include Mongo
 
 @client = MongoClient.new('localhost', 27017)
-@db     = @client['test']
-@coll   = @db['testData']
+@db     = @client['sample-db']
+@coll   = @db['test']
 
 @coll.remove
 
 3.times do |i|
-  @id = @coll.insert({'a' => i+1})
-  puts "id = #{@id}"
+  @coll.insert({'a' => i+1})
 end
 
 puts "There are #{@coll.count} records. Here they are:"
