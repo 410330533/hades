@@ -8,6 +8,7 @@ curl -sSL https://get.rvm.io | bash -s stable
 载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）
 source ~/.rvm/scripts/rvm
 rvm -v
+rvm get stable
 
 2. 用 RVM 安装 Ruby 环境
 替换 Ruby 下载地址到国内淘宝镜像服务器
@@ -16,14 +17,17 @@ sed -i .bak 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_pa
 for Linux
 sed -i 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
 rvm autolibs enable
-安装 Ruby 2.1.0
-rvm install 2.1.0
+rvm install 2.1.1
+rvm 2.1.1 --default
+ruby -v
+# Removes the ruby, source files and optional gemsets / archives
+rvm remove ruby-2.0.0-p247
+# Just removes the ruby - leaves everything else
+rvm uninstall ruby-2.0.0-p247
 
-3. 设置 Ruby 版本
-rvm 2.1.0 --default
+3. 更换 gem 源
 gem source -r https://rubygems.org/
 gem source -a http://ruby.taobao.org
-ruby -v
 gem -v
 
 4. 安装 Rails 环境
