@@ -19,4 +19,8 @@ port upgrade outdated
 vi ~/.profile
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
 MANPATH=/opt/local/share/man:$MANPATH
+
+port search nginx
+sudo port install nginx
+sudo port load nginx
 ```
