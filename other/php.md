@@ -24,6 +24,16 @@ make
 sudo make install
 ```
 
+# composer
+```shell
+curl -sS https://getcomposer.org/installer | php
+curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
+
+php composer.phar install
+php composer.phar update
+php composer.phar update monolog/monolog [...]
+```
+
 # phpunit
 ```shell
 sudo pear upgrade PEAR
