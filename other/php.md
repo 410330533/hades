@@ -29,9 +29,26 @@ sudo make install
 curl -sS https://getcomposer.org/installer | php
 curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
 
+php composer.phar init
 php composer.phar install
 php composer.phar update
-php composer.phar update monolog/monolog [...]
+php composer.phar update vendor/package vendor/package2
+php composer.phar update vendor/*
+php composer.phar require
+php composer.phar require vendor/package:2.* vendor/package2:dev-master
+php composer.phar global require fabpot/php-cs-fixer:dev-master
+php composer.phar global update
+php composer.phar search monolog
+php composer.phar show
+php composer.phar show monolog/monolog
+php composer.phar show monolog/monolog 1.0.2
+php composer.phar depends --link-type=require monolog/monolog
+php composer.phar validate
+php composer.phar status
+php composer.phar self-update
+php composer.phar config --list
+php composer.phar config repositories.foo vcs http://github.com/foo/bar
+php composer.phar create-project doctrine/orm path 2.2.*
 ```
 
 # phpunit
