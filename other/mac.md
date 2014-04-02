@@ -24,3 +24,12 @@ port search nginx
 sudo port install nginx
 sudo port load nginx
 ```
+
+# limit
+```shell
+ulimit -n 10240
+/etc/launchd.conf
+$HOME/.launchd.conf
+launchctl limit maxfiles
+launchctl limit maxfiles 1024 65536
+```
