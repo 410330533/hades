@@ -43,6 +43,9 @@ php composer.phar self-update
 php composer.phar config --list
 php composer.phar config repositories.foo vcs http://github.com/foo/bar
 php composer.phar create-project doctrine/orm path 2.2.*
+php composer.phar diagnose
+php composer.phar archive vendor/package 2.0.21 --format=zip
+php composer.phar help install
 ```
 
 # phpunit
