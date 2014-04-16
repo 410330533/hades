@@ -1,4 +1,4 @@
-# ssh
+# install
 ```shell
 apt-get install openssh-server
 ```
@@ -7,6 +7,7 @@ apt-get install openssh-server
 ```shell
 在A上生成公钥和私钥 ssh-keygen -t rsa
 将A的公钥放到B的信任key中 cat id_rsa.pub >> ~/.ssh/authorized_keys
+ssh-copy-id -i id_rsa.pub username@127.0.0.1
 ```
 
 # ssh reverse connection
