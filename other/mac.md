@@ -14,7 +14,7 @@ tar -jxvf MacPorts-2.2.1.tar.bz2
 cd MacPorts-2.2.1
 ./configure && make && sudo make install
 sudo port -v selfupdate
-port upgrade outdated
+sudo port upgrade outdated
 
 vi ~/.profile
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -23,6 +23,7 @@ MANPATH=/opt/local/share/man:$MANPATH
 port search nginx
 sudo port install nginx
 sudo port load nginx
+sudo port select --set python python27
 ```
 
 # limit
