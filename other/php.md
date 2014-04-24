@@ -48,6 +48,13 @@ php composer.phar archive vendor/package 2.0.21 --format=zip
 php composer.phar help install
 ```
 
+# symfony
+```shell
+composer create-project symfony/framework-standard-edition symfony_test ~2.4
+php app/check.php
+php app/console server:run
+```
+
 # phpunit
 ```shell
 sudo pear upgrade PEAR
