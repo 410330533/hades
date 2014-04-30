@@ -22,6 +22,7 @@ MANPATH=/opt/local/share/man:$MANPATH
 
 port search nginx
 sudo port install nginx
+sudo port uninstall mysql55 @5.5.33_1
 sudo port load nginx
 sudo port select --set python python27
 ```

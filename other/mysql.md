@@ -16,13 +16,21 @@ sudo port install mysql55
 sudo port install mysql55-server
 
 5- Initialize the Database:
+sudo -u _mysql /opt/local/lib/mysql55/bin/mysql_install_db
 sudo /opt/local/lib/mysql55/bin/mysql_install_db --user=mysql
+
+/opt/local/lib/mysql55/bin/mysql_secure_installation
 
 6- Start MySQL:
 sudo /opt/local/share/mysql55/support-files/mysql.server start
 
+You can start the MySQL daemon with:
+cd /opt/local ; /opt/local/lib/mysql55/bin/mysqld_safe &
+You can test the MySQL daemon with mysql-test-run.pl
+cd /opt/local/mysql-test ; perl mysql-test-run.pl
+
 7- Set root password:
-/opt/local/lib/mysql55/bin/mysqladmin -u root password 'changepasswordhere'
+/opt/local/lib/mysql55/bin/mysqladmin -u root password 'new-password'
 
 8- Enable the startup script so mysql starts on boot
 sudo launchctl load -w /Library/LaunchDaemons/org.macports.mysql55-server.plist
