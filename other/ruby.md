@@ -45,11 +45,16 @@ http://unicorn.bogomips.org/examples/nginx.conf
 unicorn_rails -c config/unicorn.conf.rb -E production -D
 ```
 
-# gems
+# gem
 ```shell
-gem install rails --include-dependencies
-gem install capistrano capistrano-ext
+gem install rails
+gem install capistrano
 gem install ruby-mp3info
 gem install mysql2 -v '0.3.15' -- --with-mysql-config=/opt/local/lib/mysql55/bin/mysql_config
+
+gem fetch china_sms
+gem unpack china_sms-0.0.6.gem
+gem build halo.gemspec
+gem install halo-0.0.1.gem
 ```
 
