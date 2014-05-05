@@ -15,10 +15,13 @@ git config --global push.default matching/simple
 git config --unset --global user.name
 git add -p
 git commit --amend
+git log --graph
 git stash
 git stash pop
 git ls-files --stage
-git cat-file -p 264b73
+git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
+git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
+git rev-parse master
 git archive master | tar -x -C src
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*
