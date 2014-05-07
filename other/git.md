@@ -19,13 +19,17 @@ git commit --amend
 git log --graph
 git stash
 git stash pop
+git show 94af4d747e6d9856d6e827353c2072167b971d2d
+git archive master | tar -x -C src
+git clean -nd
+git clean -fd
 git ls-files --stage
 git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
 git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
 git rev-parse master
 vi .git/logs/refs/heads/master
 git reflog show master
-git archive master | tar -x -C src
+
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*
     url = https://github.com/u-cosmetics/oms.git
