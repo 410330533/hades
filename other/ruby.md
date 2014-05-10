@@ -1,7 +1,7 @@
 # ROR 环境配置, 参考 http://ruby-china.org/wiki/install_ruby_guide
 ```shell
 0. 安装系统需要的包
-sudo apt-get install -y build-essential openssl curl libcurl3-dev libreadline6 libreadline6-dev git zlib1g zlib1g-dev libssl-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysql-ruby libmysqlclient-dev
+sudo apt-get install -y build-essential openssl libssl-dev curl libreadline6 libreadline6-dev git zlib1g zlib1g-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysqlclien-dev
 
 1. 安装 RVM
 curl -sSL https://get.rvm.io | bash -s stable
