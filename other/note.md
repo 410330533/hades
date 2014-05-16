@@ -40,8 +40,6 @@ last -n 5 | awk '{print $1,$3}'
 cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'
 finger mahone
 id mahone
-w
-who
 lastlog
 pkill -kill -t pts/1
 at now +5 minutes
@@ -209,16 +207,6 @@ apt-cache show pkg
     显示软件包记录，类似于dpkg –print-avail
 apt-cache pkgname
     打印软件包列表中任何软件包的名称
-aptitude update
-aptitude upgrade
-aptitude dist-upgrade
-aptitude install pkgname
-aptitude remove pkgname
-aptitude purge pkgname
-aptitude search string
-aptitude show pkgname
-aptitude clean
-aptitude autoclean
 ```
 
 # cowsay, fortunes
