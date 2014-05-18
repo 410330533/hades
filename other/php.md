@@ -23,29 +23,30 @@ sudo make install
 curl -sS https://getcomposer.org/installer | php
 curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
 
-php composer.phar init
-php composer.phar install
-php composer.phar update
-php composer.phar update vendor/package vendor/package2
-php composer.phar update vendor/*
-php composer.phar require
-php composer.phar require vendor/package:2.* vendor/package2:dev-master
-php composer.phar global require fabpot/php-cs-fixer:dev-master
-php composer.phar global update
-php composer.phar search monolog
-php composer.phar show
-php composer.phar show monolog/monolog
-php composer.phar show monolog/monolog 1.0.2
-php composer.phar depends --link-type=require monolog/monolog
-php composer.phar validate
-php composer.phar status
-php composer.phar self-update
-php composer.phar config --list
-php composer.phar config repositories.foo vcs http://github.com/foo/bar
-php composer.phar create-project doctrine/orm path 2.2.*
-php composer.phar diagnose
-php composer.phar archive vendor/package 2.0.21 --format=zip
-php composer.phar help install
+composer init
+composer install
+composer update
+composer update vendor/package vendor/package2
+composer update vendor/*
+composer require
+composer require vendor/package:2.* vendor/package2:dev-master
+composer global require fabpot/php-cs-fixer:dev-master
+composer global update
+composer search monolog
+composer show
+composer show monolog/monolog
+composer show monolog/monolog 1.0.2
+composer depends --link-type=require monolog/monolog
+composer validate
+composer status
+composer self-update
+composer self-update --rollback
+composer config --list
+composer config repositories.foo vcs http://github.com/foo/bar
+composer create-project doctrine/orm path 2.2.*
+composer diagnose
+composer archive vendor/package 2.0.21 --format=zip
+composer help install
 ```
 
 # symfony
