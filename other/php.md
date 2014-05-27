@@ -54,6 +54,9 @@ composer help install
 composer create-project symfony/framework-standard-edition symfony_test ~2.4
 php app/check.php
 php app/console server:run
+php app/console cache:clear
+php app/console config:dump-reference FrameworkBundle
+php app/console generate:bundle --namespace=Acme/TestBundle
 ```
 
 # phpunit
