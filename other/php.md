@@ -56,7 +56,11 @@ php app/check.php
 php app/console server:run
 php app/console cache:clear
 php app/console config:dump-reference FrameworkBundle
+php app/console container:debug
 php app/console generate:bundle --namespace=Acme/TestBundle
+php app/console route:debug
+php app/console route:debug _demo
+php app/console route:match /demo/
 ```
 
 # phpunit
