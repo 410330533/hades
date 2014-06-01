@@ -53,14 +53,31 @@ composer help install
 ```shell
 composer create-project symfony/framework-standard-edition symfony_test ~2.4
 php app/check.php
-php app/console server:run
+php app/console assets:install web
+php app/console assets:install web --symlink
+php app/console assets:install web --symlink --relative
 php app/console cache:clear
 php app/console config:dump-reference FrameworkBundle
 php app/console container:debug
-php app/console generate:bundle --namespace=Acme/TestBundle
+php app/console doctrine:database:create
+php app/console doctrine:database:drop
+php app/console doctrine:generate:entities MyCustomBundle
+php app/console doctrine:generate:entities MyCustomBundle:User
+php app/console doctrine:generate:entities MyCustomBundle/Entity/User
+php app/console doctrine:generate:entities MyCustomBundle/Entity
+php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post
+php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --fields="title:string(255) body:text"
+php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --with-repository
+php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=yml
+php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=annotation --fields="title:string(255) body:text" --with-repository --no-interaction
+php app/console generate:bundle --namespace=Acme/BlogBundle
 php app/console route:debug
 php app/console route:debug _demo
 php app/console route:match /demo/
+php app/console server:run
+php app/console twig:lint filename
+php app/console twig:lint dirname
+php app/console twig:lint @AcmeMyBundle
 ```
 
 # phpunit
