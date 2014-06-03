@@ -53,6 +53,7 @@ composer help install
 ```shell
 composer create-project symfony/framework-standard-edition symfony_test ~2.4
 php app/check.php
+
 php app/console assets:install web
 php app/console assets:install web --symlink
 php app/console assets:install web --symlink --relative
@@ -70,7 +71,18 @@ php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --fie
 php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --with-repository
 php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=yml
 php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=annotation --fields="title:string(255) body:text" --with-repository --no-interaction
+php app/console doctrine:schema:update --dump-sql
+php app/console doctrine:schema:update --force
+php app/console doctrine:schema:update --em=default
 php app/console generate:bundle --namespace=Acme/BlogBundle
+php app/console propel:database:create
+php app/console propel:model:build
+php app/console propel:sql:build
+php app/console propel:sql:insert --force
+php app/console propel:build --insert-sql
+php app/console propel:migration:generate-diff
+php app/console propel:migration:migrate
+php app/console propel:model:build
 php app/console route:debug
 php app/console route:debug _demo
 php app/console route:match /demo/
