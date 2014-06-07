@@ -308,6 +308,21 @@ apt-get install iptraf
 apt-get install iotop
 ```
 
+# ip
+```shell
+ip addr show
+ip addr show eth0
+ip addr add 192.168.0.193/24 dev wlan0
+ip addr del 192.168.0.193/24 dev wlan0
+ip route show
+ip route get 10.42.0.47
+ip route add default via 192.168.0.196
+ip neighbour
+ip monitor all
+ip link set ppp0 down
+ip link set ppp0 up
+```
+
 # console printf color
 ```shell
 #define NONE         "\033[m"  
