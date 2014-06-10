@@ -37,6 +37,7 @@ composer show
 composer show monolog/monolog
 composer show monolog/monolog 1.0.2
 composer depends --link-type=require monolog/monolog
+composer dump-autoload --optimize
 composer validate
 composer status
 composer self-update
