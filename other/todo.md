@@ -12,3 +12,6 @@
 - 2014-06-06 symfony2 book p176~p193
 - 2014-06-09 symfony2 book p205~p226
 - 2014-06-10 symfony2 book p226~p254
+- 2014-06-11
+  - php app/console generate:bundle --namespace=Mahone/ExchangeBundle
+  - delete bundle Acme/DemoBundle
