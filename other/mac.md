@@ -13,18 +13,19 @@ wget https://distfiles.macports.org/MacPorts/MacPorts-2.2.1.tar.bz2
 tar -jxvf MacPorts-2.2.1.tar.bz2
 cd MacPorts-2.2.1
 ./configure && make && sudo make install
-sudo port -v selfupdate
-sudo port upgrade outdated
+port -v selfupdate
+port upgrade outdated
 
 vi ~/.profile
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
 MANPATH=/opt/local/share/man:$MANPATH
 
 port search nginx
-sudo port install nginx
-sudo port uninstall mysql55 @5.5.33_1
-sudo port load nginx
-sudo port select --set python python27
+port install nginx
+port uninstall mysql55 @5.5.33_1
+port installed
+port load nginx
+port select --set python python27
 ```
 
 # limit
