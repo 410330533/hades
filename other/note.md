@@ -402,3 +402,14 @@ script myfile
 script -qa myfile
 ```
 
+# scrot
+```shell
+scrot
+scrot desktop.png
+scrot -s
+scrot -s -d 5
+scrot -q 50
+scrot -t 10
+scrot -e 'mv $f ~/screenshots'
+```
+
