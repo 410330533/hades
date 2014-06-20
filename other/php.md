@@ -89,6 +89,8 @@ php app/console route:debug
 php app/console route:debug _demo
 php app/console route:match /demo/
 php app/console server:run
+php app/console server:run 127.0.0.1:8080
+php app/console server:run --docroot=htdocs/
 php app/console twig:lint filename
 php app/console twig:lint dirname
 php app/console twig:lint @AcmeMyBundle
