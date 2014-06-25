@@ -66,8 +66,10 @@ create user
 CREATE USER 'custom'@'localhost' IDENTIFIED BY 'obscure';
 GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON bankaccount.* TO 'custom'@'localhost';
 grant all privileges on *.* to mahone@'%' identified by 'taobao'
+SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('cleartext password');
+UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root';
 DROP USER 'jeffrey'@'localhost';
-flush privileges;
+FLUSH PRIVILEGES;
 ```
 
 replication
@@ -96,10 +98,8 @@ replication:
 1./etc/init.d/mysql stop
 2.mysqld_safe --skip-grant-tables --skip-networking
 3.mysql -uroot
-4.use mysql;
-    update user set password=password where user="root";
-    flush privileges;
-    exit;
+4.UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root';
+    FLUSH PRIVILEGES;
 5.kill -9 6896(msqld_safe进程)
     /etc/init.d/mysql start
 6.mysql -uroot -p
