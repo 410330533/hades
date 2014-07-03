@@ -55,6 +55,8 @@ composer help install
 composer create-project symfony/framework-standard-edition symfony_test ~2.4
 php app/check.php
 
+php app/console assetic:dump
+php app/console assetic:dump --watch
 php app/console assets:install web
 php app/console assets:install web --symlink
 php app/console assets:install web --symlink --relative
