@@ -16,9 +16,16 @@ git config --global push.default matching/simple
 git config --unset --global user.name
 git add -p
 git commit --amend
+git log --pretty=oneline
 git log --graph
+git stash list
 git stash
+git stash save "message..."
 git stash pop
+git stash apply
+git stash drop [<stash>]
+git stash clear
+git stash branch <branch> <stash> 基于进度创建分支
 git show 94af4d747e6d9856d6e827353c2072167b971d2d
 git archive master | tar -x -C src
 git clean -nd
@@ -29,6 +36,7 @@ git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
 git rev-parse master
 vi .git/logs/refs/heads/master
 git reflog show master
+git tag v0.1
 
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*
