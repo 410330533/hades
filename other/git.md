@@ -14,6 +14,8 @@ git config --global alias.ci commit
 git config --global alias.br branch
 git config --global push.default matching/simple
 git config --unset --global user.name
+git add -u 将本地有改动的文件标记到暂存区
+git add -i
 git add -p
 git commit --amend
 git log --pretty=oneline
@@ -27,7 +29,12 @@ git stash drop [<stash>]
 git stash clear
 git stash branch <branch> <stash> 基于进度创建分支
 git show 94af4d747e6d9856d6e827353c2072167b971d2d
-git archive master | tar -x -C src
+git archive --format=tar v1.0 | gzip > foo-1.0.tar.gz
+git archive --format=tar --prefix=git-1.4.0/ v1.4.0 | gzip > git-1.4.0.tar.gz
+git archive --format=tar.gz --prefix=git-1.4.0/ v1.4.0 > git-1.4.0.tar.gz
+git archive --prefix=git-1.4.0/ -o git-1.4.0.tar.gz v1.4.0
+git archive -o latest.zip HEAD
+git archive -o partial.tar HEAD src doc
 git clean -nd
 git clean -fd
 git ls-files --stage
