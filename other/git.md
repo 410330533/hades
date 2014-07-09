@@ -17,9 +17,27 @@ git config --unset --global user.name
 git add -u 将本地有改动的文件标记到暂存区
 git add -i
 git add -p
+git archive --format=tar v1.0 | gzip > foo-1.0.tar.gz
+git archive --format=tar --prefix=git-1.4.0/ v1.4.0 | gzip > git-1.4.0.tar.gz
+git archive --format=tar.gz --prefix=git-1.4.0/ v1.4.0 > git-1.4.0.tar.gz
+git archive --prefix=git-1.4.0/ -o git-1.4.0.tar.gz v1.4.0
+git archive -o latest.zip HEAD
+git archive -o partial.tar HEAD src doc
+git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
+git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
 git commit --amend
+git clean -nd
+git clean -fd
+git diff <commit1> <commit2> -- <paths>
+git diff <path1> <path2>
+git diff --word-diff
+git ls-files --stage
+git log -p
+git log --stat
 git log --pretty=oneline
 git log --graph
+git rev-parse master
+git reflog show master
 git stash list
 git stash
 git stash save "message..."
@@ -29,20 +47,6 @@ git stash drop [<stash>]
 git stash clear
 git stash branch <branch> <stash> 基于进度创建分支
 git show 94af4d747e6d9856d6e827353c2072167b971d2d
-git archive --format=tar v1.0 | gzip > foo-1.0.tar.gz
-git archive --format=tar --prefix=git-1.4.0/ v1.4.0 | gzip > git-1.4.0.tar.gz
-git archive --format=tar.gz --prefix=git-1.4.0/ v1.4.0 > git-1.4.0.tar.gz
-git archive --prefix=git-1.4.0/ -o git-1.4.0.tar.gz v1.4.0
-git archive -o latest.zip HEAD
-git archive -o partial.tar HEAD src doc
-git clean -nd
-git clean -fd
-git ls-files --stage
-git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
-git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
-git rev-parse master
-vi .git/logs/refs/heads/master
-git reflog show master
 git tag v0.1
 
 [remote "origin"]
