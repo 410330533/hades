@@ -26,6 +26,7 @@ git archive -o latest.zip HEAD
 git archive -o partial.tar HEAD src doc
 git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
 git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
+git cherry-pick b57692276cc23a0a81f06e208ff2f96274adb45a
 git commit --amend
 git clean -nd
 git clean -fd
@@ -37,6 +38,8 @@ git log -p
 git log --stat
 git log --pretty=oneline
 git log --graph
+git rebase --onto <newbase> <since> <till>
+git rebase -i D^
 git rev-parse master
 git reflog show master
 git stash list
@@ -49,6 +52,7 @@ git stash clear
 git stash branch <branch> <stash> 基于进度创建分支
 git show 94af4d747e6d9856d6e827353c2072167b971d2d
 git tag v0.1
+git tag -d v0.1
 
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*
