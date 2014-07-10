@@ -27,6 +27,9 @@ git archive -o partial.tar HEAD src doc
 git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
 git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
 git cherry-pick b57692276cc23a0a81f06e208ff2f96274adb45a
+git clone <repository> <directory>
+git clone --bare <repository> <directory.git>
+git clone --mirror <repository> <directory.git>
 git commit --amend
 git clean -nd
 git clean -fd
@@ -38,8 +41,11 @@ git log -p
 git log --stat
 git log --pretty=oneline
 git log --graph
+git push [<remote-repos> [<refspec>]]
+git pull [<remote-repos> [<refspec>]]
 git rebase --onto <newbase> <since> <till>
 git rebase -i D^
+git revert 94af4d747e6d9856d6e827353c2072167b971d2d
 git rev-parse master
 git reflog show master
 git stash list
