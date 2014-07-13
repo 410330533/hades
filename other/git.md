@@ -36,18 +36,27 @@ git clean -fd
 git diff <commit1> <commit2> -- <paths>
 git diff <path1> <path2>
 git diff --word-diff
+git fsck
+git fsck --no-reflogs
+git gc
+git gc --prune=now
+git init --bare /path/to/repo.git
 git ls-files --stage
 git log -p
 git log --stat
 git log --pretty=oneline
 git log --graph
+git prune
 git push [<remote-repos> [<refspec>]]
 git pull [<remote-repos> [<refspec>]]
 git rebase --onto <newbase> <since> <till>
 git rebase -i D^
 git revert 94af4d747e6d9856d6e827353c2072167b971d2d
 git rev-parse master
+git reflog
 git reflog show master
+git reflog expire --all
+git reflog expire --expire=now --all
 git stash list
 git stash
 git stash save "message..."
@@ -75,15 +84,6 @@ git tag -d v0.1
 [remote "all"]
     url = https://github.com/u-cosmetics/oms.git
     url = git@localhost:oms.git
-```
-
-# git repo
-```shell
-mkdir test_repo.git
-cd test_repo.git
-git init --bare
-
-git clone username@host:/path/to/git/repo
 ```
 
 # github
