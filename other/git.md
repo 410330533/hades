@@ -66,7 +66,12 @@ git stash drop [<stash>]
 git stash clear
 git stash branch <branch> <stash> 基于进度创建分支
 git show 94af4d747e6d9856d6e827353c2072167b971d2d
-git tag v0.1
+git tag
+git tag <tagname> [<commit>]
+git tag -a <tagname> [<commit>]
+git tag -m <msg> <tagname> [<commit>]
+git tag -s <tagname> [<commit>]
+git tag -u <key-id> <tagname> [<commit>]
 git tag -d v0.1
 
 [remote "origin"]
