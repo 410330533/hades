@@ -26,6 +26,7 @@ curl -sS https://getcomposer.org/installer | php -- --install-dir=bin
 composer init
 composer install
 composer update
+composer update --lock
 composer update vendor/package vendor/package2
 composer update vendor/*
 composer require
