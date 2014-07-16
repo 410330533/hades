@@ -72,7 +72,11 @@ git tag -a <tagname> [<commit>]
 git tag -m <msg> <tagname> [<commit>]
 git tag -s <tagname> [<commit>]
 git tag -u <key-id> <tagname> [<commit>]
-git tag -d v0.1
+git tag -d mytag
+git push origin mytag
+git push origin refs/tags/*
+git push origin :mytag
+git pull origin refs/tags/mytag:refs/tags/mytag 远程tag有更新，需显示指定拉回
 
 [remote "origin"]
     fetch = +refs/heads/*:refs/remotes/origin/*
