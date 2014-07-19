@@ -76,6 +76,11 @@ php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --fie
 php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --with-repository
 php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=yml
 php app/console doctrine:generate:entity --entity=AcmeBlogBundle:Blog/Post --format=annotation --fields="title:string(255) body:text" --with-repository --no-interaction
+php app/console doctrine:mapping:convert xml /path/to/output
+php app/console doctrine:mapping:import "MyCustomBundle" xml
+php app/console doctrine:mapping:import "MyCustomBundle" xml --em=default
+php app/console doctrine:mapping:import "MyCustomBundle" xml --filter=MyMatchedEntity
+php app/console doctrine:mapping:import "MyCustomBundle" xml --force
 php app/console doctrine:schema:update --dump-sql
 php app/console doctrine:schema:update --force
 php app/console doctrine:schema:update --em=default
