@@ -24,9 +24,19 @@ git archive --format=tar.gz --prefix=git-1.4.0/ v1.4.0 > git-1.4.0.tar.gz
 git archive --prefix=git-1.4.0/ -o git-1.4.0.tar.gz v1.4.0
 git archive -o latest.zip HEAD
 git archive -o partial.tar HEAD src doc
+git branch
+git branch <branchname>
+git branch <branchname> <start-point>
+git branch -d <branchname>
+git branch -D <branchname>
+git branch -m <oldbranch> <newbranch>
+git branch -M <oldbranch> <newbranch>
+git branch -r
 git cat-file -t 94af4d747e6d9856d6e827353c2072167b971d2d
 git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
 git cherry-pick b57692276cc23a0a81f06e208ff2f96274adb45a
+git checkout -b develop origin/develop
+git checkout --track -b develop_1 develop
 git clone <repository> <directory>
 git clone --bare <repository> <directory.git>
 git clone --mirror <repository> <directory.git>
@@ -57,6 +67,7 @@ git reflog
 git reflog show master
 git reflog expire --all
 git reflog expire --expire=now --all
+git show-rev
 git stash list
 git stash
 git stash save "message..."
