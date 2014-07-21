@@ -46,6 +46,10 @@ git clean -fd
 git diff <commit1> <commit2> -- <paths>
 git diff <path1> <path2>
 git diff --word-diff
+git fetch origin
+git format-patch -s HEAD~3..HEAD
+git send-email *.patch
+git am mail-archive-patch
 git fsck
 git fsck --no-reflogs
 git gc
@@ -61,6 +65,12 @@ git push [<remote-repos> [<refspec>]]
 git pull [<remote-repos> [<refspec>]]
 git rebase --onto <newbase> <since> <till>
 git rebase -i D^
+git remote add origin git@github.com:mahone3297/hades.git
+git remote set-url origin git@github.com:mahone3297/hades.git
+git remote set-url --push origin git@github.com:mahone3297/hades.git
+git remote rename origin newOrigin
+git remote update
+git remote rm origin
 git revert 94af4d747e6d9856d6e827353c2072167b971d2d
 git rev-parse master
 git reflog
