@@ -67,6 +67,8 @@ php app/console config:dump-reference FrameworkBundle
 php app/console container:debug
 php app/console doctrine:database:create
 php app/console doctrine:database:drop
+php app/console doctrine:ensure-production-settings
+php app/console doctrine:ensure-production-settings --em=default
 php app/console doctrine:generate:entities MyCustomBundle
 php app/console doctrine:generate:entities MyCustomBundle:User
 php app/console doctrine:generate:entities MyCustomBundle/Entity/User
@@ -81,6 +83,12 @@ php app/console doctrine:mapping:import "MyCustomBundle" xml
 php app/console doctrine:mapping:import "MyCustomBundle" xml --em=default
 php app/console doctrine:mapping:import "MyCustomBundle" xml --filter=MyMatchedEntity
 php app/console doctrine:mapping:import "MyCustomBundle" xml --force
+php app/console doctrine:mapping:info
+php app/console doctrine:mapping:info --em=default
+php app/console doctrine:query:dql "SELECT u FROM UserBundle:User u"
+php app/console doctrine:query:dql "SELECT u FROM UserBundle:User u" --hydrate=array
+php app/console doctrine:query:dql "SELECT u FROM UserBundle:User u" --first-result=0 --max-result=30
+php app/console doctrine:query:sql "SELECT * from user"
 php app/console doctrine:schema:update --dump-sql
 php app/console doctrine:schema:update --force
 php app/console doctrine:schema:update --em=default
