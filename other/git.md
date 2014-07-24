@@ -87,6 +87,10 @@ git stash drop [<stash>]
 git stash clear
 git stash branch <branch> <stash> 基于进度创建分支
 git show 94af4d747e6d9856d6e827353c2072167b971d2d
+git submodule add /path/to/repos/libA.git lib/lib_a
+git submodule status
+git submodule init
+git submodule update
 git tag
 git tag <tagname> [<commit>]
 git tag -a <tagname> [<commit>]
