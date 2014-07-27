@@ -91,6 +91,10 @@ git submodule add /path/to/repos/libA.git lib/lib_a
 git submodule status
 git submodule init
 git submodule update
+git svn clone file:///path/to/svn/repos/demo git-svn-demo
+git svn fetch
+git svn rebase
+git svn dcommit
 git tag
 git tag <tagname> [<commit>]
 git tag -a <tagname> [<commit>]
