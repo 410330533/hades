@@ -3,6 +3,7 @@
 apt-get install git
 git config --global user.name mahone3297
 git config --global user.email 329730566@qq.com
+git config --global core.autocrlf true
 git config --global core.editor vim
 git config --global core.quotepath false
 git config --global core.fileMode false
@@ -37,6 +38,7 @@ git cat-file -p 94af4d747e6d9856d6e827353c2072167b971d2d
 git cherry-pick b57692276cc23a0a81f06e208ff2f96274adb45a
 git checkout -b develop origin/develop
 git checkout --track -b develop_1 develop
+git check-attr foo bar -- filename
 git clone <repository> <directory>
 git clone --bare <repository> <directory.git>
 git clone --mirror <repository> <directory.git>
