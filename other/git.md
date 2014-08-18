@@ -54,6 +54,7 @@ git send-email *.patch
 git am mail-archive-patch
 git fsck
 git fsck --no-reflogs
+git fsck --lost-found
 git gc
 git gc --prune=now
 git init --bare /path/to/repo.git
@@ -67,6 +68,7 @@ git push [<remote-repos> [<refspec>]]
 git pull [<remote-repos> [<refspec>]]
 git rebase --onto <newbase> <since> <till>
 git rebase -i D^
+git rebase -i HEAD~[number_of_commits]
 git remote add origin git@github.com:mahone3297/hades.git
 git remote set-url origin git@github.com:mahone3297/hades.git
 git remote set-url --push origin git@github.com:mahone3297/hades.git
