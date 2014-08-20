@@ -94,6 +94,7 @@ php app/console doctrine:schema:update --force
 php app/console doctrine:schema:update --em=default
 php app/console generate:bundle --namespace=Acme/BlogBundle
 php app/console generate:controller
+php app/console init:acl
 php app/console propel:database:create
 php app/console propel:model:build
 php app/console propel:sql:build
