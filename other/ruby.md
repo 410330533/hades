@@ -36,6 +36,11 @@ bundle -v
 rails -v
 ```
 
+# rack https://github.com/rack/rack
+```shell
+rackup config.ru
+```
+
 # unicorn http://unicorn.bogomips.org/
 ```shell
 gem install unicorn
