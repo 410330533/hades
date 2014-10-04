@@ -52,8 +52,11 @@ unicorn_rails -c config/unicorn.conf.rb -E production -D
 
 # gem
 ```shell
+gem list
 gem install rails
 gem install capistrano
+gem install mongo
+gem install mongo_ext
 gem install ruby-mp3info
 gem install mysql2 -v '0.3.15' -- --with-mysql-config=/opt/local/lib/mysql55/bin/mysql_config
 
