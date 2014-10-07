@@ -9,6 +9,8 @@ tmux new -s mySession
 tmux attach-session -t 1
 tmux attach-session -t mySession
 tmux ls
+tmux list-session
+tmux rename-session [-t target-session] new-name
 tmux kill-session -t 1
 tmux kill-session -t mySession
 ```
