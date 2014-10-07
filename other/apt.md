@@ -1,4 +1,4 @@
-# apt-get
+# apt
 ```shell
 /var/cache/apt/archives/
 /var/cache/apt/archives/partial/
