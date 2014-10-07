@@ -1,12 +1,11 @@
 # tmux
+## install
 ```shell
 apt-get install tmux
 port install tmux
-
-tmux new -s mySession
 ```
 
-help
+## help
 ```shell
 bind-key        C-b send-prefix                                                                                                                                               [25/25]
 bind-key        C-o rotate-window
