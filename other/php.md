@@ -116,6 +116,26 @@ php app/console twig:lint dirname
 php app/console twig:lint @AcmeMyBundle
 ```
 
+# symfony-doc
+```shell
+Sphinx http://sphinx-doc.org/latest/install.html
+apt-get install python-sphinx
+
+port install py27-sphinx
+port select --set python python27
+port select --set sphinx py27-sphinx
+
+easy_install sphinx
+pip install Sphinx
+
+pip install git+https://github.com/fabpot/sphinx-php.git
+
+git clone git@github.com:symfony/symfony-docs.git
+make help
+make clean
+make dirhtml
+```
+
 # phpunit
 ```shell
 sudo pear upgrade PEAR
