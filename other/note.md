@@ -36,8 +36,6 @@ nl /etc/passwd | sed -e '2a drink tea'
 nl /etc/passwd | sed -e '2i drink tea'
 sed -e 's/replace_str/new_str/g'
 printf '%10s %5i %8.2f \n' $ (cat printf.txt)
-last -n 5 | awk '{print $1,$3}'
-cat /etc/passwd | awk '{FS=":"} $3 < 10 {print $1, $3}'
 finger mahone
 id mahone
 lastlog
@@ -45,7 +43,6 @@ pkill -kill -t pts/1
 at now +5 minutes
 batch 23:00 2012-01-24
 pstree
-kill -SIGHUP $(ps aux | grep 'syslog' | grep -v 'grep' | awk '{print $2}')
 killall -9 httpd
 nice -n number vi
 renice number PID
