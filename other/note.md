@@ -179,30 +179,6 @@ sudo apt-key add rabbitmq-signing-key-public.asc
 sudo apt-get install rabbitmq-server
 ```
 
-# svn
-```shell
-apt-get install subversion
-svnadmin create repository
-svnserve -d -r repository
-```
-
-# vsftp
-```shell
-apt-get install vsftpd
-service vsftpd status[start, stop, restart]
-ftp ftp.ruby-lang.org
-ftp> ?
-ftp> passive
-```
-
-# apache
-```shell
-apt-get install apache2
-vi /etc/apache2/apache2.conf
-a2enmod a2dismod
-ab -c 100 -n 10000 http://127.0.0.1:8080/
-```
-
 # Java
 ```shell
 JAVA_HOME: D:\Program Files (x86)\Java\jdk1.6.0_27
