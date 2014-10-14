@@ -101,43 +101,6 @@ make all 进行上述的三个操作
 make modules_install
 ```
 
-# rpm
-```shell
-/var/lib/rpm
-rpm -ivh rp-pppoe-3.5-32.1.i386.rpm
-rpm -Uvh rp-pppoe-3.5-32.1.i386.rpm
-rpm -ql logrotate
-rpm -qi logrotate
-rpm -qc logrotate
-rpm -qd logrotate
-rpm -qR logrotate
-rpm -qf /bin/sh
-rpm -qpR filename.i386.rpm
-rpm -V logrotate
-rpm -Vf /etc/crontab
-rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-5
-rpm -e pam
-rpm --rebuilddb
-rpmbuild --rebuild rp-pppoe-3.5-32.1.src.rpm
-rpmbuild -ba rp-pppoe.spec 编译并同时生成RPM与SRPM文件
-rpmbuild -bb rp-pppoe.spec 仅编译成RPM文件
-```
-
-# yum
-```shell
-yum search raid
-yum info mdadm
-yum list
-yum list updates
-yum install pam-devel
-yum remove pam-devel
-yum clean all
-vi /etc/yum.repos.d/CentOS-Base.repo
-yum grouplist
-yum groupinfo XFCE-4.4
-yum groupinstall XFCE-4.4
-```
-
 # gcc
 ```shell
 gcc -c hello.c
@@ -375,10 +338,3 @@ scrot -t 10
 scrot -e 'mv $f ~/screenshots'
 ```
 
-# tcpdump
-```shell
-tcpdump -i eth1 "tcp[tcpflags] & (tcp-syn) != 0" 只捕获tcp syn包
-tcpdump -i eth1 "tcp[tcpflags] & (tcp-ack) != 0" 只捕获tcp ack包
-tcpdump -i eth1 "tcp[tcpflags] & (tcp-fin) != 0" 只捕获tcp fin包
-tcpdump -i eth1 "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0" 只捕获tcp syn或ack包
-```
