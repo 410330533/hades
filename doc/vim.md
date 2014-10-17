@@ -16,8 +16,8 @@ ctrl-i
 ```
 
 # plugin
-[kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
-[mileszs/ack.vim](https://github.com/mileszs/ack.vim)
+- [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
+- [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
 
 # [Vundle](https://github.com/gmarik/Vundle.vim)
 ```shell
