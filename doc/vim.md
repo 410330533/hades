@@ -13,6 +13,9 @@ ctrl-w [h|j|k|l]
 跳转表
 ctrl-o
 ctrl-i
+
+替换
+%s/search/replace/g
 ```
 
 # plugin
