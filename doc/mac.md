@@ -39,4 +39,5 @@ launchctl limit maxfiles 1024 65536
 
 # link
 - [简单制作 OS X Yosemite 10.10 正式版U盘USB启动安装盘方法教程 (全新安装 Mac 系统)](http://www.iplaysoft.com/osx-yosemite-usb-install-drive.html)
+- [How to Make an OS X Yosemite Boot Installer USB Drive](http://osxdaily.com/2014/10/16/make-os-x-yosemite-boot-install-drive/)
 - [苹果系统 Mac OS X Yosemite 正式版安装程序镜像下载 (10.10 新功能特性总结)](http://www.iplaysoft.com/osx-yosemite.html)
