@@ -57,7 +57,7 @@ innodb_buffer_pool_size = 64M
 skip-networking = OFF
 
 log_bin = /var/log/mysql/mysql-bin.log
-log_slow_queries = /var/log/mysql/mysql-slow.log
+slow_query_log = /var/log/mysql/mysql-slow.log
 long_query_time = 2
 ```
 
