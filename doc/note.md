@@ -9,6 +9,7 @@ find . -name "*.php" -exec dos2unix {} \;
 find . -path "./DontSearchPath" -prune -o -name "datafile*" -print
 find . \( -path "./DontSearchPath" -o -path "./DoSearchPath" \) -prune -o -name "datafile*" -print
 find . -name "*.php" -exec php -l {} \; | grep -v 'No syntax errors'
+find ./ -perm /+x -type f # 搜索当前目录下所有的可执行文件 
 
 dos2unix [-kn] file [newfile]
 unix2dos [-kn] file [newfile]
@@ -56,9 +57,6 @@ runlevel
 nmap 192.168.1.100
 iostat -d 2 3
 dd if=/dev/sda of=/dev/sdb
-
-find / -print | cpio -covB > /dev/st0
-cpio -iduv < /dev/st0
 
 dump -0u -f /backupdata/home.dump /home
 dump -1u -f /backupdata/home.dump.1 /home
