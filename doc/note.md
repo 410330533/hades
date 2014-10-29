@@ -51,7 +51,6 @@ free -m
 uname -a
 uptime
 netstat [-atunlp]
-lsof -u mahone
 logrotate -v /etc/logrotate.conf
 runlevel
 nmap 192.168.1.100
