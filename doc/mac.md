@@ -20,6 +20,7 @@ vi ~/.profile
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
 MANPATH=/opt/local/share/man:$MANPATH
 
+port list
 port search nginx
 port install nginx
 port uninstall mysql55 @5.5.33_1
