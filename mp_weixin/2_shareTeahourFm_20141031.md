@@ -9,3 +9,4 @@ Teahour.fm 由 Terry Tai，Dingding Ye, Daniel Lv, Kevin Wang 和 Xdite Cheng �
 
 # link
 - [teahour](http://teahour.fm)
+- [从库克出柜谈同性恋：颜色不一样的烟火](http://tech.sina.com.cn/zl/post/detail/it/2014-10-31/pid_8464085.htm?sina-fr=bd.ala.xw)
