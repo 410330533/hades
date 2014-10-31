@@ -1,4 +1,6 @@
 # teahour
+库克宣布出柜后，昨晚雷军一夜无眠！脑子里不断重复着一句话：这他妈的怎么抄啊！
+
 今天又到周五了(以后坚持每周五给大家分享一些东西)，分享一个 podcast 给大家，开阔眼界。
 
 Teahour.fm 由 Terry Tai，Dingding Ye, Daniel Lv, Kevin Wang 和 Xdite Cheng 主持，会专注程序员感兴趣的话题，包括 Web 设计和开发，移动应用设计和开发，创业以及一切 Geek 的话题。
