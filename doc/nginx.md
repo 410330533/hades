@@ -1,5 +1,5 @@
-# nginx
-```conf
+# nginx install
+```shell
 Ubuntu:
 Version	Codename
 10.04	lucid
@@ -16,16 +16,21 @@ deb-src http://nginx.org/packages/ubuntu/ codename nginx
 
 apt-get update
 apt-get install nginx
+```
 
-php
+# configuration
+- php
+```conf
 location / {
     include fastcgi_params;
     fastcgi_param SCRIPT_FILENAME $fastcgi_script_name;
     fastcgi_param PATH_INFO $fastcgi_script_name;
     fastcgi_pass 127.0.0.1:9002;
 }
+```
 
-python
+- python
+```conf
 location / {
     include uwsgi_params;
     uwsgi_pass 127.0.0.1:9090;
