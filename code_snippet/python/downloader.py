@@ -121,6 +121,19 @@ def get_verycd_music_address(topic_id):
     for item in download_file_map:
         print('%s %s' % (item.encode('utf-8', 'ignore'), download_file_map[item]))
 
+# 获取 yyets 下载地址
+def getYyetsDownloadUrlsByResourceId(resourceId, format='720P'):
+    url = 'http://www.yyets.com/resource/%d' % (resourceId)
+    f = urllib2.urlopen(url)
+    soup = BeautifulSoup(''.join(f))
+    for ul in soup.findAll('ul', {'class': 'resod_list'}):
+        print "season %s" % ul.get('season')
+        for li in ul.findAll('li'):
+            if format == li.get('format'):
+                for a in li.findAll('a'):
+                    if u'迅雷' == a.text:
+                        print a.get('thunderhref')
+
 if __name__ == '__main__':
     # tid = 160401
     # tid = sys.argv[1].strip('/')
@@ -131,5 +144,8 @@ if __name__ == '__main__':
     # download_5542_pic(url)
     
     # topic_id = '139356/'
-    topic_id = sys.argv[1].strip('/')
-    get_verycd_music_address(topic_id)
+    #topic_id = sys.argv[1].strip('/')
+    #get_verycd_music_address(topic_id)
+
+    resourceId = int(sys.argv[1])
+    getYyetsDownloadUrlsByResourceId(resourceId)
