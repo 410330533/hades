@@ -122,7 +122,7 @@ def get_verycd_music_address(topic_id):
         print('%s %s' % (item.encode('utf-8', 'ignore'), download_file_map[item]))
 
 # 获取 yyets 下载地址
-def getYyetsDownloadUrlsByResourceId(resourceId, format='720P'):
+def getYyetsDownloadUrlsByResourceId(resourceId, format='HR-HDTV'):
     url = 'http://www.yyets.com/resource/%d' % (resourceId)
     f = urllib2.urlopen(url)
     soup = BeautifulSoup(''.join(f))
