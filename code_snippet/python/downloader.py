@@ -56,18 +56,18 @@ def download_5542_pic(url):
     # 获取总页数
     f = unicode(urllib2.urlopen(url, None, timeout).read(), 'gbk', 'ignore').encode('utf-8', 'ignore')
     soup = BeautifulSoup(''.join(f))
-    total_page = int(soup.find('ul', {'class': 'image'}).find('strong').string)
+    totalPage = int(soup.find('ul', {'class': 'image'}).find('strong').string)
     # 获取 title
     title = soup.find('div', {'class': 'title'}).find('h2').string
     open('/'.join(url_array) + '/' + title, 'w').write(url)
     
-    cur_page = 1
-    while (cur_page <= total_page):
+    curPage = 1
+    while (curPage <= totalPage):
         # 下载每页n张图
         i = 0;
         for item in soup.find('ul', {'class': 'file'}).findAll('img'):
             i += 1
-            file_name = '/'.join(url_array) + '/' +  str(cur_page) + '_' + str(i) + '.jpg'
+            file_name = '/'.join(url_array) + '/' +  str(curPage) + '_' + str(i) + '.jpg'
             if (os.path.exists(file_name)): continue
             
             try:
@@ -75,10 +75,10 @@ def download_5542_pic(url):
             except Exception, e:
                 print('exception occur')
             print('    download file: ' + file_name + ', done.')
-        print('total_page ' + str(total_page) + ', downloaded page ' + str(cur_page) + ', done.')
+        print('totalPage ' + str(totalPage) + ', downloaded page ' + str(curPage) + ', done.')
         
-        cur_page += 1
-        f = unicode(urllib2.urlopen(url.replace('.html', '_' + str(cur_page) + '.html'), None, timeout).read(), 'gbk', 'ignore').encode('utf-8', 'ignore')
+        curPage += 1
+        f = unicode(urllib2.urlopen(url.replace('.html', '_' + str(curPage) + '.html'), None, timeout).read(), 'gbk', 'ignore').encode('utf-8', 'ignore')
         soup = BeautifulSoup(''.join(f))
 
 # 获取 verycd 音乐下载地址
@@ -139,13 +139,13 @@ if __name__ == '__main__':
     # tid = sys.argv[1].strip('/')
     # download_tiekuzip_by_tid(tid)
     
-    # url = 'http://www.ppmsg.com/siwameitui/201206/18216.html'
-    # url = sys.argv[1];
-    # download_5542_pic(url)
+    #url = 'http://www.ppmsg.com/siwameitui/201410/23776.html'
+    url = sys.argv[1];
+    download_5542_pic(url)
     
     # topic_id = '139356/'
     #topic_id = sys.argv[1].strip('/')
     #get_verycd_music_address(topic_id)
 
-    resourceId = int(sys.argv[1])
-    getYyetsDownloadUrlsByResourceId(resourceId)
+    #resourceId = int(sys.argv[1])
+    #getYyetsDownloadUrlsByResourceId(resourceId)
