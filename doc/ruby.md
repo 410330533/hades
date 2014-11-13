@@ -1,4 +1,4 @@
-# ROR 环境配置, 参考 http://ruby-china.org/wiki/install_ruby_guide
+# ror 环境配置
 ```shell
 0. 安装系统需要的包
 sudo apt-get install -y build-essential openssl libssl-dev curl libreadline6 libreadline6-dev git zlib1g zlib1g-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysqlclien-dev
@@ -17,8 +17,11 @@ sed -i .bak 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_pa
 for Linux
 sed -i 's!ftp.ruby-lang.org/pub/ruby!ruby.taobao.org/mirrors/ruby!' $rvm_path/config/db
 rvm autolibs enable
-rvm install 2.1.1
-rvm 2.1.1 --default
+rvm list
+rvm list known
+rvm install 2.1.4
+rvm use 2.1.4 --default
+rvm use system
 ruby -v
 # Removes the ruby, source files and optional gemsets / archives
 rvm remove ruby-2.0.0-p247
@@ -35,6 +38,9 @@ gem install bundler rails
 bundle -v
 rails -v
 ```
+## link
+- [如何快速正确的安装 Ruby, Rails 运行环境](https://ruby-china.org/wiki/install_ruby_guide)
+- [rvm](http://rvm.io/)
 
 # rack https://github.com/rack/rack
 ```shell
