@@ -13,10 +13,15 @@ apt-get install php5-xdebug
 
 编译安装 php
 sudo apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev
-./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-pear --with-curl --with-mcrypt --with-gd --with-readline --with-openssl --enable-intl --enable-soap --enable-zip --enable-pcntl --enable-fpm --enable-mbstring 
+./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-pear --with-curl --with-mcrypt --with-gd --with-readline --with-openssl --enable-intl --enable-soap --enable-zip --enable-pcntl --enable-fpm --enable-mbstring --enable-opcache
 make
 sudo make install
 ```
+
+# link
+- [Alternative PHP Cache](http://php.net/manual/en/book.apc.php)
+- [How To Install Linux, nginx, MySQL, PHP (LEMP) stack on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-14-04)
+- [How to Install Laravel with an Nginx Web Server on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-laravel-with-an-nginx-web-server-on-ubuntu-14-04)
 
 # phpunit
 ```shell

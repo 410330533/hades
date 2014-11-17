@@ -41,6 +41,7 @@ rails -v
 ## link
 - [如何快速正确的安装 Ruby, Rails 运行环境](https://ruby-china.org/wiki/install_ruby_guide)
 - [rvm](http://rvm.io/)
+- [How To Install Ruby on Rails on Ubuntu 14.04 using RVM](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm)
 
 # rack https://github.com/rack/rack
 ```shell

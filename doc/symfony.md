@@ -1,6 +1,6 @@
 # symfony
 ```shell
-composer create-project symfony/framework-standard-edition symfony_test ~2.4
+composer create-project symfony/framework-standard-edition blog
 php app/check.php
 
 php app/console --shell
