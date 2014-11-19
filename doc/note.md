@@ -14,8 +14,6 @@ find ./ -perm /+x -type f # 搜索当前目录下所有的可执行文件
 dos2unix [-kn] file [newfile]
 unix2dos [-kn] file [newfile]
 
-iconv -f 原编码 -t 新编码 filename [-o newfile]
-
 type -a ls
 echo $PATH | cut -d ':' -f 1,3
 export | cut -c 12-
