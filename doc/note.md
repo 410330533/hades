@@ -1,3 +1,7 @@
+# link
+
+- [如何使用 SHA256 校验下载的文件](http://linux.cn/article-4264-1.html)
+
 ```shell
 mount -o username=${username},password=${password} //${ip}/e$ /home/win
 unmount /home/win
