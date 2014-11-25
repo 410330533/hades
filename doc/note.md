@@ -32,7 +32,6 @@ paste /etc/passwd /etc/shadow
 expand -t 4 filename
 split -b 300k /etc/termcap termcap
 split -l 10 /etc/termcap termcap
-tar -cvf - /home | tar -xvf -
 grep -n 'go\{2,5\}g' regular_express.txt
 nl /etc/passwd | sed -e '2,5d'
 nl /etc/passwd | sed -e '2a drink tea'
@@ -61,11 +60,6 @@ dd if=/dev/sda of=/dev/sdb
 
 dump -0u -f /backupdata/home.dump /home
 dump -1u -f /backupdata/home.dump.1 /home
-tar --exclude /proc --exclude /mnt --exclude /tmp --exclude /backupdata -jcvp -f /backupdata/system.tar.bz2 /
-tar -N '2012-02-06' -jpcv -f /backupdata/home.tar.bz2 /home
-tar -jpcvf mysql.`date +%Y-%m-%d`.tar.bz2 /var/lib/mysql
-tar -tf log.tar
-tar -xf log.tar -C log_dir
 rsync -av /home /backupdata
 rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
 echo "Welcome to linuxde.net" | openssl enc -base64
