@@ -14,6 +14,7 @@ apt-get remove packagename
     卸载一个已安装的软件包(保留配置文档)
 apt-get --purge remove packagename
     卸载一个已安装的软件包(删除配置文档)
+apt-get purge packagename
 apt-get clean
     这个命令会把安装的软件的备份也删除，但是这样不会影响软件的使用
 apt-get autoclean
