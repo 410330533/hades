@@ -13,7 +13,7 @@ apt-get install php5-xdebug
 
 编译安装 php
 sudo apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev
-./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-pear --with-curl --with-mcrypt --with-gd --with-readline --with-openssl --enable-intl --enable-soap --enable-zip --enable-pcntl --enable-fpm --enable-mbstring --enable-opcache
+./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-pear --with-curl --with-mcrypt --with-gd --with-readline --with-openssl --enable-intl --enable-soap --enable-zip --enable-pcntl --enable-fpm --enable-mbstring --enable-opcache --enable-bcmath --enable-sockets
 make
 sudo make install
 ```
