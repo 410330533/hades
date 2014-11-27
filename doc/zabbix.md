@@ -1,8 +1,6 @@
-# zabbix
+# server install
 
-## server install
-
-### install
+## install
 ```shell
 apt-get install dbconfig-common
 apt-get install zabbix-agent
@@ -16,13 +14,13 @@ make
 make install
 ```
 
-### create user
+## create user
 ```shell
 groupadd zabbix
 useradd -g zabbix zabbix
 ```
 
-### initialize database
+## initialize database
 ```shell
 create database zabbix default charset utf8;
 mysql -hlocalhost -umahone -p zabbix < database/mysql/schema.sql
@@ -30,7 +28,7 @@ mysql -hlocalhost -umahone -p zabbix < database/mysql/images.sql
 mysql -hlocalhost -umahone -p zabbix < database/mysql/data.sql
 ```
 
-### config zabbix
+## config zabbix
 ```shell
 vi /usr/local/etc/zabbix_server.conf
 DBName=zabbix
@@ -39,21 +37,21 @@ DBPassword=xxoo
 DBPort=3306
 ```
 
-### start
+## start
 ```shell
 /usr/local/sbin/zabbix_server
 ```
 
-## client install
+# client install
 
-### install
+## install
 ```shell
 ./configure --prefix=/usr/local --enable-agent
 make
 make install
 ```
 
-### config zabbix
+## config zabbix
 ```shell
 vi /usr/local/etc/zabbix_agentd.conf
 Server=127.0.0.1
@@ -62,12 +60,12 @@ Hostname=Zabbix server
 其中Server和ServerActive都指定zabbixserver的IP地址，不同的是，前者是被动后者是主动。也就是说Server这个配置是用来允许127.0.0.1这个ip来我这取数据。而serverActive的127.0.0.1的意思是，客户端主动提交数据给他。
 ```
 
-### start
+## start
 ```shell
 /usr/local/sbin/zabbix_agentd
 ```
 
-## zabbix管理网站配置
+# zabbix管理网站配置
 ```shell
 cp -rp frontends/php/* zabbix_frontends/
 ```
