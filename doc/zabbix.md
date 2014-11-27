@@ -73,5 +73,4 @@ cp -rp frontends/php/* zabbix_frontends/
 # link
 - [zabbix download](http://www.zabbix.com/download.php)
 - [zabbix doc](http://www.zabbix.com/documentation.php)
-- [ttlsa zzabix](http://www.ttlsa.com/monitor/zabbix/)
 - [图文讲解zabbix安装全过程（5）](http://www.ttlsa.com/zabbix/install-zabbix-on-linux-5-ttlsa/)
