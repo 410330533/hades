@@ -3,18 +3,13 @@
 apt-get install git
 git config --global user.name mahone3297
 git config --global user.email 329730566@qq.com
-git config --global core.autocrlf true
 git config --global core.editor vim
-git config --global core.quotepath false
-git config --global core.fileMode false
-git config core.logallrefupdates
 git config --global color.ui true
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.br branch
 git config --global alias.rb rebase
-git config --global push.default matching/simple
 git config --unset --global user.name
 git add -u 将本地有改动的文件标记到暂存区
 git add -i
