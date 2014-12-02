@@ -3,8 +3,8 @@
 apt-get install pptpd
 
 vi /etc/pptpd.conf
-localip 10.0.0.1
-remoteip 10.0.0.100-200
+localip 192.168.0.1
+remoteip 192.168.0.234-238
 
 vi /etc/ppp/chap-secrets
 username1 pptpd password1 *
@@ -18,6 +18,9 @@ service pptpd restart
 vi /etc/sysctl.conf
 net.ipv4.ip_forward = 1
 sysctl -p
+
+注意：由于阿里云是双网卡，内网eth0，外网eth1，所以这块特别容易误写为eth0，这也是为什么很多杂乱的教程无法配置成功的原因之一
+iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -j MASQUERADE
 ```
 
 # link
