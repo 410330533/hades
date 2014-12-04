@@ -1,3 +1,17 @@
+# vimrc
+```conf
+syntax enable
+set autoindent
+set nu
+set hlsearch
+set autoindent
+set smartindent
+
+set expandtab
+set shiftwidth=4
+set tabstop=4
+```
+
 # command
 ```shell
 缓冲区管理
@@ -17,10 +31,6 @@ ctrl-i
 替换
 %s/search/replace/g
 ```
-
-# plugin
-- [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
-- [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
 
 # [Vundle](https://github.com/gmarik/Vundle.vim)
 ```shell
@@ -73,16 +83,10 @@ filetype plugin indent on    " required
 Launch vim and run :PluginInstall
 ```
 
-# vimrc
-```conf
-syntax enable
-set autoindent
-set nu
-set hlsearch
-set autoindent
-set smartindent
+# plugin
+- [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 
-set expandtab
-set shiftwidth=4
-set tabstop=4
+- [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
+```shell
+:Ack 'class SalesOrder\b' src/Uco/OmsBundle/
 ```
