@@ -13,7 +13,7 @@ wget https://distfiles.macports.org/MacPorts/MacPorts-2.2.1.tar.bz2
 tar -jxvf MacPorts-2.2.1.tar.bz2
 cd MacPorts-2.2.1
 ./configure && make && sudo make install
-port -v selfupdate
+port selfupdate
 port upgrade outdated
 
 vi ~/.profile
