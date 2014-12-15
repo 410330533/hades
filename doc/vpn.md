@@ -25,3 +25,4 @@ iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -j MASQUERADE
 
 # link
 - [How To Setup Your Own VPN With PPTP](https://www.digitalocean.com/community/tutorials/how-to-setup-your-own-vpn-with-pptp)
+- [VPS 教程系列：Ubuntu 14.04 安装 OpenVPN Static Key 科学上网](http://ttt.tt/160/)
