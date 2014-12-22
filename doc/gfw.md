@@ -31,9 +31,13 @@ Configure Multiple Users
 
 server
 ssserver -c /etc/shadowsocks.json
+ssserver -c /etc/shadowsocks.json -d start
+ssserver -c /etc/shadowsocks.json -d stop
 
 local
 sslocal -c /etc/shadowsocks.json
+sslocal -c /etc/shadowsocks.json -d start
+sslocal -c /etc/shadowsocks.json -d stop
 ```
 
 # link
