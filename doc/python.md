@@ -21,3 +21,26 @@ easy_install pysox
 easy_install web.py
 ```
 
+# pip
+```shell
+pip list
+pip list --outdated
+
+pip install SomePackage
+pip install SomePackage==1.0.4
+pip install SomePackage>=1.0.4
+pip install shadowsocks --upgrade
+
+pip uninstall simplejson
+
+pip freeze
+pip freeze > requirements.txt
+pip install -r requirements.txt
+
+pip show sphinx
+
+pip search peppercorn
+
+pip wheel --wheel-dir=/tmp/wheelhouse SomePackage
+pip install --no-index --find-links=/tmp/wheelhouse SomePackage
+```
