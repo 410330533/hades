@@ -26,7 +26,15 @@ port install nginx
 port uninstall mysql55 @5.5.33_1
 port installed
 port load nginx
+port unload nginx
 port select --set python python27
+```
+
+# launchctl
+Launchd is Apple's open-source replacement for cron, xinetd, mach_init, and init. You manage launchd services with the launchctl utility.
+```shell
+launchctl load /Library/LaunchDaemons/org.macports.nginx.plist
+launchctl unload /Library/LaunchDaemons/org.macports.nginx.plist
 ```
 
 # limit
