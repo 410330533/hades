@@ -19,8 +19,12 @@ vi /etc/sysctl.conf
 net.ipv4.ip_forward = 1
 sysctl -p
 
+iptables-save > iptables.bak
+iptables-restore < iptables.bak
+
 注意：由于阿里云是双网卡，内网eth0，外网eth1，所以这块特别容易误写为eth0，这也是为什么很多杂乱的教程无法配置成功的原因之一
 iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -j MASQUERADE
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ```
 
 # link
