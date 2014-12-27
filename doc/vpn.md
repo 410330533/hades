@@ -3,8 +3,10 @@
 apt-get install pptpd
 
 vi /etc/pptpd.conf
-localip 192.168.0.1
-remoteip 192.168.0.234-238
+localip是VPN连接成功后，VPN server（就是你启动pptpd服务）的地址
+remoteip是指可分配给VPN client的地址或地址段
+localip 192.168.11.1
+remoteip 192.168.11.2-100
 
 vi /etc/ppp/chap-secrets
 username1 pptpd password1 *
@@ -23,8 +25,7 @@ iptables-save > iptables.bak
 iptables-restore < iptables.bak
 
 注意：由于阿里云是双网卡，内网eth0，外网eth1，所以这块特别容易误写为eth0，这也是为什么很多杂乱的教程无法配置成功的原因之一
-iptables -t nat -A POSTROUTING -s 192.168.0.0/24 -o eth1 -j MASQUERADE
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+iptables -t nat -A POSTROUTING -s 192.168.11.0/24 -o eth1 -j MASQUERADE
 ```
 
 # link
