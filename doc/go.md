@@ -5,13 +5,13 @@ apt-get update
 apt-get install golang-stable
 
 下载编译包
-https://go.googlecode.com/files/go1.1.2.linux-386.tar.gz
-https://go.googlecode.com/files/go1.1.2.linux-amd64.tar.gz
-https://go.googlecode.com/files/go1.1.2.src.tar.gz
-https://go.googlecode.com/files/go1.1.2.windows-386.zip
-https://go.googlecode.com/files/go1.1.2.windows-amd64.zip
+https://storage.googleapis.com/golang/go1.4.linux-386.tar.gz
+https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz
 
+tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+
+Installing to a custom location
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 ```
-
