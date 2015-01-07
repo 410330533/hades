@@ -15,3 +15,7 @@ Installing to a custom location
 export GOROOT=$HOME/go
 export PATH=$PATH:$GOROOT/bin
 ```
+
+# link
+- [Getting Started](http://golang.org/doc/install)
+- [Go Slices: usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
