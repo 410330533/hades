@@ -18,4 +18,5 @@ export PATH=$PATH:$GOROOT/bin
 
 # link
 - [Getting Started](http://golang.org/doc/install)
+- [How to Write Go Code](http://golang.org/doc/code.html)
 - [Go Slices: usage and internals](http://blog.golang.org/go-slices-usage-and-internals)
