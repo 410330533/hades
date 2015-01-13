@@ -84,8 +84,12 @@ Launch vim and run :PluginInstall
 ```
 
 # plugin
+- [gmarik/Vundle.vim](https://github.com/gmarik/Vundle.vim)
+- [fatih/vim-go](https://github.com/fatih/vim-go)
+```conf
+Plugin 'fatih/vim-go'
+```
 - [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
-
 - [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
 ```shell
 :Ack 'class SalesOrder\b' src/Uco/OmsBundle/
