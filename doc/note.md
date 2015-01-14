@@ -151,12 +151,6 @@ apt-get install wavpack
 shnsplit -f CDImage.cue -i ape -o "cust ext=mp3 lame -b 320 - %f" CDImage.ape
 ```
 
-# siege
-```shell
-apt-get install siege
-siege -c100 -r10 -b http://www.qq.com
-```
-
 # rabbitMQ
 ```shell
 http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb

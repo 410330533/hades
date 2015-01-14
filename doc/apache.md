@@ -3,6 +3,8 @@
 apt-get install apache2
 vi /etc/apache2/apache2.conf
 a2enmod a2dismod
+
+apt-get install apache2-utils
 ab -c 100 -n 10000 http://127.0.0.1:8080/
 ```
 
