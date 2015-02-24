@@ -1,8 +1,22 @@
-# symfony
+# symfony install
 ```shell
+curl -LsS http://symfony.com/installer > symfony.phar
+sudo mv symfony.phar /usr/local/bin/symfony
+chmod a+x /usr/local/bin/symfony
+
 composer create-project symfony/framework-standard-edition blog
 php app/check.php
+```
 
+# symfony installer command
+```php
+symfony new blog
+symfony new blog 2.5.6
+symfony self-update
+```
+
+# symfony command
+```shell
 php app/console --shell
 php app/console assetic:dump
 php app/console assetic:dump --watch
@@ -57,6 +71,9 @@ php app/console route:match /demo/
 php app/console server:run
 php app/console server:run 127.0.0.1:8080
 php app/console server:run --docroot=htdocs/
+php app/console server:start
+php app/console server:status
+php app/console server:stop
 php app/console swiftmailer:spool:send --message-limit=10 --time-limit=10 --recover-timeout=900
 php app/console twig:lint filename
 php app/console twig:lint dirname
