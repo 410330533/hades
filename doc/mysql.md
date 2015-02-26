@@ -46,7 +46,7 @@ sudo rm -rf mysql55/
 sudo port contents <package_name>
 ```
 
-configuration
+# configuration
 ```conf
 [mysqld]
 character_set_server = utf8
@@ -61,18 +61,30 @@ slow_query_log = /var/log/mysql/mysql-slow.log
 long_query_time = 2
 ```
 
-create user
+# user management
 ```shell
-CREATE USER 'custom'@'localhost' IDENTIFIED BY 'obscure';
-GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP ON bankaccount.* TO 'custom'@'localhost';
-grant all privileges on *.* to mahone@'%' identified by 'taobao'
-SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('cleartext password');
-UPDATE mysql.user SET Password=PASSWORD('MyNewPass') WHERE User='root';
+CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'mypass';
+http://dev.mysql.com/doc/refman/5.7/en/create-user.html
+
 DROP USER 'jeffrey'@'localhost';
+http://dev.mysql.com/doc/refman/5.7/en/drop-user.html
+
+GRANT SELECT ON db2.invoice TO 'jeffrey'@'localhost';
+GRANT ALL ON db1.* TO 'jeffrey'@'localhost';
+http://dev.mysql.com/doc/refman/5.7/en/grant.html
+
+REVOKE INSERT ON *.* FROM 'jeffrey'@'localhost';
+REVOKE ALL PRIVILEGES, GRANT OPTION FROM user [, user] ...
+http://dev.mysql.com/doc/refman/5.7/en/revoke.html
+
+SET PASSWORD = PASSWORD('cleartext password');
+SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('cleartext password');
+http://dev.mysql.com/doc/refman/5.7/en/set-password.html
+
 FLUSH PRIVILEGES;
 ```
 
-replication
+# replication
 ```shell
 replication:
     GRANT REPLICATION SLAVE ON *.* TO repl@'192.168.0.%' IDENTIFIED BY 'repl';
@@ -93,7 +105,7 @@ replication:
     START SLAVE;
 ```
         
-恢复数据库管理员密码:
+# 恢复数据库管理员密码:
 ```shell
 1./etc/init.d/mysql stop
 2.mysqld_safe --skip-grant-tables --skip-networking
@@ -105,7 +117,7 @@ replication:
 6.mysql -uroot -p
 ```
 
-数据库备份, 恢复:
+# 数据库备份, 恢复:
 ```shell
 mysqldump --quick --default-character-set=utf8 5imimi > 5imimi.sql
 mysqldump --single-transaction --flush-logs --master-data=2 > database.sql
@@ -113,7 +125,7 @@ mysqldump -h<host> -u<user> -p<password> --quick --no-data 5imimi | sed 's/ AUTO
 mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.sql
 ```
 
-mysqlbinlog
+# mysqlbinlog
 ```shell
 mysqlbinlog --no-defaults mysql-bin-2.001895 | less
 mysqlbinlog mysql-bin.000048 --start-position=93758480 --stop-position=93758616 | mysql -uroot -p
