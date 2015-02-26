@@ -105,7 +105,7 @@ replication:
     START SLAVE;
 ```
         
-# 恢复数据库管理员密码:
+# 恢复数据库管理员密码
 ```shell
 1./etc/init.d/mysql stop
 2.mysqld_safe --skip-grant-tables --skip-networking
@@ -117,7 +117,7 @@ replication:
 6.mysql -uroot -p
 ```
 
-# 数据库备份, 恢复:
+# 数据库备份, 恢复
 ```shell
 mysqldump --quick --default-character-set=utf8 5imimi > 5imimi.sql
 mysqldump --single-transaction --flush-logs --master-data=2 > database.sql
