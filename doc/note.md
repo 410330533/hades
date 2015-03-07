@@ -50,8 +50,6 @@ nice -n number vi
 renice number PID
 free -m
 uname -a
-uptime
-netstat [-atunlp]
 logrotate -v /etc/logrotate.conf
 runlevel
 nmap 192.168.1.100
