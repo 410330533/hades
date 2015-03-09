@@ -28,7 +28,6 @@ last | tr '[a-z]' '[A-Z]'
 cat /etc/passwd | tr -d ':'
 join -t ':' /etc/passwd /etc/shadow
 join -t ':' -1 4 /etc/passwd -2 3 /etc/group
-paste /etc/passwd /etc/shadow
 expand -t 4 filename
 split -b 300k /etc/termcap termcap
 split -l 10 /etc/termcap termcap
@@ -48,7 +47,6 @@ pstree
 killall -9 httpd
 nice -n number vi
 renice number PID
-free -m
 uname -a
 logrotate -v /etc/logrotate.conf
 runlevel
@@ -58,8 +56,6 @@ dd if=/dev/sda of=/dev/sdb
 
 dump -0u -f /backupdata/home.dump /home
 dump -1u -f /backupdata/home.dump.1 /home
-rsync -av /home /backupdata
-rsync -av -e ssh /backup/weekly mahone@127.0.0.1:/home/backup
 echo "Welcome to linuxde.net" | openssl enc -base64
 echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 ```
