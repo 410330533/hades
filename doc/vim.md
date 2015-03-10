@@ -30,6 +30,9 @@ ctrl-i
 
 替换
 %s/search/replace/g
+
+缩写
+:ab asap as soon as possible
 ```
 
 # [Vundle](https://github.com/gmarik/Vundle.vim)
