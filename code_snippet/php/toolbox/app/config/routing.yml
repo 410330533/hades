@@ -1,3 +1,8 @@
+unbroken_toolbox:
+    resource: "@UnbrokenToolboxBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation
