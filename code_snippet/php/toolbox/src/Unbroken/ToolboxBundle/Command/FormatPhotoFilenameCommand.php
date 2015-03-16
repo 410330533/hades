@@ -63,10 +63,10 @@ class FormatPhotoFilenameCommand extends ContainerAwareCommand
     {
         $info = exif_read_data($filename, null, true);
         // $make = str_replace(' ', '_', $info['IFD0']['Make']);
-        $model = str_replace(' ', '_', $info['IFD0']['Model']);
+        // $model = str_replace(' ', '_', $info['IFD0']['Model']);
         $datetime = (new \DateTime($info['EXIF']['DateTimeOriginal']))->format('Ymd_His');
 
-        return sprintf('%s_%s_%s%s', $datetime, $model, self::RAW, $this->getRawFilename($filename));
+        return sprintf('%s_%s%s', $datetime, self::RAW, $this->getRawFilename($filename));
     }
 
     private function getRawFilename($filename)
