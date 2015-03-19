@@ -20,6 +20,7 @@ apt-get clean
 apt-get autoclean
     定期运行这个命令来清除那些已卸载的软件包的.deb文档。通过这种方式，您能够释放大量的磁盘空间。假如您的需求十分迫切，能够使用apt-get clean以释放更多空间。这个命令会将已安装软件包裹
 的.deb文档一并删除。大多数情况下您不会再用到这些.debs文档，因此假如您为磁盘空间不足而感到焦头烂额，这个办法也许值得一试
+apt-apt autoremove
 apt-get upgrade
     更新任何已安装的软件包
 apt-get dist-upgrade
