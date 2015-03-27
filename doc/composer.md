@@ -7,8 +7,7 @@ composer init
 composer install
 composer update
 composer update --lock
-composer update vendor/package vendor/package2
-composer update vendor/*
+composer update friendsofsymfony/user-bundle
 composer require
 composer require vendor/package:2.* vendor/package2:dev-master
 composer global require fabpot/php-cs-fixer:dev-master

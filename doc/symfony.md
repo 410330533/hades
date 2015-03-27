@@ -20,6 +20,7 @@ symfony self-update
 php app/console --shell
 php app/console assetic:dump
 php app/console assetic:dump --watch
+php app/console assetic:watcht
 php app/console assets:install web
 php app/console assets:install web --symlink
 php app/console assets:install web --symlink --relative
