@@ -1,7 +1,6 @@
 # symfony install
 ```shell
-curl -LsS http://symfony.com/installer > symfony.phar
-sudo mv symfony.phar /usr/local/bin/symfony
+curl -LsS http://symfony.com/installer -o /usr/local/bin/symfony
 chmod a+x /usr/local/bin/symfony
 
 composer create-project symfony/framework-standard-edition blog
@@ -10,8 +9,9 @@ php app/check.php
 
 # symfony installer command
 ```php
-symfony new blog
-symfony new blog 2.5.6
+symfony new my_project lts
+symfony new my_project 2.3 # symfony branch
+symfony new my_project 2.5.6 # specific symfony version
 symfony self-update
 ```
 
