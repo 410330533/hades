@@ -119,10 +119,8 @@ replication:
 
 # 数据库备份, 恢复
 ```shell
-mysqldump --quick --default-character-set=utf8 5imimi > 5imimi.sql
-mysqldump --single-transaction --flush-logs --master-data=2 > database.sql
-mysqldump -h<host> -u<user> -p<password> --quick --no-data 5imimi | sed 's/ AUTO_INCREMENT=[0-9]*\b//' > 5imimi.sql
-mysql -hlocalhost -uroot -ptaobao --default-character-set=utf8 5imimi < 5imimi.sql
+mysqldump --single-transaction --quick db table | gzip > backup.sql.gz
+gunzip < backup.sql.gz | mysql
 ```
 
 # mysqlbinlog
