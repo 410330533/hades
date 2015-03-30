@@ -1,8 +1,9 @@
 # vimrc
 ```conf
-syntax enable
+syntax on
 set autoindent
 set nu
+set showmatch
 set hlsearch
 set autoindent
 set smartindent
