@@ -18,6 +18,13 @@ make
 sudo make install
 ```
 
+# install imap
+```shell
+http://php.net/manual/en/imap.installation.php
+apt-get install libc-client2007e-dev
+--with-imap --with-imap-ssl --with-kerberos
+```
+
 # link
 - [Alternative PHP Cache](http://php.net/manual/en/book.apc.php)
 - [How To Install Linux, nginx, MySQL, PHP (LEMP) stack on Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-ubuntu-14-04)
