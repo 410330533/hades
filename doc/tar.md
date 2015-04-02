@@ -2,35 +2,25 @@
 
 ## tar
 ```shell
-tar -cvf tecmint-14-09-12.tar /home/tecmint/
+tar cvf archive.tar file1 file2 file3
 
 tar -zcvf MyImages-14-09-12.tar.gz /home/MyImages
 tar -zcvf MyImages-14-09-12.tgz /home/MyImages
 
 tar -jcvf Phpfiles-org.tar.bz2 /home/php
-tar -jcvf Phpfiles-org.tar.tbz /home/php
-tar -jcvf Phpfiles-org.tar.tb2 /home/php
 ```
 
 ## untar
 ```shell
 tar -xvf public_html-14-09-12.tar
 tar -xvf public_html-14-09-12.tar -C /home/public_html/videos/
-
-tar -xvf thumbnails-14-09-12.tar.gz
-tar -xvf videos-14-09-12.tar.bz2
 ```
 
 ## untar single file
 ```shell
 tar -xvf cleanfiles.sh.tar cleanfiles.sh
-tar --extract --file=cleanfiles.sh.tar cleanfiles.sh
-
 tar -zxvf tecmintbackup.tar.gz tecmintbackup.xml
-tar --extract --file=tecmintbackup.tar.gz tecmintbackup.xml
-
 tar -jxvf Phpfiles-org.tar.bz2 home/php/index.php
-tar --extract --file=Phpfiles-org.tar.bz2 /home/php/index.php
 ```
 
 ## untar multiple files
@@ -62,6 +52,16 @@ tar -rvf MyImages-14-09-12.tar.gz xyz.txt
 tar -rvf Phpfiles-org.tar.bz2 xyz.txt
 ```
 
+## 对归档文件进行更新 ( u / --update)
+```shell
+tar uvf archive.tar newfile.c
+```
+
+## 从归档中删除文件 (--delete)
+```shell
+tar --delete -f archive.tar file1.c
+```
+
 ## verify
 ```shell
 tar -tvfW tecmint-14-09-12.tar
@@ -76,3 +76,4 @@ tar -czf - Phpfiles-org.tar.bz2 | wc -c
 
 # link
 - [18 Tar Command Examples in Linux](http://www.tecmint.com/18-tar-command-examples-in-linux/)
+- [Linux 下最为人熟知的归档/压缩工具](http://linux.cn/article-5131-1.html)
