@@ -15,7 +15,7 @@ class ReadEmailCommand extends ContainerAwareCommand
         $this
             ->setName('read_email')
             ->setDescription('read email')
-            ->addArgument('host', InputArgument::REQUIRED, 'host')
+            ->addArgument('host', InputArgument::REQUIRED, '{localhost:995/pop3/ssl/novalidate-cert}INBOX')
             ->addArgument('username', InputArgument::REQUIRED, 'username')
             ->addArgument('password', InputArgument::REQUIRED, 'password')
         ;
@@ -23,7 +23,6 @@ class ReadEmailCommand extends ContainerAwareCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // {localhost:995/pop3/ssl/novalidate-cert}INBOX
         $host = $input->getArgument('host');
         $username = $input->getArgument('username');
         $password = $input->getArgument('password');
@@ -48,9 +47,7 @@ class ReadEmailCommand extends ContainerAwareCommand
             $fetchBody = mb_convert_encoding($fetchBody, 'UTF8', 'GBK');
             $output->writeln(sprintf('fetchBody = %s', $fetchBody));
 
-            if (++$readCount > 5) {
-                break ;
-            }
+            if (++$readCount > 2) break ;
         }
 
         imap_close($conn);
