@@ -1,8 +1,10 @@
 # [Vundle](https://github.com/gmarik/Vundle.vim)
 ```shell
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
 
 vi .vimrc
+```conf
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,6 +18,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
+Plugin 'Tabular'
+Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,18 +35,15 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-Launch vim and run :PluginInstall
 ```
 
 # plugin
-- [gmarik/Vundle.vim](https://github.com/gmarik/Vundle.vim)
-- [fatih/vim-go](https://github.com/fatih/vim-go)
-```conf
-Plugin 'fatih/vim-go'
-```
-- [kien/ctrlp.vim](https://github.com/kien/ctrlp.vim)
 - [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
 ```shell
 :Ack 'class SalesOrder\b' src/Uco/OmsBundle/
+```
+- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+```conf
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 ```
