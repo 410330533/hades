@@ -30,6 +30,18 @@ composer archive vendor/package 2.0.21 --format=zip
 composer help install
 ```
 
+# composer with proxy
+```shell
+export http_proxy=<your_http_proxy:proxy_port>
+export https_proxy=<your_https_proxy:proxy_port>
+export HTTP_PROXY_REQUEST_FULLURI=0
+export HTTPS_PROXY_REQUEST_FULLURI=0
+env | grep http -i
+
+https://getcomposer.org/doc/03-cli.md#http-proxy-or-http-proxy
+https://getcomposer.org/doc/03-cli.md#http-proxy-request-fulluri
+```
+
 # satis
 ```php
 php composer.phar create-project composer/satis --stability=dev --keep-vcs
