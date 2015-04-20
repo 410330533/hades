@@ -31,6 +31,8 @@ ctrl-i
 
 替换
 %s/search/replace/g
+%s/name="\w*", //cg
+http://tanqisen.github.io/blog/2013/01/13/vim-search-replace-regex/
 
 缩写
 :ab asap as soon as possible
