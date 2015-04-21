@@ -18,6 +18,12 @@ make
 sudo make install
 ```
 
+# install zlib
+```shell
+http://php.net/manual/en/zlib.installation.php
+--with-zlib[=DIR]
+```
+
 # install imap
 ```shell
 http://php.net/manual/en/imap.installation.php
