@@ -20,6 +20,7 @@ Plugin 'mileszs/ack.vim'
 Plugin 'fatih/vim-go'
 Plugin 'Tabular'
 Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
