@@ -13,15 +13,21 @@ apt-get install php5-xdebug
 
 编译安装 php
 sudo apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev libmysqld-dev libmysqlclient-dev
-./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-pear --with-curl --with-mcrypt --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-gettext --with-readline --with-openssl --enable-intl --enable-soap --enable-zip --enable-pcntl --enable-fpm --enable-mbstring --enable-opcache --enable-bcmath --enable-sockets --enable-exif
+./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-pear --with-curl --with-mcrypt --with-gd --with-jpeg-dir --with-png-dir --with-freetype-dir --with-gettext --with-readline --with-openssl --enable-intl --enable-soap --enable-zip --enable-pcntl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets
 make
 sudo make install
 ```
 
-# install zlib
+# install bcmath
 ```shell
-http://php.net/manual/en/zlib.installation.php
---with-zlib[=DIR]
+http://php.net/manual/en/bc.installation.php
+--enable-bcmath
+```
+
+# install exif
+```shell
+http://php.net/manual/en/exif.installation.php
+--enable-exif
 ```
 
 # install imap
@@ -29,6 +35,12 @@ http://php.net/manual/en/zlib.installation.php
 http://php.net/manual/en/imap.installation.php
 apt-get install libc-client2007e-dev
 --with-imap --with-imap-ssl --with-kerberos
+```
+
+# install zlib
+```shell
+http://php.net/manual/en/zlib.installation.php
+--with-zlib[=DIR]
 ```
 
 # link
