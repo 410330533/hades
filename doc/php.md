@@ -1,15 +1,6 @@
 # php
 ```shell
 apt-get install php5
-apt-get install php5-cli
-apt-get install php5-cgi
-apt-get install php5-curl
-apt-get install php5-dev
-apt-get install php5-gd
-apt-get install php5-fpm
-apt-get install php5-memcache
-apt-get install php5-mysql
-apt-get install php5-xdebug
 
 编译安装 php
 sudo apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev libmysqld-dev libmysqlclient-dev
