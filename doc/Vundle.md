@@ -45,8 +45,15 @@ filetype plugin indent on    " required
 ```shell
 :Ack 'class SalesOrder\b' src/Uco/OmsBundle/
 ```
+
 - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
 ```conf
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+```
+
+- [Shougo/neocomplcache.vim](https://github.com/Shougo/neocomplcache.vim)
+```conf
+:NeoComplCacheEnable
+let g:neocomplcache_enable_at_startup = 1
 ```
