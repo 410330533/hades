@@ -48,8 +48,7 @@ filetype plugin indent on    " required
 
 - [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
 ```conf
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd vimenter * NERDTree
 ```
 
 - [Shougo/neocomplcache.vim](https://github.com/Shougo/neocomplcache.vim)
