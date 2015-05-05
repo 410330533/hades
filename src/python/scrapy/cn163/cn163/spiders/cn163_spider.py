@@ -1,17 +1,17 @@
-from scrapy.contrib.spiders import CrawlSpider, Rule
-from scrapy.contrib.linkextractors import LinkExtractor
+import scrapy
 from cn163.items import Cn163Item
 
-class Cn163Spider(CrawlSpider):
-    name = 'cn163'
+class Cn163Spider(scrapy.Spider):
+    name            = 'cn163'
     allowed_domains = ["cn163.net"]
-    start_urls = [
+    start_urls      = [
         "http://cn163.net/ddc1/",
     ]
-    rules = [Rule(LinkExtractor(allow=['/archives/\d+']), 'parse_content')]
 
-    def parse_content(self, response):
-        item = Cn163Item()
-        item['url'] = response.url
-        item['title'] = response.xpath('//*[@id="content"]/div[2]/div[2]/h2/text()').extract()
-        return item
+    def parse(self, response):
+        for sel in response.xpath('//*[@id="content"]/div/div/div[1]/div[2]/h2/a'):
+            item = Cn163Item()
+            item['url'] = sel.xpath('@href').extract()[0]
+            item['title'] = sel.xpath('text()').extract()[0]
+ #           print "url = %s, title = %s" % (item['url'], item['title'])
+            yield item
