@@ -8,10 +8,11 @@
 import scrapy
 
 
-class Cn163Item(scrapy.Item):
+class Cn163CrawlItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     url           = scrapy.Field()
     title         = scrapy.Field()
-    downloadLinks = scrapy.Field()
+    info          = scrapy.Field()
     content       = scrapy.Field()
+    downloadLinks = scrapy.Field()
