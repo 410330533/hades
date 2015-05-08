@@ -1,5 +1,6 @@
 # scrapy
 ```shell
+apt-get install python-pip
 apt-get install python2.7-dev
 apt-get install libxml2-dev
 apt-get install libxslt1-dev
