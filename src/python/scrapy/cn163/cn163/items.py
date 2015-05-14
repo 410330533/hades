@@ -13,6 +13,4 @@ class Cn163CrawlItem(scrapy.Item):
     # name = scrapy.Field()
     url           = scrapy.Field()
     title         = scrapy.Field()
-    info          = scrapy.Field()
-    content       = scrapy.Field()
     downloadLinks = scrapy.Field()

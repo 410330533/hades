@@ -16,7 +16,11 @@ class Cn163CrawlSpider(CrawlSpider):
     def parse_archives(self, response):
         item = Cn163CrawlItem()
         item['url']     = response.url
-        item['title']   = response.xpath('//*[@id = "content"]/div[2]/div[2]/h2/text()').extract()
-        item['info']    = response.xpath('//*[@id = "content"]/div[2]/div[2]/div[2]')
-        item['content'] = response.xpath('//*[@id = "content"]/div[2]/div[3]')
-        return item
+        item['title']   = response.xpath('//*[@id = "content"]/div[2]/div[2]/h2/text()').extract()[0]
+
+        for a in response.xpath('//*[@id="entry"]/p/a'):
+            print '==================='
+            print a.xpath('text()').extract()[0]
+            print a.xpath('@href').extract()[0]
+            print '--------------------'
+        yield item
