@@ -3,10 +3,10 @@ from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from cn163.items import Cn163CrawlItem
 
-class Cn163CrawlSpider(CrawlSpider):
-    name = 'cn163Crawl'
+class Cn163WholeSiteSpider(CrawlSpider):
+    name = 'cn163WholeSite'
     allowed_domains = ['cn163.net']
-    start_urls = ['http://cn163.net/bbcjilu/']
+    start_urls = ['http://cn163.net/ddc1/']
 
     rules = (
         Rule(LinkExtractor(allow=('/ddc1/page/\d+/'))),
