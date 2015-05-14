@@ -1,4 +1,3 @@
-import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from cn163.items import Cn163CrawlItem
@@ -23,4 +22,5 @@ class Cn163WholeSiteSpider(CrawlSpider):
             print a.xpath('text()').extract()[0]
             print a.xpath('@href').extract()[0]
             print '--------------------'
+
         yield item
