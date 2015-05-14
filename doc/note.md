@@ -23,10 +23,6 @@ expand -t 4 filename
 split -b 300k /etc/termcap termcap
 split -l 10 /etc/termcap termcap
 grep -n 'go\{2,5\}g' regular_express.txt
-nl /etc/passwd | sed -e '2,5d'
-nl /etc/passwd | sed -e '2a drink tea'
-nl /etc/passwd | sed -e '2i drink tea'
-sed -e 's/replace_str/new_str/g'
 printf '%10s %5i %8.2f \n' $ (cat printf.txt)
 finger mahone
 id mahone
