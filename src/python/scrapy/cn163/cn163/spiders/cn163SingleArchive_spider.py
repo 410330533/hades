@@ -7,12 +7,14 @@ class Cn163SingleArchiveSpider(CrawlSpider):
     name = 'cn163SingleArchive'
     allowed_domains = ['cn163.net']
     start_urls = [
-        'http://cn163.net/archives/1293/',
-        'http://cn163.net/archives/1292/',
-        'http://cn163.net/archives/17530/',
+        'http://cn163.net/archives/1714/',
+        'http://cn163.net/archives/3359/',
     ]
 
     def parse_start_url(self, response):
-        for a in response.xpath('//*[@id="entry"]/ol/li/a'):
- #           print a.xpath('text()').extract()[0]
-            print a.xpath('@href').extract()[0]
+        filename = '%s.links' % response.url.split('/')[-2]
+        with open(filename, 'wb') as f:
+            for a in response.xpath('//*[@id="entry"]//a'):
+                f.write("%s\n" % (a.xpath('@href').extract()[0].encode('utf8')))
+#           print a.xpath('text()').extract()[0]
+#           print a.xpath('@href').extract()[0]
