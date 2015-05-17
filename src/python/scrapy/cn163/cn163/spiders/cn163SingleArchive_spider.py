@@ -6,10 +6,12 @@ from scrapy.contrib.linkextractors import LinkExtractor
 class Cn163SingleArchiveSpider(CrawlSpider):
     name = 'cn163SingleArchive'
     allowed_domains = ['cn163.net']
-    start_urls = [
-        'http://cn163.net/archives/1714/',
-        'http://cn163.net/archives/3359/',
-    ]
+    start_urls = []
+
+    def __init__(self, archiveIds, *args, **kwargs):
+        super(Cn163SingleArchiveSpider, self).__init__(*args, **kwargs)
+        for archiveId in archiveIds.split(','):
+            self.start_urls.append('http://cn163.net/archives/%d/' % int(archiveId))
 
     def parse_start_url(self, response):
         filename = '%s.links' % response.url.split('/')[-2]
