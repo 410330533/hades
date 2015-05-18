@@ -52,3 +52,4 @@ location / {
 
 # link
 - [玩转 nginx 反向代理 Google](http://hack0nair.me/2014-10-25-how-to-setup-reverse-proxy-by-nginx/)
+- [Nginx 战斗准备：优化指南](https://linux.cn/article-5265-1.html)
