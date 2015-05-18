@@ -15,7 +15,7 @@ class Cn163SingleArchiveSpider(CrawlSpider):
             self.start_urls.append('http://cn163.net/archives/%d/' % int(archiveId))
 
     def parse_start_url(self, response):
-        filename = '%s.links' % response.url.split('/')[-2]
+        filename = '%s.link' % response.url.split('/')[-2]
         with open(filename, 'wb') as f:
             for a in response.xpath('//*[@id="entry"]//a'):
                 f.write("%s\n" % (a.xpath('@href').extract()[0].encode('utf8')))
