@@ -236,18 +236,6 @@ ip link set ppp0 up
 \033[?25h   显示光标
 ```
 
-# linux系统启动过程:
-```conf
-加载BIOS的硬件信息与进行自我测试，并依据设置取得第一个可启动的设备
-读取并执行第一个启动设备内MBR的boot loader(即是grub, spfdisk等程序)
-依据boot loader的设置加载kernel, kernel会开始检测硬件与加载驱动程序
-在硬件驱动成功后，kernel会主动调用init进程，而init会取得run-level信息
-init执行/etc/rc.d/rc.sysinit文件来准备软件执行的操作环境(如网络，时区等)
-init执行run-level的各个服务的启动(script方式)
-init执行/etc/rc.d/rc.local
-init执行终端机模拟程序mingetty来启动login程序，最后就等待用户登录
-```
-
 # sublime
 ```shell
 install [package control](https://sublime.wbond.net/installation)
