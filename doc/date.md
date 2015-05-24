@@ -12,8 +12,3 @@ date --set='-3 months +2 weeks -5 minutes'
 ```shell
 dpkg-reconfigure tzdata
 ```
-
-# ntp
-```shell
-apt-get install ntp
-```
