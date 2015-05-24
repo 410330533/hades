@@ -6,9 +6,6 @@ sudo apt-get install -y build-essential openssl libssl-dev curl libreadline6 lib
 1. 安装 RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
-载入 RVM 环境（新开 Termal 就不用这么做了，会自动重新载入的）
-source ~/.rvm/scripts/rvm
-rvm -v
 rvm get stable
 
 2. 用 RVM 安装 Ruby 环境
@@ -23,21 +20,15 @@ rvm list known
 rvm install 2.1.4
 rvm use 2.1.4 --default
 rvm use system
-ruby -v
-# Removes the ruby, source files and optional gemsets / archives
 rvm remove ruby-2.0.0-p247
-# Just removes the ruby - leaves everything else
 rvm uninstall ruby-2.0.0-p247
 
 3. 更换 gem 源
 gem source -r https://rubygems.org/
 gem source -a http://ruby.taobao.org
-gem -v
 
 4. 安装 Rails 环境
 gem install bundler rails
-bundle -v
-rails -v
 
 * proxy
 export http_proxy="http://example.proxy_name.com:80"
