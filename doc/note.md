@@ -77,18 +77,6 @@ gcc sin.c -lm -L /usr/lib -I /usr/include
 gcc test.c -o xxx -std=c99;
 ```
 
-# user
-```shell
-useradd mahone -m -s /bin/bash
-passwd mahone
-usermod -s /bin/bash -l oldname newname
-userdel -r mahone
-groupadd mahone
-groupmod -g 1001 -n new old
-groupdel mahone
-gpasswd groupname
-```
-
 # net
 ```conf
 /etc/network/interfaces
