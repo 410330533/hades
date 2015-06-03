@@ -1,6 +1,8 @@
-# install
+# command
 ```shell
 apt-get install openssh-server
+
+ssh user@remote_vps -L 3306:127.0.0.1:3306 -N # 在本地的3306端口和远程VPS的3306端口之间将会建立一个SSH隧道
 ```
 
 # A无需密码访问B
