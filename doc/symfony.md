@@ -18,15 +18,21 @@ symfony self-update
 # symfony command
 ```shell
 php app/console --shell
+
 php app/console assetic:dump
 php app/console assetic:dump --watch
 php app/console assetic:watcht
+
 php app/console assets:install web
 php app/console assets:install web --symlink
 php app/console assets:install web --symlink --relative
+
 php app/console cache:clear
+
 php app/console config:dump-reference FrameworkBundle
+
 php app/console container:debug
+
 php app/console doctrine:database:create
 php app/console doctrine:database:drop
 php app/console doctrine:ensure-production-settings
@@ -54,9 +60,12 @@ php app/console doctrine:query:sql "SELECT * from user"
 php app/console doctrine:schema:update --dump-sql
 php app/console doctrine:schema:update --force
 php app/console doctrine:schema:update --em=default
+
 php app/console generate:bundle --namespace=Acme/BlogBundle
 php app/console generate:controller
+
 php app/console init:acl
+
 php app/console propel:database:create
 php app/console propel:model:build
 php app/console propel:sql:build
@@ -65,17 +74,21 @@ php app/console propel:build --insert-sql
 php app/console propel:migration:generate-diff
 php app/console propel:migration:migrate
 php app/console propel:model:build
+
 php app/console route:debug
 php app/console route:debug _demo
 php app/console router:dump-apache
 php app/console route:match /demo/
+
 php app/console server:run
 php app/console server:run 127.0.0.1:8080
 php app/console server:run --docroot=htdocs/
 php app/console server:start
 php app/console server:status
 php app/console server:stop
+
 php app/console swiftmailer:spool:send --message-limit=10 --time-limit=10 --recover-timeout=900
+
 php app/console twig:lint filename
 php app/console twig:lint dirname
 php app/console twig:lint @AcmeMyBundle
