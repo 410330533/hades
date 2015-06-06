@@ -1,10 +1,10 @@
-#!/usr/bin/python
 # -*- coding: utf8 -*-
 
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from cn163.items import Cn163CrawlItem
 
+# scrapy crawl cn163WholeSite
 class Cn163WholeSiteSpider(CrawlSpider):
     name = 'cn163WholeSite'
     allowed_domains = ['cn163.net']

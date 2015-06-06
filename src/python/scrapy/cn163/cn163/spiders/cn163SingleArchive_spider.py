@@ -1,10 +1,8 @@
-#!/usr/bin/python
 # -*- coding: utf8 -*-
 
 import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
-#from cn163.items import Cn163Item
 
 # scrapy crawl cn163SingleArchive -a archiveIds=17663
 class Cn163SingleArchiveSpider(CrawlSpider):
