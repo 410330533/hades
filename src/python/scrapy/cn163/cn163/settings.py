@@ -15,3 +15,6 @@ NEWSPIDER_MODULE = 'cn163.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'cn163 (+http://www.yourdomain.com)'
+# DOWNLOAD_DELAY = 2
+# RANDOMIZE_DOWNLOAD_DELAY = True
+USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'

@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf8 -*-
+
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
 from cn163.items import Cn163CrawlItem
@@ -13,14 +16,15 @@ class Cn163WholeSiteSpider(CrawlSpider):
     )
 
     def parse_archives(self, response):
+        title = response.css('#content > div.entry_box_s > div.entry_title_box > h2').xpath('text()').extract()[0].encode('utf8')
+        title = title.replace('/', '').replace(' ', '').replace(':', '').replace('：', '')
+        filename = '%s_%s.link' % (title, response.url.split('/')[-2])
+        with open(filename, 'w') as f:
+            for a in response.xpath('//*[@id="entry"]//a'):
+                f.write("%s\n" % (a.xpath('@href').extract()[0].encode('utf8')))
+
         item = Cn163CrawlItem()
-        item['url']     = response.url
-        item['title']   = response.xpath('//*[@id = "content"]/div[2]/div[2]/h2/text()').extract()[0]
-
-        for a in response.xpath('//*[@id="entry"]/p/a'):
-            print '==================='
-            print a.xpath('text()').extract()[0]
-            print a.xpath('@href').extract()[0]
-            print '--------------------'
-
+        item['url']   = response.url
+        item['title'] = title
+        item['downloadLinks'] = response.xpath('//*[@id="entry"]//a/@href').extract()
         yield item

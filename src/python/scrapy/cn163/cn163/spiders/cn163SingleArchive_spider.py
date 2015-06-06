@@ -1,3 +1,6 @@
+#!/usr/bin/python
+# -*- coding: utf8 -*-
+
 import scrapy
 from scrapy.contrib.spiders import CrawlSpider, Rule
 from scrapy.contrib.linkextractors import LinkExtractor
@@ -15,9 +18,9 @@ class Cn163SingleArchiveSpider(CrawlSpider):
             self.start_urls.append('http://cn163.net/archives/%d/' % int(archiveId))
 
     def parse_start_url(self, response):
-        filename = '%s.link' % response.url.split('/')[-2]
-        with open(filename, 'wb') as f:
+        title = response.css('#content > div.entry_box_s > div.entry_title_box > h2').xpath('text()').extract()[0].encode('utf8')
+        title = title.replace('/', '').replace(' ', '').replace(':', '').replace('：', '')
+        filename = '%s_%s.link' % (title, response.url.split('/')[-2])
+        with open(filename, 'w') as f:
             for a in response.xpath('//*[@id="entry"]//a'):
                 f.write("%s\n" % (a.xpath('@href').extract()[0].encode('utf8')))
-#           print a.xpath('text()').extract()[0]
-#           print a.xpath('@href').extract()[0]

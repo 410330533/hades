@@ -1,11 +1,12 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 from scrapy import log
 from twisted.enterprise import adbapi
 from scrapy.http import Request
 
 import MySQLdb
 import MySQLdb.cursors
-
 
 class DoubanmoivePipeline(object):
   def __init__(self):
@@ -17,6 +18,7 @@ class DoubanmoivePipeline(object):
         charset = 'utf8',
         use_unicode = False
     )
+
   def process_item(self, item, spider):
     query = self.dbpool.runInteraction(self._conditional_insert, item)
     query.addErrback(self.handle_error)
