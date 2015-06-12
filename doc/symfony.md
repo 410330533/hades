@@ -104,7 +104,7 @@ port select --set python python27
 port select --set sphinx py27-sphinx
 
 easy_install sphinx
-pip install Sphinx
+pip install sphinx
 
 pip install git+https://github.com/fabpot/sphinx-php.git
 
