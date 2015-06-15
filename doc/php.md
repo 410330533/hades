@@ -4,7 +4,7 @@ apt-get install php5
 
 编译安装 php
 apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev libmysqld-dev libmysqlclient-dev
-./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets
+./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets --enable-zip --enable-pcntl
 make
 make install
 ```
