@@ -104,7 +104,7 @@ git remote set-url origin git@github.com:mahone3297/hades.git
 git remote set-url --push origin git@github.com:mahone3297/hades.git
 git remote rename origin newOrigin
 git remote update
-git remote rm origin
+git remote remove origin
 
 git revert 94af4d747e6d9856d6e827353c2072167b971d2d
 
