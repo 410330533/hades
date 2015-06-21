@@ -5,14 +5,24 @@ apt-get install tmux
 port install tmux
 
 tmux
-tmux new -s mySession
-tmux attach-session -t 1
-tmux attach-session -t mySession
+tmux new
+tmux new -s sessionName
+
+tmux a
+tmux a -t sessionName
+tmux attach-session -t sessionName
+
+tmux detach
+Ctrl+b d
+
 tmux ls
 tmux list-session
-tmux rename-session [-t target-session] new-name
-tmux kill-session -t 1
-tmux kill-session -t mySession
+Ctrl+b s
+
+tmux rename-session [-t target-session] sessionName
+Ctrl+b $
+
+tmux kill-session -t sessionName
 ```
 
 ## help
