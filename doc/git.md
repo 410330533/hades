@@ -80,7 +80,8 @@ git init --bare /path/to/repo.git
 
 git ls-files --stage
 
-git log -p
+git log --author="username"
+git log -p <file>
 git log --stat
 git log --pretty=oneline
 git log --graph
@@ -91,6 +92,7 @@ git push [<remote-repos> [<refspec>]]
 git push origin mytag
 git push origin refs/tags/*
 git push origin :mytag
+git push --tags
 
 git pull origin refs/tags/mytag:refs/tags/mytag 远程tag有更新，需显示指定拉回
 git pull [<remote-repos> [<refspec>]]
