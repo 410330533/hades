@@ -3,7 +3,7 @@
 apt-get install python-pip
 pip install shadowsocks
 
-vi /etc/shadowsocks.json
+vi ~/shadowsocks.json
 {
     "server":"服务器 IP 地址",
     "server_port":8388,
@@ -30,12 +30,12 @@ Configure Multiple Users
 }
 
 server
-ssserver -c /etc/shadowsocks.json
-ssserver -c /etc/shadowsocks.json -d start
-ssserver -c /etc/shadowsocks.json -d stop
+ssserver -c ~/shadowsocks.json
+ssserver -c ~/shadowsocks.json -d start
+ssserver -c ~/shadowsocks.json -d stop
 
 local
-sslocal -c /etc/shadowsocks.json
-sslocal -c /etc/shadowsocks.json -d start
-sslocal -c /etc/shadowsocks.json -d stop
+sslocal -c ~/shadowsocks.json
+sslocal -c ~/shadowsocks.json -d start
+sslocal -c ~/shadowsocks.json -d stop
 ```
