@@ -41,8 +41,6 @@ nmap 192.168.1.100
 iostat -d 2 3
 dd if=/dev/sda of=/dev/sdb
 
-dump -0u -f /backupdata/home.dump /home
-dump -1u -f /backupdata/home.dump.1 /home
 echo "Welcome to linuxde.net" | openssl enc -base64
 echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 ```
@@ -51,22 +49,6 @@ echo "V2VsY29tZSB0byBsaW51eGRlLm5ldAo=" | openssl enc -base64 -d
 ```shell
 update-grub // 更新 grub 信息
 grub-install /dev/sda
-```
-
-# linux kernel
-```shell
-make mrproper
-make clean
-make menuconfig
-make oldconfig
-make xconfig
-make gconfig
-make config
-make vmlinux 未经压缩的内核
-make modules 仅内核模块
-make bzImage 经过压缩的内核
-make all 进行上述的三个操作
-make modules_install
 ```
 
 # gcc
@@ -88,14 +70,6 @@ address 192.168.1.102
 netmask 255.255.255.0
 gateway 192.168.1.1
 invoke-rc.d networking restart
-```
-
-# cowsay, fortunes
-```shell
-apt-get install cowsay
-apt-get install fortunes
-apt-get install fortune-zh
-apt-get install fortunes-ubuntu-server
 ```
 
 # expect
@@ -147,11 +121,6 @@ spawn-fcgi -a 127.0.0.1 -p 9002 -F 5 -d /home/mahone/git/test -f /home/mahone/gi
 ```shell
 apt-get install memcached
 memcached -m 64 -p 11211 -u memcache -l 127.0.0.1
-```
-
-# iptraf
-```shell
-apt-get install iptraf
 ```
 
 # iotop
