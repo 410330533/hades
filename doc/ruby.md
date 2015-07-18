@@ -1,12 +1,15 @@
 # ror 环境配置
 ```shell
 0. 安装系统需要的包
-sudo apt-get install -y build-essential openssl libssl-dev curl libreadline6 libreadline6-dev git zlib1g zlib1g-dev libyaml-dev libxml2-dev libxslt-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysqlclien-dev
+sudo apt-get install -y build-essential openssl libssl-dev curl libreadline6 libreadline6-dev git zlib1g zlib1g-dev libyaml-dev libxml2-dev libxslt1-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysqlclient-dev
 
 1. 安装 RVM
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
 rvm get stable
+
+export http_proxy="http://example.proxy_name.com:80"
+rvm install X --proxy $domain_or_ip:$port
 
 2. 用 RVM 安装 Ruby 环境
 替换 Ruby 下载地址到国内淘宝镜像服务器
@@ -26,15 +29,14 @@ rvm uninstall ruby-2.0.0-p247
 3. 更换 gem 源
 gem source -r https://rubygems.org/
 gem source -a http://ruby.taobao.org
+gem source -l
 
 4. 安装 Rails 环境
 gem install bundler rails
-
-* proxy
-export http_proxy="http://example.proxy_name.com:80"
-rvm install X --proxy $domain_or_ip:$port
+gem install --http-proxy http://127.0.0.1:3128 rails
 ```
-## link
+
+# link
 - [如何快速正确的安装 Ruby, Rails 运行环境](https://ruby-china.org/wiki/install_ruby_guide)
 - [rvm](http://rvm.io/)
 - [How To Install Ruby on Rails on Ubuntu 14.04 using RVM](https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-on-ubuntu-14-04-using-rvm)
