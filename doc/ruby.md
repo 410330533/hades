@@ -1,4 +1,4 @@
-# ror 环境配置
+# ror env
 ```shell
 0. 安装系统需要的包
 sudo apt-get install -y build-essential openssl libssl-dev curl libreadline6 libreadline6-dev git zlib1g zlib1g-dev libyaml-dev libxml2-dev libxslt1-dev autoconf automake libtool imagemagick libmagickwand-dev libpcre3-dev libsqlite3-dev libmysqlclient-dev
@@ -71,3 +71,19 @@ gem build halo.gemspec
 gem install halo-0.0.1.gem
 ```
 
+# rails http://guides.rubyonrails.org/index.html
+```shell
+rails new blog
+rails new blog -d mysql --skip-bundle
+```
+
+# capistrano http://capistranorb.com/
+```shell
+bundle exec cap install
+bundle exec cap install STAGES=local,sandbox,qa,production
+bundle exec cap -T
+bundle exec cap production deploy
+bundle exec cap production deploy --dry-run
+bundle exec cap production deploy --prereqs
+bundle exec cap production deploy --trace
+```
