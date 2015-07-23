@@ -79,11 +79,15 @@ rails new blog -d mysql --skip-bundle
 
 # capistrano http://capistranorb.com/
 ```shell
+bundle exec cap -T
+
 bundle exec cap install
 bundle exec cap install STAGES=local,sandbox,qa,production
-bundle exec cap -T
+
 bundle exec cap production deploy
 bundle exec cap production deploy --dry-run
 bundle exec cap production deploy --prereqs
 bundle exec cap production deploy --trace
+
+cap staging git:check
 ```
