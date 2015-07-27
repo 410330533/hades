@@ -11,6 +11,8 @@ set smartindent
 set expandtab
 set shiftwidth=4
 set tabstop=4
+
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 ```
 
 # command
