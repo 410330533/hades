@@ -59,6 +59,7 @@ skip-networking = OFF
 log_bin = /var/log/mysql/mysql-bin.log
 slow_query_log = /var/log/mysql/mysql-slow.log
 long_query_time = 2
+binlog_format = 'MIXED'
 ```
 
 # user management
