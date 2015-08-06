@@ -34,6 +34,8 @@ gem source -l
 4. 安装 Rails 环境
 gem install bundler rails
 gem install --http-proxy http://127.0.0.1:3128 rails
+
+rvm implode
 ```
 
 # link
