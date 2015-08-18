@@ -110,6 +110,8 @@ pip install sphinx
 pip install git+https://github.com/fabpot/sphinx-php.git
 
 git clone git@github.com:symfony/symfony-docs.git
+git submodule update --init
+
 make help
 make clean
 make dirhtml
