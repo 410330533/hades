@@ -51,6 +51,8 @@ sudo port contents <package_name>
 [mysqld]
 character_set_server = utf8
 collation_server = utf8_general_ci
+character_set_server = utf8mb4
+collation_server = utf8mb4_general_ci
 innodb_file_per_table = 1
 innodb_lock_wait_timeout = 120
 innodb_buffer_pool_size = 64M
