@@ -5,8 +5,16 @@ apt-get update
 apt-get install golang-stable
 
 下载编译包
-https://storage.googleapis.com/golang/go1.4.linux-386.tar.gz
-https://storage.googleapis.com/golang/go1.4.linux-amd64.tar.gz
+https://storage.googleapis.com/golang/go1.5.1.src.tar.gz
+https://storage.googleapis.com/golang/go1.5.1.darwin-amd64.tar.gz
+https://storage.googleapis.com/golang/go1.5.1.darwin-amd64.pkg
+https://storage.googleapis.com/golang/go1.5.1.freebsd-amd64.tar.gz
+https://storage.googleapis.com/golang/go1.5.1.linux-386.tar.gz
+https://storage.googleapis.com/golang/go1.5.1.linux-amd64.tar.gz
+https://storage.googleapis.com/golang/go1.5.1.windows-386.zip
+https://storage.googleapis.com/golang/go1.5.1.windows-386.msi
+https://storage.googleapis.com/golang/go1.5.1.windows-amd64.zip
+https://storage.googleapis.com/golang/go1.5.1.windows-amd64.msi
 
 tar -C /usr/local -xzf go$VERSION.$OS-$ARCH.tar.gz
 export PATH=$PATH:/usr/local/go/bin
