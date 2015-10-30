@@ -1,9 +1,5 @@
 # go
 ```shell
-add-apt-repository ppa:gophers/go
-apt-get update
-apt-get install golang-stable
-
 下载编译包
 https://storage.googleapis.com/golang/go1.5.1.src.tar.gz
 https://storage.googleapis.com/golang/go1.5.1.darwin-amd64.tar.gz
