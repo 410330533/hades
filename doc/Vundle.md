@@ -57,3 +57,11 @@ autocmd vimenter * NERDTree
 :NeoComplCacheEnable
 let g:neocomplcache_enable_at_startup = 1
 ```
+
+- https://github.com/Valloric/YouCompleteMe
+```conf
+apt-get install build-essential cmake
+apt-get install python-dev
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer
+```
