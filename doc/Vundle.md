@@ -42,17 +42,17 @@ filetype plugin indent on    " required
 ```
 
 # plugin
-- [mileszs/ack.vim](https://github.com/mileszs/ack.vim)
+- https://github.com/mileszs/ack.vim
 ```shell
 :Ack 'class SalesOrder\b' src/Uco/OmsBundle/
 ```
 
-- [scrooloose/nerdtree](https://github.com/scrooloose/nerdtree)
+- https://github.com/scrooloose/nerdtree
 ```conf
 autocmd vimenter * NERDTree
 ```
 
-- [Shougo/neocomplcache.vim](https://github.com/Shougo/neocomplcache.vim)
+- https://github.com/Shougo/neocomplcache.vim
 ```conf
 :NeoComplCacheEnable
 let g:neocomplcache_enable_at_startup = 1
@@ -60,6 +60,8 @@ let g:neocomplcache_enable_at_startup = 1
 
 - https://github.com/Valloric/YouCompleteMe
 ```conf
+Plugin 'Valloric/YouCompleteMe'
+
 apt-get install build-essential cmake
 apt-get install python-dev
 cd ~/.vim/bundle/YouCompleteMe
