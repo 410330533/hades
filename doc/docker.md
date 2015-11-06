@@ -15,12 +15,14 @@ docker inspect efefdc74a1d5
 docker login
 docker ps -l
 docker ps -a
-docker pull learn/tutorial
-docker push learn/ping
+docker pull maryatdocker/docker-whale
+docker push maryatdocker/docker-whale
+docker rmi docker-whale
 docker run learn/tutorial echo 'hello world'
 docker run -it ubuntu:14.04
 docker run -p 80:80 saymagic/ubuntu-nginx:v2
 docker search tutoria
+docker tag 7d9495d03763 maryatdocker/docker-whale:latest
 docker version
 ```
 
