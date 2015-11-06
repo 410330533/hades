@@ -13,6 +13,7 @@ docker images
 docker info
 docker inspect efefdc74a1d5
 docker login
+docker logs gitlab
 docker ps -l
 docker ps -a
 docker pull maryatdocker/docker-whale
