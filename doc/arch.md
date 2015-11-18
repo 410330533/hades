@@ -5,14 +5,14 @@ mkfs.ext4 /dev/sda
 mount /dev/sda /mnt
 
 vi /etc/pacman.d/mirrorlist
-http://mirrors.aliyun.com/archlinux/
+Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch
 pacstrap -i /mnt base
 
 genfstab -U -p /mnt >> /mnt/etc/fstab
 
 arch-chroot /mnt /bin/bash
 
-/etc/locale.gen
+vi /etc/locale.gen
 en_US.UTF-8 UTF-8
 locale-gen
 echo LANG=en_US.UTF-8 > /etc/locale.conf 
@@ -24,7 +24,7 @@ echo arch > /etc/hostname
 passwd
 
 pacman -S grub
-grub-install /dev/sda
+grub-install --force /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 exit
