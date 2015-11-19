@@ -1,5 +1,5 @@
 # install
-```conf
+```sh
 fdish /dev/sda
 mkfs.ext4 /dev/sda
 mount /dev/sda /mnt
@@ -30,4 +30,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 exit
 umount /mnt
 reboot
+```
+
+# install software
+```sh
+systemctl stop dhcpcd.service
+systemctl start dhcpcd.service
+systemctl enable dhcpcd.service
+systemctl enable dhcpcd@eth0.service
 ```
