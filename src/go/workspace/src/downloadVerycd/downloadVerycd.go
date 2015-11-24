@@ -1,14 +1,16 @@
 package main
 
 import (
-	"fmt"
+	"database/sql"
+	_ "github.com/go-sql-driver/mysql"
 	"io/ioutil"
 	"log"
 	"net/http"
 )
 
 func req(c chan int) {
-	resp, err := http.Get("http://www.verycd.com/sto/music/china/")
+	url := "http://www.verycd.com/sto/music/"
+	resp, err := http.Get(url)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -17,8 +19,23 @@ func req(c chan int) {
 	if err != nil {
 		log.Fatal(err)
 	}
+	content := string(body)
 
-	fmt.Println(string(body))
+	db, err := sql.Open("mysql", "mahone:taobao@/test")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer db.Close()
+
+	stmt, err := db.Prepare("insert into verycd_sto_music(url, content) values(?, ?)")
+	if err != nil {
+		log.Fatal(err)
+	}
+	res, err := stmt.Exec(url, content)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	c <- 1
 }
 
