@@ -10,6 +10,6 @@ sudo apt-get install -y flacon
 
 iconv -f gbk -t utf8 x.cue -o x.cue
 shntool split -f x.cue -t "%p-%n-%t" x.ape
-for file in *.wav; do lame -b 192 "`echo $file | sed "s/'/\\\'/g" | sed 's/ /\\ /g';`" ; done
+for file in *.wav; do lame -b 320 "`echo $file | sed "s/'/\\\'/g" | sed 's/ /\\ /g';`" ; done
 cuetag x.cue *.mp3
 ```
