@@ -4,7 +4,7 @@ apt-get install php5
 
 编译安装 php
 apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev libmysqld-dev libmysqlclient-dev
-./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --with-zlib --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets --enable-zip --enable-pcntl
+./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --with-zlib --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets --enable-zip --enable-pcntl --enable-soap
 make
 make install
 ```
@@ -33,12 +33,6 @@ apt-get install libjpeg-dev libpng-dev libxpm-dev libfreetype6-dev
 http://php.net/manual/en/imap.installation.php
 apt-get install libc-client2007e-dev
 --with-imap --with-imap-ssl --with-kerberos
-```
-
-# install soap
-```shell
-http://php.net/manual/en/soap.installation.php
---enable-soap
 ```
 
 # config
