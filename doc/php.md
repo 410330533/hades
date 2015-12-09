@@ -4,7 +4,7 @@ apt-get install php5
 
 编译安装 php
 apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev libmysqld-dev libmysqlclient-dev
-./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets --enable-zip --enable-pcntl
+./configure --prefix=/usr/local --with-pdo-mysql --with-mysql --with-mysqli --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --with-zlib --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets --enable-zip --enable-pcntl
 make
 make install
 ```
@@ -35,28 +35,21 @@ apt-get install libc-client2007e-dev
 --with-imap --with-imap-ssl --with-kerberos
 ```
 
-# install pcntl
-```shell
-http://php.net/manual/en/pcntl.installation.php
---enable-pcntl
-```
-
 # install soap
 ```shell
 http://php.net/manual/en/soap.installation.php
 --enable-soap
 ```
 
-# install zip
-```shell
-http://php.net/manual/en/zip.installation.php
---enable-zip
-```
+# config
+```conf
+1. opcache
+zend_extension=opcache.so
+opcache.enable=1
+opcache.enable_cli=1
 
-# install zlib
-```shell
-http://php.net/manual/en/zlib.installation.php
---with-zlib[=DIR]
+2. 使用新的编译器
+GCC 4.8 +
 ```
 
 # link
