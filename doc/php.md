@@ -65,3 +65,18 @@ pear upgrade PhpDocumentor
 phpdoc -d parsedir -t targetdir -o HTML:default:default
 ```
 
+# xhprof
+```shell
+wget http://pecl.php.net/get/xhprof-0.9.4.tgz
+tar -zxvf xhprof-0.9.4.tgz
+cd xhprof-0.9.4
+cd extension/
+phpize
+./configure --with-php-config=/usr/local/php/bin/php-config
+make
+make install
+
+apt-get install graphviz
+
+http://php.net/manual/en/book.xhprof.php
+```
