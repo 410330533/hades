@@ -64,6 +64,16 @@ docker run --name gitlab -d \
     --env 'GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alpha-numeric-string' \
     --volume /srv/docker/gitlab/gitlab:/home/git/data \
     sameersbn/gitlab:8.3.2
+
+backup
+docker stop gitlab && docker rm gitlab
+docker run --name=gitlab -it --rm [OPTIONS] \
+  sameersbn/gitlab:latest app:rake gitlab:backup:create
+
+restore
+docker stop gitlab && docker rm gitlab
+docker run --name=gitlab -it --rm [OPTIONS] \
+  sameersbn/gitlab:latest app:rake gitlab:backup:restore
 ```
 
 # link
