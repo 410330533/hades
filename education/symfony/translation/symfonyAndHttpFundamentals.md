@@ -28,12 +28,12 @@ User-Agent: Mozilla/5.0 (Macintosh)
 
 URI（举例 /，/contact等）标识了这个客户端想要资源的唯一地址。HTTP方法（举例 GET）定义了你想对资源做什么。HTTP方法是请求的动作，并定义了一些操作资源的公共方法。
 
-|METHOD|DESCRIPTION|
-|---|---|
-| GET    | 从服务器上获取资源 |
-| POST   | 在服务器上创建资源 |
-| PUT    | 更新服务器上的资源 |
-| DELETE | 删除服务器上的资源 |
+| METHOD | DESCRIPTION |
+| ---    | ---         |
+| GET    | 从服务器上获取资源   |
+| POST   | 在服务器上创建资源   |
+| PUT    | 更新服务器上的资源   |
+| DELETE | 删除服务器上的资源   |
 
 把这个记在脑子里，你能想象从服务器上删除一篇指定博客的请求应该长什么样子，比如：
 ```
@@ -151,10 +151,53 @@ $response->send();
 >Request和Response类在Symfony中是独立的组件，叫做HttpFoundation。这个组件能被完全独立于Symfony使用，并能提供处理会话和文件上传功能的类。
 
 # 从请求到响应的旅程
+就像HTTP一样，Request和Response对象也非常简单。创建一个应用的难点在于在他们之间写点什么。换句话说，就是解析一个请求的信息并创建响应。
+
+你的应用可能做很多事，像发邮件，处理表单提交，保存东西到数据库，渲染HTML页面和保护内容的安全性。你如何管理所有这些东西，并且保持你的代码有组织且可维护？
+
+Symfony就是用来解决这些问题的，所以你无需为此烦恼。
 
 ## 前端控制器
+传统的，站点的每个页面都是一个物理页：
+```
+index.php
+contact.php
+blog.php
+```
+这种方法有不少问题，比如URL的可扩展性（假如你想将blog.php修改为news.php但不破坏你所有的连接？）和每页必须手动包含一些核心文件使得安全，数据库连接，页面的一致性。
 
-## 保持组织
+一个更好的解决方案是使用前端控制器：一个简单的PHP文件，它会处理每个到你这个应用的请求。比如：
+
+| URL                | ACTION             |
+| ---                | ---                |
+| /index.php         | executes index.php |
+| /index.php/contact | executes index.php |
+| /index.php/blog    | executes index.php |
+
+>使用Apache的mod_rewrite（或者其他服务器的类似功能），URL能轻松的改写成简洁的形式，比如/，/contact和/blog。
+
+现在，所有请求都被相同的方式处理。和之前每个文件执行不同的文件不同，现在前端控制器始终都会执行，而且不同的URL路由到应用的不同部分这个过程也在内部完成。这解决了前面提到的两个问题。几乎所有的现代web应用都这样做，比如WordPress。
+
+## 保持代码的组织性
+在前端控制器里，你必须要分清楚什么代码应该被执行，什么内容需要返回。为了弄清楚这个，你需要检查URI并根据它的值来执行代码的不同部分。这样，你的代码马上会变的比较难看：
+```php
+// index.php
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+$request = Request::createFromGlobals();
+$path = $request->getPathInfo(); // the URI path being requested
+
+if (in_array($path, array('', '/'))) {
+    $response = new Response('Welcome to the homepage.');
+} elseif ('/contact' === $path) {
+    $response = new Response('Contact us');
+} else {
+    $response = new Response('Page not found.', Response::HTTP_NOT_FOUND);
+}
+$response->send();
+```
+解决这个问题比较困难。幸运的是，这正是Symfony被设计来解决的问题。
 
 ## Symfony应用流
 
