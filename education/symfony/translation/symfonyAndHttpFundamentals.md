@@ -213,7 +213,30 @@ $response->send();
 - 路由系统根据请求信息和你创建的路由配置决定执行哪个PHP函数
 - PHP函数被执行，然后创建并返回合适的Response对象
 
-## 在动作中的一个Symfony请求
+## Symfony处理请求实战
+先不深入细节，我们先来看一个实例。假设你想添加一个/contact页面到你的Symfony应用。首先，在你的路由配置文件中为/contact添加一个入口：
+```yaml
+# app/config/routing.yml
+contact:
+    path:     /contact
+    defaults: { _controller: AppBundle:Main:contact }
+```
+当有人访问/contact页面时，这个路由就被匹配到了，指定的控制器就被执行。就像你将在[路由](http://symfony.com/doc/current/book/routing.html)学到的，AppBundle:Main:contact是一个字符串简写，它指向了MainController中的contactAction函数：
+```php
+// src/AppBundle/Controller/MainController.php
+namespace AppBundle\Controller;
+
+use Symfony\Component\HttpFoundation\Response;
+
+class MainController
+{
+    public function contactAction()
+    {
+        return new Response('<h1>Contact us!</h1>');
+    }
+}
+```
+在这个非常简单的例子里，控制器非常简单的创建了一个包含HTML内容`<h1>Contact us!</h1>`的Response对象。在[控制器章节](http://symfony.com/doc/current/book/controller.html)，你将会学到控制器如何渲染页面，将你的“表现层”代码（举例，那些写到HTML的代码）放在一个单独的模板文件中。这就解放了控制器，使得它只需要关注最重要的部分：与数据库的交互，处理提交数据，或发送邮件消息。
 
 # Symfony：创建你的应用，而不是你的工具
 
