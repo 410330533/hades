@@ -35,6 +35,9 @@ gem source -l
 gem install bundler rails
 gem install --http-proxy http://127.0.0.1:3128 rails
 
+5. 更换 bundler 源
+bundle config mirror.https://rubygems.org https://ruby.taobao.org
+
 rvm implode
 ```
 
