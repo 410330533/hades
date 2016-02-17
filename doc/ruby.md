@@ -28,7 +28,7 @@ rvm uninstall ruby-2.0.0-p247
 
 3. 更换 gem 源
 gem source -r https://rubygems.org/
-gem source -a http://ruby.taobao.org
+gem source -a https://ruby.taobao.org
 gem source -l
 
 4. 安装 Rails 环境
