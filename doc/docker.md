@@ -37,6 +37,13 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --vers
 docker-compose --version
 ```
 
+# shadowsocks
+```shell
+https://hub.docker.com/r/oddrationale/docker-shadowsocks/
+docker pull oddrationale/docker-shadowsocks
+docker run -d -p 1984:1984 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb
+```
+
 # gitlab
 ```shell
 https://github.com/sameersbn/docker-gitlab
