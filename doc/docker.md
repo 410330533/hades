@@ -22,6 +22,7 @@ docker run learn/tutorial echo 'hello world'
 docker run -it ubuntu:14.04
 docker run -p 80:80 saymagic/ubuntu-nginx:v2
 docker search tutoria
+docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 docker tag 7d9495d03763 maryatdocker/docker-whale:latest
 docker version
 ```
