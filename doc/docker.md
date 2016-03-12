@@ -38,6 +38,31 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --vers
 docker-compose --version
 ```
 
+# docker-registry
+```shell
+https://docs.docker.com/registry/deploying/
+
+1. insecure registry
+docker run -d -p 5000:5000 --restart=always --name registry registry:2
+
+/etc/default/docker
+DOCKER_OPTS="--insecure-registry myregistrydomain.com:5000"
+
+2. secure registry
+2.1 generate certificate
+mkdir -p certs && openssl req \
+  -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key \
+  -x509 -days 365 -out certs/domain.crt
+2.2 run container
+docker run -d -p 5000:5000 --restart=always --name registry \
+  -v `pwd`/certs:/certs \
+  -e REGISTRY_HTTP_TLS_CERTIFICATE=/certs/domain.crt \
+  -e REGISTRY_HTTP_TLS_KEY=/certs/domain.key \
+  registry:2
+2.3 copy
+/etc/docker/certs.d/myregistrydomain.com:5000/ca.crt
+```
+
 # shadowsocks
 ```shell
 https://hub.docker.com/r/oddrationale/docker-shadowsocks/
