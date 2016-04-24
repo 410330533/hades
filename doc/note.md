@@ -83,17 +83,6 @@ apt-get install dstat
 dstat -cdlmnpsy
 ```
 
-# music
-```shell
-apt-get install lame
-apt-get install mp3splt
-apt-get install shntool
-apt-get install flac
-apt-get install cuetools
-apt-get install wavpack
-shnsplit -f CDImage.cue -i ape -o "cust ext=mp3 lame -b 320 - %f" CDImage.ape
-```
-
 # rabbitMQ
 ```shell
 http://www.rabbitmq.com/releases/rabbitmq-server/v3.0.4/rabbitmq-server_3.0.4-1_all.deb
