@@ -9,6 +9,6 @@ smbpasswd -a testsamba
     path = / 
     browseable = yes 
     writable = yes
-    create mask = 0600
-    directory mask = 0600
+    create mask = 0664
+    directory mask = 0775
 ```
