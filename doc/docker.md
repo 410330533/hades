@@ -5,8 +5,18 @@ wget -qO- https://get.docker.com/ | sh
 
 # commands
 ```shell
-docker
 docker build -t="saymagic/ubuntu-nginx:v2" .
+docker build -f Dockerfile-redis-no-expose -t mahone3297/redis-no-expose .
+
+docker run learn/tutorial echo 'hello world'
+docker run -it ubuntu:14.04
+docker run -p 80:80 saymagic/ubuntu-nginx:v2
+docker run -d -p 6379 --name redis mahone3297/redis
+docker run -d -p 6379 --name redis-app --link redis:db mahone3297/redis
+
+docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
+docker tag 7d9495d03763 maryatdocker/docker-whale:latest
+
 docker commit 6982a9948422 learn/ping
 docker images
 docker info
@@ -18,13 +28,8 @@ docker ps -a
 docker pull maryatdocker/docker-whale
 docker push maryatdocker/docker-whale
 docker rmi docker-whale
-docker run learn/tutorial echo 'hello world'
-docker run -it ubuntu:14.04
-docker run -p 80:80 saymagic/ubuntu-nginx:v2
-docker search tutoria
-docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
-docker tag 7d9495d03763 maryatdocker/docker-whale:latest
 docker version
+docker search redis
 ```
 
 # docker compose
