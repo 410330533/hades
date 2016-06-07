@@ -2,6 +2,7 @@
 ```shell
 apt-get install samba
 service smbd status[start, stop, restart]
+pdbedit -L -v
 useradd -m testsamba
 smbpasswd -a testsamba
 
