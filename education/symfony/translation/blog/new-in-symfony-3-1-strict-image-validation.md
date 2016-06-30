@@ -1,7 +1,7 @@
+http://symfony.com/blog/new-in-symfony-3-1-strict-image-validation
+
 # New in Symfony 3.1: Strict Image Validation
 # Symfony 3.1新特性：严格图片校验
-
-http://symfony.com/blog/new-in-symfony-3-1-strict-image-validation
 
 The Image constraint is one of the most powerful constraints defined by the Validator component. It allows you to validate the max/min height and width, the max/min ratio of images, whether the format should be portrait or landscape, etc.
 

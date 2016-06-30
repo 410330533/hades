@@ -1,6 +1,6 @@
-# New in Symfony 3.1: Cache component
-
 http://symfony.com/blog/new-in-symfony-3-1-cache-component
+
+# New in Symfony 3.1: Cache component
 
 This is the last article in the "New in Symfony 3.1" series and it introduces the most important new feature of Symfony 3.1: the **Cache component**.
 
