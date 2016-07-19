@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  application:
+    image: 'bitnami/ghost:latest'
+    ports:
+      - '10080:2368'
+    volumes:
+      - '/path/to/your/local/ghost_data:/bitnami/ghost'
