@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    volumes:
+      - '/path/to/your/local/mariadb_data:/bitnami/mariadb'
+  application:
+    image: bitnami/redmine:latest
+    ports:
+      - 10080:3000
+    volumes:
+      - '/path/to/your/local/redmine_data:/bitnami/redmine'
+    depends_on:
+      - mariadb
