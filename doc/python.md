@@ -1,3 +1,9 @@
+# scikit-learn
+```shell
+pip3 install NumPy
+pip3 install scikit-learn -i http://pypi.douban.com/simple/
+```
+
 # python
 ```shell
 apt-get install python
