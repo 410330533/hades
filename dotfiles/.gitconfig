@@ -1,0 +1,15 @@
+[user]
+	name = mahone3297
+	email = 329730566@qq.com
+[core]
+	editor = vim
+[color]
+	ui = true
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	rb = rebase
+[push]
+	default = matching
