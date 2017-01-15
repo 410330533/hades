@@ -1,4 +1,0 @@
-SHELL=/bin/bash
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-
-*/15 * * * * /home/mahone/git/symfony-docs/scripts/build.sh /home/mahone/git/symfony-docs >> /home/mahone/git/symfony-docs/scripts/build_`date +'\%Y\%m\%d'`.log 2>&1
