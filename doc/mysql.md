@@ -1,5 +1,5 @@
 # mysql
-apt-get install mysql-server-5.5
+apt-get install mysql-server-5.7
 
 macPorts install mysql
 ```shell
