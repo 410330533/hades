@@ -2,6 +2,8 @@ owncloud:
     image: owncloud:9.1.4
     ports:
         - 10080:80
+    volumes:
+        - /docker/owncloud/html:/var/www/html
     links:
         - mysql:mysql
 
