@@ -1,9 +1,11 @@
-# php
+# install common
 ```shell
-apt-get install php5
+apt-get install build-essential software-properties-common
+```
 
-编译安装 php
-apt-get install build-essential libxml2 libxml2-dev libcurl4-gnutls-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev
+# make install
+```shell
+apt-get install libxml2 libxml2-dev libcurl4-gnutls-dev libmcrypt-dev libicu-dev libreadline-dev openssl libssl-dev
 ./configure --prefix=/usr/local --with-pdo-mysql=mysqlnd --with-mysqli=mysqlnd --with-curl --with-mcrypt --with-gettext --with-readline --with-openssl --with-zlib --enable-intl --enable-fpm --enable-mbstring --enable-opcache --enable-sockets --enable-zip --enable-pcntl --enable-soap --enable-mysqlnd
 make
 make install
