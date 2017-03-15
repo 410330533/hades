@@ -7,6 +7,7 @@ set showmatch
 set hlsearch
 set autoindent
 set smartindent
+set paste
 
 set expandtab
 set shiftwidth=4
