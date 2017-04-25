@@ -11,6 +11,14 @@ make
 make install
 ```
 
+###### install inotify
+```shell
+sudo apt-get install php-pear
+sudo apt-get install php7.0-dev
+sudo pecl install inotify
+add extension=inotify.so
+```
+
 # install bcmath
 ```shell
 http://php.net/manual/en/bc.installation.php
