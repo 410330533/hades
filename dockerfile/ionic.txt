@@ -1,0 +1,10 @@
+* https://hub.docker.com/r/beevelop/ionic/
+```
+docker run -it beevelop/ionic bash
+```
+
+* https://hub.docker.com/r/agileek/ionic-framework/
+```
+docker run -ti --rm -p 8100:8100 -p 35729:35729 agileek/ionic-framework
+docker run -ti --rm -p 8100:8100 -p 35729:35729 -v /path/to/your/ionic-project/:/myApp:rw agileek/ionic-framework
+```
