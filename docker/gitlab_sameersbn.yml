@@ -1,3 +1,5 @@
+version: '3'
+services:
   redis:
     restart: always
     image: sameersbn/redis:latest
@@ -5,15 +7,15 @@
         - /srv/docker/gitlab/redis:/var/lib/redis
 
   # postgresql:
-    # restart: always
-    # image: sameersbn/postgresql:9.6-2
-    # volumes:
-        # - /srv/docker/gitlab/postgresql:/var/lib/postgresql
-    # environment:
-        # - DB_NAME=gitlabhq_production
-        # - DB_USER=gitlab
-        # - DB_PASS=password
-        # - DB_EXTENSION=pg_trgm
+  #   restart: always
+  #   image: sameersbn/postgresql:9.6-2
+  #   volumes:
+  #   - /srv/docker/gitlab/postgresql:/var/lib/postgresql:Z
+  #   environment:
+  #   - DB_USER=gitlab
+  #   - DB_PASS=password
+  #   - DB_NAME=gitlabhq_production
+  #   - DB_EXTENSION=pg_trgm
 
   mysql:
     restart: always
@@ -27,19 +29,33 @@
 
   gitlab:
     restart: always
-    image: sameersbn/gitlab:9.0.0
+    image: sameersbn/gitlab:9.1.2
     ports:
         - "10080:80"
         - "10022:22"
     volumes:
         - /srv/docker/gitlab/gitlab:/home/git/data
     links:
-        - redis:redisio
+        - redis:redis
         - mysql:mysql
     environment:
+        - REDIS_HOST=redis
+        - REDIS_PORT=6379
+
+        - DB_ADAPTER=mysql2
+        - DB_HOST=mysql
+        - DB_PORT=3306
+        - DB_NAME=gitlabhq_production
+        - DB_USER=gitlab
+        - DB_PASS=password
+
+        - TZ=Asia/Beijing
         - GITLAB_TIMEZONE=Beijing
+
+        - GITLAB_HOST=localhost
         - GITLAB_PORT=10080
         - GITLAB_SSH_PORT=10022
-        - GITLAB_SECRETS_DB_KEY_BASE=Vb3bzsntLbhmhVpNcssVxKdznqxqnHbJPfNtvqLfJczC4v7cCK3hWvHdzK4tw4v4
-        - GITLAB_SECRETS_SECRET_KEY_BASE=Vb3bzsntLbhmhVpNcssVxKdznqxqnHbJPfNtvqLfJczC4v7cCK3hWvHdzK4tw4v4
-        - GITLAB_SECRETS_OTP_KEY_BASE=Vb3bzsntLbhmhVpNcssVxKdznqxqnHbJPfNtvqLfJczC4v7cCK3hWvHdzK4tw4v4
+        - GITLAB_RELATIVE_URL_ROOT=
+        - GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alphanumeric-string
+        - GITLAB_SECRETS_SECRET_KEY_BASE=long-and-random-alphanumeric-string
+        - GITLAB_SECRETS_OTP_KEY_BASE=long-and-random-alphanumeric-string
