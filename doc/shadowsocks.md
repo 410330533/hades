@@ -1,8 +1,18 @@
-# shadowsocks
+### docker install
+```shell
+https://hub.docker.com/r/oddrationale/docker-shadowsocks/
+docker pull oddrationale/docker-shadowsocks
+docker run -d -p 1984:1984 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb
+```
+
+### pip install
 ```shell
 apt-get install python-pip
 pip install shadowsocks
+```
 
+### config
+```conf
 vi ~/shadowsocks.json
 {
     "server":"服务器 IP 地址",
