@@ -1,4 +1,18 @@
-### docker install
+### docker mritd/shadowsocks
+```shell
+https://hub.docker.com/r/mritd/shadowsocks/
+docker run -dt --name ss -p 6443:6443 mritd/shadowsocks -s "-s 0.0.0.0 -p 6443 -m aes-256-cfb -k test123 --fast-open"
+
+server
+docker run -dt --name ss -p 6443:6443 -p 6500:6500/udp mritd/shadowsocks -s "-s :: -s 0.0.0.0 -p 6443 -m aes-256-cfb -k test123 --fast-open" -k "-t 127.0.0.1:6443 -l :6500 -mode fast2" -x
+ss-server -s :: -s 0.0.0.0 -p 6443 -m aes-256-cfb -k test123 --fast-open kcptun -t 127.0.0.1:6443 -l :6500 -mode fast2
+
+client
+docker run -dt --name ss -p 1080:1080 mritd/shadowsocks -m "ss-local" -s "-c /etc/shadowsocks-libev/test.json"
+ss-local -c /etc/shadowsocks-libev/test.json
+```
+
+### docker oddrationale/docker-shadowsocks
 ```shell
 https://hub.docker.com/r/oddrationale/docker-shadowsocks/
 docker pull oddrationale/docker-shadowsocks
