@@ -87,10 +87,3 @@ docker run -d -p 5000:5000 --restart=always --name registry \
 2.3 copy
 /etc/docker/certs.d/myregistrydomain.com:5000/ca.crt
 ```
-
-# shadowsocks
-```shell
-https://hub.docker.com/r/oddrationale/docker-shadowsocks/
-docker pull oddrationale/docker-shadowsocks
-docker run -d -p 1984:1984 oddrationale/docker-shadowsocks -s 0.0.0.0 -p 1984 -k $SSPASSWORD -m aes-256-cfb
-```
