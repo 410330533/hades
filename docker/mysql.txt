@@ -1,1 +1,5 @@
-docker run --name codemaster_mysql -p 13306:3306 -e MYSQL_ROOT_PASSWORD=x -d mysql:5.7.13 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+docker run --name app_mysql -p 13306:3306 \
+    -v /srv/docker/mysql:/var/lib/mysql \
+    -e MYSQL_ROOT_PASSWORD=rootPassword -e MYSQL_DATABASE=db -e MYSQL_USER=user -e MYSQL_PASSWORD=password \
+    -d mysql:5.7.18 \
+    --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
