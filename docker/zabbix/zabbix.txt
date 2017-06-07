@@ -1,0 +1,74 @@
+* zabbix-server
+** Start zabbix-server-mysql
+docker run \
+    --name some-zabbix-server-mysql \
+    -e DB_SERVER_HOST="some-mysql-server" \
+    -e MYSQL_USER="some-user" \
+    -e MYSQL_PASSWORD="some-password" \
+    -d zabbix/zabbix-server-mysql:ubuntu-3.2.6
+
+* zabbix-agent
+** Start zabbix-agent
+docker run \
+	--name some-zabbix-agent \
+	-e ZBX_HOSTNAME="some-hostname" \
+	-e ZBX_SERVER_HOST="some-zabbix-server" \
+	-d zabbix/zabbix-agent:ubuntu-3.2.6
+
+** Connects from Zabbix server or Zabbix proxy in other containers (Passive checks)
+docker run \
+	--name some-zabbix-server \
+	--link some-zabbix-agent:zabbix-agent \
+	-d zabbix/zabbix-server:ubuntu-3.2.6
+
+** Connect to Zabbix server or Zabbix proxy containers (Active checks)
+docker run \
+	--name some-zabbix-agent \
+	--link some-zabbix-server:zabbix-server \
+	-d zabbix/zabbix-agent:ubuntu-3.2.6
+
+** Privileged mode
+docker run \
+	--name some-zabbix-agent \
+	--link some-zabbix-server:zabbix-server \
+	--privileged \
+	-d zabbix/zabbix-agent:ubuntu-3.2.6
+
+docker run \
+	--name some-zabbix-agent \
+	--link some-zabbix-server:zabbix-server \
+	-v /dev/sdc:/dev/sdc \
+	-d zabbix/zabbix-agent:ubuntu-3.2.6
+
+* zabbix-web-nginx-mysql
+** Start zabbix-web-nginx-mysql
+docker run \
+    --name some-zabbix-web-nginx-mysql \
+    -e DB_SERVER_HOST="some-mysql-server" \
+    -e MYSQL_USER="some-user" \
+    -e MYSQL_PASSWORD="some-password" \
+    -e ZBX_SERVER_HOST="some-zabbix-server" \
+    -e PHP_TZ="some-timezone" \
+    -d zabbix/zabbix-web-nginx-mysql:ubuntu-3.2.6
+
+** Linking the container to Zabbix server
+docker run \
+    --name some-zabbix-web-nginx-mysql \
+    --link some-zabbix-server:zabbix-server \
+    -e DB_SERVER_HOST="some-mysql-server" \
+    -e MYSQL_USER="some-user" \
+    -e MYSQL_PASSWORD="some-password" \
+    -e ZBX_SERVER_HOST="some-zabbix-server" \
+    -e PHP_TZ="some-timezone" \
+    -d zabbix/zabbix-web-nginx-mysql:ubuntu-3.2.6
+
+** Linking the container to MySQL database
+docker run \
+    --name some-zabbix-web-nginx-mysql \
+    --link some-mysql-server:mysql \
+    -e DB_SERVER_HOST="some-mysql-server" \
+    -e MYSQL_USER="some-user" \
+    -e MYSQL_PASSWORD="some-password" \
+    -e ZBX_SERVER_HOST="some-zabbix-server" \
+    -e PHP_TZ="some-timezone" \
+    -d zabbix/zabbix-web-nginx-mysql:ubuntu-3.2.6
