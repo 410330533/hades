@@ -1,6 +1,3 @@
-#! /usr/bin/env python
-# -*- coding:utf-8 -*-
-
 class Solution:
 	def twoSum(self, nums, target):
 		"""
@@ -9,9 +6,14 @@ class Solution:
 		:rtype: List[int]
 		"""
 		d = {};
-		for i in nums:
-			if i in d:
-				return [i, d.get(i)]
+		for i, n in enumerate(nums):
+			if n not in d:
+				d[target - n] = i
 			else:
-				d[i] = target - i
-		return [0,0]
+				return (d[n], i)
+		return (0, 0)
+
+if __name__ == '__main__':
+	s = Solution()
+	r = s.twoSum([3, 2, 4], 6)
+	print(r)
