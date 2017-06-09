@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  mysql:
+    restart: always
+    image: mysql:5.7.18
+    # volumes:
+      # - /srv/docker/zabbix/mysql:/var/lib/mysql
+    ports:
+      - 13306:3306
+    environment:
+      - MYSQL_DATABASE=zabbix
+      - MYSQL_USER=zabbix
+      - MYSQL_PASSWORD=password
+      - MYSQL_ROOT_PASSWORD=rootPassword
+    command:
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_general_ci
+
+  server:
+    restart: always
+    image: zabbix/zabbix-server-mysql:ubuntu-3.2.6
+    environment:
+      - MYSQL_DATABASE=zabbix
+      - MYSQL_USER=zabbix
+      - MYSQL_PASSWORD=password
+    links:
+      - mysql:mysql-server
+
+  agent:
+    restart: always
+    image: zabbix/zabbix-agent:ubuntu-3.2.6
+    privileged: true
+    links:
+      - server:zabbix-server
+
+  web:
+    restart: always
+    image: zabbix/zabbix-web-nginx-mysql:ubuntu-3.2.6
+    ports:
+      - 10080:80
+    environment:
+      - MYSQL_DATABASE=zabbix
+      - MYSQL_USER=zabbix
+      - MYSQL_PASSWORD=password
+    links:
+      - mysql:mysql-server
+      - server:zabbix-server
