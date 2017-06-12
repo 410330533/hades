@@ -13,31 +13,23 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
-        l3 = l3Cur = None
+        dummyHead = ListNode(0)
+        cur = dummyHead
         carry = 0
-        while l1 != None or l2 != None or carry != 0:
-            if l3Cur == None:
-                l3Cur = ListNode(0)
-                l3 = l3Cur
-            else:
-                l3Cur.next = ListNode(0)
-                l3Cur = l3Cur.next
-
-            v1 = l1.val if l1 != None else 0
-            v2 = l2.val if l2 != None else 0
-            sum = v1 + v2 + carry
-            if sum >= 10:
-                l3Cur.val = sum - 10
-                carry = 1
-            else:
-                l3Cur.val = sum
-                carry = 0
-
+        while l1 != None or l2 != None or carry > 0:
+            sum = 0
             if l1 != None:
+                sum += l1.val
                 l1 = l1.next
             if l2 != None:
+                sum += l2.val
                 l2 = l2.next
-        return l3
+            sum += carry
+            carry = sum / 10
+            cur.next = ListNode(sum % 10)
+            cur = cur.next
+
+        return dummyHead.next
 
 if __name__ == '__main__':
     pass
