@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 
 services:
   mysql:
@@ -45,6 +45,7 @@ services:
       - MYSQL_DATABASE=zabbix
       - MYSQL_USER=zabbix
       - MYSQL_PASSWORD=password
+      - TZ=Asia/Shanghai
     links:
       - mysql:mysql-server
       - server:zabbix-server
