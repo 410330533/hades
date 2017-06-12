@@ -4,8 +4,8 @@ services:
   mysql:
     restart: always
     image: mysql:5.7.18
-    # volumes:
-      # - /srv/docker/zabbix/mysql:/var/lib/mysql
+    volumes:
+      - /srv/docker/zabbix/mysql:/var/lib/mysql
     ports:
       - 13306:3306
     environment:
@@ -27,12 +27,14 @@ services:
     links:
       - mysql:mysql-server
 
-  agent:
-    restart: always
-    image: zabbix/zabbix-agent:ubuntu-3.2.6
-    privileged: true
-    links:
-      - server:zabbix-server
+  # agent:
+  #   restart: always
+  #   image: zabbix/zabbix-agent:ubuntu-3.2.6
+  #   privileged: true
+  #   environment:
+  #     - ZBX_HOSTNAME=agent
+  #   links:
+  #     - server:zabbix-server
 
   web:
     restart: always
