@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  agent:
+    restart: always
+    image: zabbix/zabbix-agent:ubuntu-3.2.6
+    ports:
+      - 10050:1005
+    privileged: true
+    environment:
+      - ZBX_SERVER_HOST=
+      - ZBX_HOSTNAME=agent

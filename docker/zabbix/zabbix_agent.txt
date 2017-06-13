@@ -1,0 +1,8 @@
+docker run \
+    --name zabbix-agent \
+    --restart always \
+    --privileged \
+    -p 10050:10050 \
+    -e ZBX_SERVER_HOST= \
+    -e ZBX_HOSTNAME=`hostname` \
+    -d zabbix/zabbix-agent:ubuntu-3.2.6
