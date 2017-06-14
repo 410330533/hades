@@ -1,5 +1,8 @@
-docker run --name app_mysql -p 13306:3306 \
+docker run \
+    --name app_mysql \
+    --restart always \
+    -p 13306:3306 \
     -v /srv/docker/mysql:/var/lib/mysql \
-    -e MYSQL_ROOT_PASSWORD=rootPassword -e MYSQL_DATABASE=db -e MYSQL_USER=user -e MYSQL_PASSWORD=password \
+    -e MYSQL_DATABASE=db -e MYSQL_USER=user -e MYSQL_PASSWORD=password -e MYSQL_ROOT_PASSWORD=rootPassword \
     -d mysql:5.7.18 \
     --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
