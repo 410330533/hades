@@ -1,9 +1,7 @@
-# https://leetcode.com/problems/two-sum/#/description
-
-class Solution:
+class Solution(object):
     def twoSum(self, nums, target):
         """
-        :type nums List[int]
+        :type nums: List[int]
         :type target: int
         :rtype: List[int]
         """
@@ -14,8 +12,3 @@ class Solution:
             else:
                 return (d[n], i)
         return (0, 0)
-
-if __name__ == '__main__':
-    s = Solution()
-    r = s.twoSum([3, 2, 4], 6)
-    print(r)
