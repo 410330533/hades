@@ -13,6 +13,7 @@ apt-get install python-opencv
 apt-get install python-psyco
 apt-get install python-pip
 pip install flacsync --upgrade
+pip install bs4
 pip install lxml
 pip install cython
 pip install pandas
