@@ -31,7 +31,7 @@ func req(c chan int) {
 	if err != nil {
 		log.Fatal(err)
 	}
-	res, err := stmt.Exec(url, content)
+	_, err = stmt.Exec(url, content)
 	if err != nil {
 		log.Fatal(err)
 	}
