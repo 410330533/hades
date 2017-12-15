@@ -11,7 +11,16 @@ make
 make install
 ```
 
-###### install inotify
+# apt install
+```shell
+sudo add-apt-repository ppa:ondrej/php
+sudo add-apt-repository ppa:ondrej/pkg-gearman
+sudo add-apt-repository ppa:ondrej/apache2
+sudo add-apt-repository ppa:ondrej/nginx-mainline
+sudo apt-get update
+```
+
+# install inotify
 ```shell
 sudo apt-get install php-pear
 sudo apt-get install php7.0-dev
