@@ -6,15 +6,23 @@ import glob
 from os.path import join, basename, exists
 from os import mkdir, chdir, rename
 
-if __name__=='__main__':
-    srcPath = 'E:\photo\meilanNote_photo'
-    chdir(srcPath)
-    
-    for f in glob.glob(join(srcPath, '*.gif')):
+def rename_files(ext):
+    i =  0
+    for f in glob.glob('*.' + ext):
         name = basename(f)
-        k = '201'+name[1:6]
-        if not exists(k):
-            mkdir(k)
-        rename(name, join(k, name))
-    
+        d = '201'+name[1:6]
+        if not exists(d):
+            mkdir(d)
+        rename(name, join(d, name))
+
+        i += 1
+        print("%d rename from %s, to %s" % (i, name, join(d, name)))
+
+if __name__=='__main__':
+    srcPath = sys.argv[1]
+    chdir(srcPath)
+
+    for ext in ['jpg', 'mp4']:
+        rename_files(ext)
+
     print('end...')
