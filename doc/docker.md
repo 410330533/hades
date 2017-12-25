@@ -1,7 +1,7 @@
-# install
+# docker
 ```shell
-https://docs.docker.com/engine/installation/linux/ubuntu/
-sudo apt-get remove docker docker-engine
+https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
+sudo apt-get remove docker docker-engine docker.io
 sudo apt-get install \
     apt-transport-https \
     ca-certificates \
@@ -17,13 +17,9 @@ sudo apt-get update
 sudo apt-get install docker-ce
 apt-cache madison docker-ce
 sudo apt-get install docker-ce=<VERSION>
-
-curl -L https://github.com/docker/compose/releases/download/1.12.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose --version
 ```
 
-# commands
+# docker command
 ```shell
 docker build -t="saymagic/ubuntu-nginx:v2" .
 docker build -f Dockerfile-redis-no-expose -t mahone3297/redis-no-expose .
