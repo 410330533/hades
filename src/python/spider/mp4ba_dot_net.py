@@ -3,6 +3,7 @@
 
 import logging
 import urllib.request
+import codecs
 from bs4 import BeautifulSoup
 
 class Crawler:
@@ -22,8 +23,9 @@ class Crawler:
         req = urllib.request.Request(url = url, headers = headers)
         resp = urllib.request.urlopen(req)
 
-        # s = resp.read().decode('utf-8', errors='replace')
-        # f = open('mp4ba.html', 'w+')
+        # s = resp.read().decode('gbk')
+        # f = open(path, 'w+')
+        # f = codecs.open(path, 'w+', 'gbk')
         # f.write(s)
         # f.close()
 
