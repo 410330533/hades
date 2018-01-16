@@ -46,6 +46,19 @@ docker push maryatdocker/docker-whale
 docker rmi docker-whale
 docker version
 docker search redis
+
+docker swarm init
+docker swarm join --token SWMTKN-1-61c3i8vgfhdbkobhwl6i77g6dafbyvvo858k19nyku1q7vwx7p-59gcno33s62m384m64tv8pwot 192.168.211.136:2377
+docker swarm leave --force
+docker node ls
+docker node rm
+
+docker stack ls
+docker stack deploy -c docker-compose.yml getstartedlab
+docker stack rm getstartedlab
+
+docker service ls
+docker service ps getstartedlab_web
 ```
 
 # docker compose
