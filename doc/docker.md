@@ -35,6 +35,16 @@ docker tag 7d9495d03763 maryatdocker/docker-whale:latest
 
 docker commit 6982a9948422 learn/ping
 docker images
+docker image ls ubuntu
+docker image ls ubuntu:16.04
+docker image ls -a
+docker image ls -q
+docker image ls -f dangling=true
+docker image ls --digests
+docker image ls --format "{{.ID}}: {{.Repository}}"
+docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
+docker image prune
+docker image rm 894f9a914774
 docker info
 docker inspect efefdc74a1d5
 docker login
@@ -46,6 +56,8 @@ docker push maryatdocker/docker-whale
 docker rmi docker-whale
 docker version
 docker search redis
+docker system df
+docker system info
 
 docker swarm init
 docker swarm join --token SWMTKN-1-61c3i8vgfhdbkobhwl6i77g6dafbyvvo858k19nyku1q7vwx7p-59gcno33s62m384m64tv8pwot 192.168.211.136:2377
