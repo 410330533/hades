@@ -21,6 +21,14 @@ sudo apt-get install docker-ce=<VERSION>
 
 # docker command
 ```shell
+docker save alpine | gzip > alpine-latest.tar.gz
+docker load -i alpine-latest.tar.gz
+docker save <镜像名> | bzip2 | pv | ssh <用户名>@<主机名> 'cat | docker load'
+
+docker export 7691a814370e > ubuntu.tar
+cat ubuntu.tar | docker import - test/ubuntu:v1.0
+docker import http://example.com/exampleimage.tgz example/imagerepo
+
 docker build -t="saymagic/ubuntu-nginx:v2" .
 docker build -f Dockerfile-redis-no-expose -t mahone3297/redis-no-expose .
 
@@ -32,6 +40,7 @@ docker run -d -p 6379 --name redis-app --link redis:db mahone3297/redis
 
 docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 docker tag 7d9495d03763 maryatdocker/docker-whale:latest
+docker tag ubuntu:latest 127.0.0.1:5000/ubuntu:latest
 
 docker commit 6982a9948422 learn/ping
 docker images
@@ -45,20 +54,29 @@ docker image ls --format "{{.ID}}: {{.Repository}}"
 docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
 docker image prune
 docker image rm 894f9a914774
+docker image rm 127.0.0.1:5000/ubuntu:latest
 docker info
 docker inspect efefdc74a1d5
 docker login
+docker logout docker.domain.com
 docker logs gitlab
 docker ps -l
 docker ps -a
 docker pull maryatdocker/docker-whale
 docker push maryatdocker/docker-whale
+docker push 127.0.0.1:5000/ubuntu:latest
 docker rmi docker-whale
 docker version
 docker search redis
 docker system df
 docker system info
 
+docker container ls
+docker container prune
+```
+
+# docker swarm
+```shell
 docker swarm init
 docker swarm join --token SWMTKN-1-61c3i8vgfhdbkobhwl6i77g6dafbyvvo858k19nyku1q7vwx7p-59gcno33s62m384m64tv8pwot 192.168.211.136:2377
 docker swarm leave --force
@@ -84,12 +102,13 @@ curl -L https://raw.githubusercontent.com/docker/compose/$(docker-compose --vers
 docker-compose --version
 ```
 
-# docker-registry
+# docker registry
 ```shell
 https://docs.docker.com/registry/deploying/
 
 1. insecure registry
 docker run -d -p 5000:5000 --restart=always --name registry registry:2
+docker run -d -p 5000:5000 -v /opt/data/registry:/var/lib/registry registry
 
 /etc/default/docker
 DOCKER_OPTS="--insecure-registry myregistrydomain.com:5000"
