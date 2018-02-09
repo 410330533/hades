@@ -1,4 +1,4 @@
-# docker
+# docker install
 ```shell
 https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/
 sudo apt-get remove docker docker-engine docker.io
@@ -32,17 +32,12 @@ docker import http://example.com/exampleimage.tgz example/imagerepo
 docker build -t="saymagic/ubuntu-nginx:v2" .
 docker build -f Dockerfile-redis-no-expose -t mahone3297/redis-no-expose .
 
-docker run learn/tutorial echo 'hello world'
-docker run -it ubuntu:14.04
-docker run -p 80:80 saymagic/ubuntu-nginx:v2
-docker run -d -p 6379 --name redis mahone3297/redis
-docker run -d -p 6379 --name redis-app --link redis:db mahone3297/redis
-
 docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]
 docker tag 7d9495d03763 maryatdocker/docker-whale:latest
 docker tag ubuntu:latest 127.0.0.1:5000/ubuntu:latest
 
 docker commit 6982a9948422 learn/ping
+
 docker images
 docker image ls ubuntu
 docker image ls ubuntu:16.04
@@ -55,24 +50,40 @@ docker image ls --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
 docker image prune
 docker image rm 894f9a914774
 docker image rm 127.0.0.1:5000/ubuntu:latest
+
 docker info
 docker inspect efefdc74a1d5
 docker login
 docker logout docker.domain.com
 docker logs gitlab
-docker ps -l
-docker ps -a
 docker pull maryatdocker/docker-whale
 docker push maryatdocker/docker-whale
 docker push 127.0.0.1:5000/ubuntu:latest
 docker rmi docker-whale
 docker version
 docker search redis
+
 docker system df
 docker system info
 
+docker network create -d bridge my-net
+
+docker run learn/tutorial echo 'hello world'
+docker run -it ubuntu:14.04
+docker run -p 80:80 saymagic/ubuntu-nginx:v2
+docker run -d -p 127.0.0.1::5000 training/webapp python app.py
+docker run -d -p 127.0.0.1:5000:5000/udp training/webapp python app.py
+docker run -d -p 6379 --name redis mahone3297/redis
+docker run -d -p 6379 --name redis-app --link redis:db mahone3297/redis
+docker run -it --rm --name busybox1 --network my-net busybox sh
+
 docker container ls
 docker container prune
+
+docker volume ls
+docker volume inspect my-vol
+docker volume rm my-vol
+docker volume prune
 ```
 
 # docker swarm
