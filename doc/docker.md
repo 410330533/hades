@@ -94,12 +94,20 @@ docker swarm leave --force
 docker node ls
 docker node rm
 
+docker service ls
+docker service ps getstartedlab_web
+
 docker stack ls
 docker stack deploy -c docker-compose.yml getstartedlab
 docker stack rm getstartedlab
 
-docker service ls
-docker service ps getstartedlab_web
+docker config create redis.conf redis.conf
+docker config ls
+
+docker secret ls
+docker secret inspect my_password
+docker secret create my_password filename
+docker secret rm my_password
 ```
 
 # docker compose
