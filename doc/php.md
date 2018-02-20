@@ -1,6 +1,6 @@
 # install common
 ```shell
-apt-get install build-essential software-properties-common
+apt-get install build-essential software-properties-common python-software-properties
 ```
 
 # make install
@@ -18,6 +18,9 @@ sudo add-apt-repository ppa:ondrej/pkg-gearman
 sudo add-apt-repository ppa:ondrej/apache2
 sudo add-apt-repository ppa:ondrej/nginx-mainline
 sudo apt-get update
+
+update-alternatives --set php /usr/bin/php7.0
+update-alternatives --set php /usr/bin/php7.2
 ```
 
 # install inotify
