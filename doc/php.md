@@ -20,6 +20,7 @@ sudo add-apt-repository ppa:ondrej/nginx-mainline
 sudo apt-get update
 
 update-alternatives --set php /usr/bin/php7.0
+update-alternatives --set php /usr/bin/php7.1
 update-alternatives --set php /usr/bin/php7.2
 ```
 
