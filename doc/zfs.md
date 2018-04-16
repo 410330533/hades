@@ -37,6 +37,7 @@ zpool destroy poolname
 ```
 zfs list
 zfs list -t snapshot
+zfs list -t all
 
 zfs create poolname/stu
 zfs destroy poolname/stu
@@ -54,6 +55,8 @@ zfs clone poolname/stu@123 poolname/stu/snap123
 zfs rename poolname/stu@23 poolname/stu@23-xxx
 zfs diff poolname/stu@123 poolname/stu
 zfs diff poolname/stu@123 poolname/stu@234
+
+zfs send poolname/stu@123 | zfs receive poolname/stu/testback
 ```
 
 * link
