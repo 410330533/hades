@@ -10,7 +10,13 @@ sudo apt-get install -y flacon
 
 iconv -f gbk -t utf8 x.cue -o x.cue
 shntool split -f x.cue -t "%p-%n-%t" x.ape
+
 for file in *.wav; do lame -b 320 "$file"; done
+
+for a in ./*.flac; do
+  ffmpeg -i "$a" -qscale:a 0 "${a[@]/%flac/mp3}"
+done
+ffmpeg -i input.flac -ab 320k output.mp3
 
 shntool conv -i ape -o "cust ext=mp3 lame -b 320 - %f" *.ape
 
