@@ -5,6 +5,7 @@ import sys
 import glob
 from os.path import join, basename, exists
 from os import mkdir, chdir, rename
+from shutil import rmtree, move, copy, copytree
 
 def rename_files(ext):
     i =  0
@@ -25,6 +26,19 @@ def replace_filename():
         print('old = %s, new = %s' % (old, new))
         rename(old, new)
 
+def move_ml_photo(dir):
+    for f in glob.glob(dir + '*.jpg'):
+        old = f
+        new = 'DCIMP/' + basename(f)
+
+        print('old = %s, new = %s' % (old, new))
+        rename(old, new)
+
+    for d in ('.Gif', '100ANDRO', 'Burst', 'Panorama'):
+        path = dir + d
+        if exists(path):
+            print('rmtree dir ' + path)
+            rmtree(path)
 
 if __name__=='__main__':
     srcPath = sys.argv[1]
@@ -33,5 +47,8 @@ if __name__=='__main__':
     # for ext in ['jpg', 'mp4']:
         # rename_files(ext)
     # replace_filename()
+
+    # for i in range(0, 9):
+        # move_ml_photo('DCIM0%d/' % (i))
 
     print('end...')
