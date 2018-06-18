@@ -13,16 +13,11 @@ class MyPrompt(Cmd):
 
     def do_hello(self, line):
         """Says hello. If you provide a name, it will greet you with it."""
-        if len(line) == 0:
-            name = 'stranger'
-        else:
-            name = line
-        print('hello %s' % (name))
+        print('hello %s' % (line))
 
-    def do_go(self, version, servers = 'app3 app4'):
+    def do_go(self, line):
         """do go..."""
-        version = int(version)
-        print('go go go... version = %d, servers = %s' % (version, servers))
+        print('go go go... version = %s' % (int(line)))
 
     def do_quit(self, line):
         """Quits the program."""
