@@ -35,6 +35,33 @@ vgremove vg1
 ```
 lvcreate -L 10G -n lv1 vg1
 lvcreate -l 100%FREE -n lv2 vg1
+
+<!-- create snapshot -->
+lvcreate -L 1G -n lv1-snap1 --snapshot /dev/vg1/lv1
+
+<!-- create thin pool -->
+apt-get install thin-provisioning-tools
+
+lvcreate --name pool0meta --size 1G vg1 创建元数据卷
+lvcreate --name pool0 --size 10G vg1 创建数据卷
+lvconvert --thinpool vg1/pool0 --poolmetadata vg1/pool0meta 创建一个精简池
+lvconvert --thinpool vg1/pool0 系统自动创建 metadata 卷
+lvcreate --name thin1 -V 1G --thinpool vg1/pool0 创建精简卷thin1
+lvcreate --name thin2 -V 1G --thinpool vg1/pool0 创建精简卷thin2
+
+lvcreate -L 10G --thinpool pool0 vg1
+lvcreate -l+100%FREE --thinpool pool0 vg1
+lvcreate -l+100%FREE --poolmetadatasize 1G -T vg1/pool0
+lvcreate -l+100%FREE -T vg1/pool0
+
+<!-- create thin lv -->
+lvcreate --name lvthin1 --virtualsize 20G --thin vg1/pool0
+<!-- create thin lv snapshot -->
+lvcreate -n ss1 --snapshot vg1/lvthin1
+
+<!-- thin lv snapshot 需要 active 才能 mount -->
+lvchange --activate y --setactivationskip n vg1/ss12
+
 lvdisplay
 lvs
 
