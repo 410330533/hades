@@ -64,6 +64,7 @@ lvchange --activate y --setactivationskip n vg1/ss12
 
 lvdisplay
 lvs
+http://www.man7.org/linux/man-pages/man8/lvs.8.html
 
 lvresize -L 20G /dev/vg1/lv1
 lvresize -L +10G /dev/vg1/lv1
