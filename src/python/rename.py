@@ -19,8 +19,8 @@ from shutil import rmtree, move, copy, copytree
 #         i += 1
 #         print("%d rename from %s, to %s" % (i, name, join(d, name)))
 
-def replace_filename():
-    for f in glob.glob('**/*.*', recursive=True):
+def replace_filename(ext):
+    for f in glob.glob('*.' + ext, recursive=True):
         old = f
         new = f.replace('【可乐美剧】','')
         print('old = %s, new = %s' % (old, new))
@@ -57,7 +57,7 @@ if __name__=='__main__':
     srcPath = sys.argv[1]
     chdir(srcPath)
 
-    for ext in ('jpg', 'mp4'):
-        mv_xiaomi_photo(ext)
+    for ext in ('rmvb',):
+        replace_filename(ext)
 
     print('end...')
