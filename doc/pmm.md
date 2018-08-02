@@ -27,6 +27,7 @@ docker run -d \
 ```
 pmm-admin list
 pmm-admin config --server 192.168.211.136:2080 --server-user admin --server-password admin
+pmm-admin config --server server_ip --bind-address=client_ip_private --client-address=client_ip_public --server-user=admin --server-password=xxx --client-name=xxx
 pmm-admin add mysql --disable-tablestats
 pmm-admin add mysql --user monitor --password '123456' --host localhost --port 3306 instance-01
 pmm-admin add mysql --user monitor --password '123456' --host localhost --port 3307 instance-02
@@ -34,6 +35,7 @@ pmm-admin add mysql --user root --password root --create-user
 GRANT SELECT, PROCESS, SUPER, REPLICATION CLIENT, RELOAD ON *.* TO 'pmm'@' localhost' IDENTIFIED BY 'pass' WITH MAX_USER_CONNECTIONS 10;
 GRANT SELECT, UPDATE, DELETE, DROP ON performance_schema.* TO 'pmm'@'localhost';
 flush privileges;
+pmm-admin check-network
 pmm-admin repair
 pmm-admin stop --all
 pmm-admin start --all
