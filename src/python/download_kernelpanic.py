@@ -2,6 +2,7 @@ import urllib.request
 from gevent import monkey; monkey.patch_socket()
 import gevent
 from os.path import exists
+import os
 
 def download(i):
     path = 'https://ipn.c.zgslb.net/kernelpanic/'
@@ -32,6 +33,9 @@ if __name__ == '__main__':
 
     # for g in gs:
     #     g.join()
+
+    dir = '~/kernelpanic/'
+    os.chdir(dir)
 
     # sequence
     for i in range(1, 53):
