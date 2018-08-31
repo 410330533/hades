@@ -43,10 +43,13 @@ http://dev.mysql.com/doc/refman/5.7/en/set-password.html
 FLUSH PRIVILEGES;
 ```
 
-# mysql
-apt-get install mysql-server-5.7
+# install
 
-macPorts install mysql
+* apt
+```shell
+apt-get install mysql-server-5.7
+```
+* mac
 ```shell
 1- Install MacPorts
 http://www.macports.org/install.php
