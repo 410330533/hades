@@ -49,6 +49,15 @@ FLUSH PRIVILEGES;
 ```shell
 apt-get install mysql-server-5.7
 ```
+* bin
+```shell
+./mysqld --defaults-file=~/.my.cnf --initialize
+./mysqld --defaults-file=~/.my.cnf --initialize-insecure
+./mysqld --defaults-file=~/.my.cnf
+
+./mysql -S /data/sysbench_bare/mysqld.sock -u root -p
+./mysql -h 127.0.0.1 -u root -p
+```
 * mac
 ```shell
 1- Install MacPorts
