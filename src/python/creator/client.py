@@ -1,6 +1,7 @@
 import os
 import cmd
 import argparse
+import socket
 
 class Client(cmd.Cmd):
     prompt = '>>> '
@@ -14,14 +15,21 @@ class Client(cmd.Cmd):
 
     def __init__(self, host, port):
         super().__init__()
-        self.host = host
-        self.port = port
+        self.encoding = 'utf-8'
+        self.host     = host
+        self.port     = port
+
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.connect((self.host, self.port))
 
     def emptyline(self):
         pass
 
     def do_hello(self, line):
-        print('hello %s' % (line))
+        print("[cmd] hello {}".format(line))
+        self.sock.send(bytes(line, self.encoding))
+        response = str(self.sock.recv(1024), self.encoding)
+        print("Received: {}".format(response))
 
     # def parse_subcmd(self, subcmd):
     #     parser = argparse.ArgumentParser()
