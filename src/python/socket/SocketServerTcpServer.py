@@ -1,17 +1,19 @@
 #!/usr/bin/env python
 # -*- coding:utf-8 -*-
 
-import SocketServer
+import socketserver
 from time import ctime
 
-HOST = 'localhost'
+HOST = '0.0.0.0'
 PORT = 21567
+encoding = 'utf-8'
 
-class MyRequestHandler(SocketServer.StreamRequestHandler):
+class MyRequestHandler(socketserver.BaseRequestHandler):
     def handle(self):
-        print('...connected from: ', self.client_address)
-        self.wfile.write('[%s] %s' % (ctime(), self.rfile.readline()))
+        print('connected from... ', self.client_address)
+        data = str(self.request.recv(1024), 'utf-8')
+        self.request.sendall(bytes("[Server] {}".format(data), encoding))
 
-tcpServ = SocketServer.TCPServer((HOST, PORT), MyRequestHandler)
+tcpServ = socketserver.TCPServer((HOST, PORT), MyRequestHandler)
 print('waiting for connection...')
 tcpServ.serve_forever()
