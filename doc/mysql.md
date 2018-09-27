@@ -117,7 +117,7 @@ replication:
         log_slave_updates = 1
         read_only = 1
     show binary logs;
-    CHANGE MASTER TO MASTER_HOST='192.168.1.101', MASTER_USER='repl', MASTER_PASSWORD='repl', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
+    CHANGE MASTER TO MASTER_HOST='192.168.1.101', master_port=3306, MASTER_USER='repl', MASTER_PASSWORD='repl', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
     SHOW MASTER STATUS;
     SHOW SLAVE STATUS;
     START SLAVE;
