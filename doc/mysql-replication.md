@@ -22,7 +22,7 @@ replication:
     mysqldump –master-data –single-transaction –user=username –password=password dbname> dumpfilename
 ```
 
-# 并行复制
+# group commit
 ```
 slave_parallel_workers      = 4
 slave_parallel_type         = LOGICAL_CLOCK
