@@ -26,7 +26,7 @@ def replace_filename(ext):
         print('old = %s, new = %s' % (old, new))
         rename(old, new)
 
-def mv_ml_photo(dir):
+def mv_photo_meizu(dir):
     for f in glob.glob(dir + '*.jpg'):
         old = f
         new = 'DCIMP/' + basename(f)
@@ -40,7 +40,7 @@ def mv_ml_photo(dir):
             print('rmtree dir ' + path)
             rmtree(path)
 
-def mv_xiaomi_photo(ext):
+def mv_photo_xiaomi(ext):
     i = 1
     for f in glob.glob('*.' + ext):
         date = f.split('_')[1]
@@ -54,10 +54,11 @@ def mv_xiaomi_photo(ext):
         i += 1
 
 if __name__=='__main__':
-    srcPath = sys.argv[1]
+    # srcPath = sys.argv[1]
+    srcPath = r'/path/to/the/file'
     chdir(srcPath)
 
-    for ext in ('rmvb',):
-        replace_filename(ext)
+    for ext in ('jpg', ):
+        mv_photo_xiaomi(ext)
 
     print('end...')
