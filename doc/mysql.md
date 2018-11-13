@@ -48,6 +48,7 @@ FLUSH PRIVILEGES;
 * apt
 ```shell
 apt-get install mysql-server-5.7
+mysql_secure_installation
 ```
 * bin
 ```shell
