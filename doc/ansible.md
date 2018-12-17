@@ -1,4 +1,4 @@
-# cmd
+# ansible
 ```
 ansible app14* --list-hosts
 ansible '*app*' --list-hosts
@@ -44,6 +44,11 @@ ansible db -m user -a 'name=hunk3 state=absent remove=yes'
 
 ansible dns -m get_url -a 'dest=/app/ url="https://github.com/bennojoy/nginx/archive/master.zip"'
 ansible dns -m get_url -a 'dest=/app/ELS.txt checksum=sha1:8c9e20bd25525c3ed04ebaa407097fe875f02b2c url="ftp://172.18.0.1/pub/Files/ELS.txt" force=yes'
+```
+
+# ansible-playbook
+```
+ansible-playbook -i hosts -l app14 setup_machine.yml
 ```
 
 # install
