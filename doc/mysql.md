@@ -17,6 +17,8 @@ http://dev.mysql.com/doc/refman/5.7/en/revoke.html
 SET PASSWORD = PASSWORD('cleartext password');
 SET PASSWORD FOR 'jeffrey'@'localhost' = PASSWORD('cleartext password');
 http://dev.mysql.com/doc/refman/5.7/en/set-password.html
+ALTER USER user IDENTIFIED BY 'auth_string';
+https://dev.mysql.com/doc/refman/8.0/en/set-password.html
 
 FLUSH PRIVILEGES;
 ```
