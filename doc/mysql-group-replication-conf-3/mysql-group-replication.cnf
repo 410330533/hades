@@ -1,0 +1,19 @@
+[mysqld]
+# server configuration
+server_id                 = 3
+gtid_mode                 = ON
+enforce_gtid_consistency  = ON
+binlog_checksum           = NONE
+
+log_bin                   = binlog
+log_slave_updates         = ON
+binlog_format             = ROW
+master_info_repository    = TABLE
+relay_log_info_repository = TABLE
+
+transaction_write_set_extraction        = XXHASH64
+loose-group_replication_group_name      = "1dfe5d34-0f21-11e9-bba1-cf27e0c07c7a"
+loose-group_replication_start_on_boot   = off
+loose-group_replication_local_address   = "172.17.0.4:33060"
+loose-group_replication_group_seeds     = "172.17.0.2:33060,172.17.0.3:33060,172.17.0.4:33060"
+loose-group_replication_bootstrap_group = off
