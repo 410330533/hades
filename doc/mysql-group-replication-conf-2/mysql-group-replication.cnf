@@ -12,8 +12,8 @@ master_info_repository    = TABLE
 relay_log_info_repository = TABLE
 
 transaction_write_set_extraction        = XXHASH64
-loose-group_replication_group_name      = "17a72f60-0f21-11e9-b032-4734d66d46be"
+loose-group_replication_group_name      = "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
 loose-group_replication_start_on_boot   = off
-loose-group_replication_local_address   = "172.17.0.3:33060"
-loose-group_replication_group_seeds     = "172.17.0.2:33060,172.17.0.3:33060,172.17.0.4:33060"
+loose-group_replication_local_address   = "mysql-g2:33070"
+loose-group_replication_group_seeds     = "mysql-g1:33070,mysql-g2:33070,mysql-g3:33070"
 loose-group_replication_bootstrap_group = off
