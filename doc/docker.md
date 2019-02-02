@@ -19,6 +19,14 @@ apt-cache madison docker-ce
 sudo apt-get install docker-ce=<VERSION>
 ```
 
+# docker ps
+```shell
+docker ps
+docker ps -f "name=app5"
+docker ps -a -f "exited=137"
+```
+https://docs.docker.com/v1.11/engine/reference/commandline/ps/
+
 # docker command
 ```shell
 docker save alpine | gzip > alpine-latest.tar.gz
