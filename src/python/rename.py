@@ -55,10 +55,10 @@ def mv_photo_xiaomi(ext):
 
 if __name__=='__main__':
     # srcPath = sys.argv[1]
-    srcPath = r'/path/to/the/file'
+    srcPath = r'E:\photo\Camera'
     chdir(srcPath)
 
-    for ext in ('jpg', ):
+    for ext in ('jpg', 'mp4'):
         mv_photo_xiaomi(ext)
 
     print('end...')
