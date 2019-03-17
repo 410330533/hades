@@ -1,4 +1,4 @@
-# ansible
+# ansible ad-hoc
 ```
 ansible app14* --list-hosts
 ansible '*app*' --list-hosts
