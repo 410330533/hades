@@ -1,3 +1,7 @@
+# ref
+
+https://docs.ansible.com/
+
 # ansible ad-hoc
 ```
 ansible app14* --list-hosts
